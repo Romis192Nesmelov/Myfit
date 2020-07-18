@@ -22,7 +22,6 @@ Route::match(['get', 'post'], '/login', 'OAuthController@login');
 Route::match(['get', 'post'], '/auth', 'OAuthController@auth');
 Route::match(['get', 'post'], '/logout', 'OAuthController@logout');
 Route::match(['get', 'post'], '/register', 'OAuthController@register');
-Route::match(['get', 'post'], '/reconfirm', 'OAuthController@reConfirmedRegistration');
 Route::match(['get', 'post'], '/confirm-registration/{token}', 'OAuthController@confirmRegistration');
 Route::match(['get', 'post'], '/re-confirm-registration', 'OAuthController@reConfirmRegistration');
 Route::match(['get', 'post'], '/restore-password', 'OAuthController@restorePassword');
