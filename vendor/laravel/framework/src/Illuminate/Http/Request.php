@@ -11,6 +11,7 @@ use Illuminate\Support\Traits\Macroable;
 use RuntimeException;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
+use App\User;
 
 /**
  * @method array validate(array $rules, ...$params)
@@ -515,7 +516,9 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
      */
     public function user($guard = null)
     {
-        return call_user_func($this->getUserResolver(), $guard);
+        return call_user_func(function () {
+            return User::where('access_token',$this->input('access_token'))->first();
+        }, $guard);
     }
 
     /**

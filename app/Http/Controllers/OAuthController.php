@@ -136,8 +136,7 @@ class OAuthController extends Controller
 
     public function logout(Request $request)
     {
-        $this->validate($request, ['access_token' => 'required|size:32|exists:users']);
-        $user = User::where('access_token',$request->input('access_token'))->first();
+        $user = $request->user();
         $user->auth_token = null;
         $user->access_token = null;
         $user->access_token_expired = null;
