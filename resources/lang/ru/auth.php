@@ -17,6 +17,7 @@ return [
     'trouble_with_url_button' => 'Если у вас возникли проблемы с нажатием кнопки: :actionText, скопируйте и вставьте приведенный ниже URL-адрес в свой веб-браузер: <a href=":actionURL" target="_blank">:actionURL</a>',
     'throttle' => 'Слишком много попыток. Пожалуйста, попробуйте через :seconds секунд.',
     'token_error' => 'Не верный токен!',
+    'wrong_password' => 'Не верный пароль!',
 
     'complete_registration' => 'Завершить регистрацию',
     'confirm_register_head' => 'Подтверждение регистрации',
