@@ -26,6 +26,6 @@ Route::match(['get', 'post'], '/re-confirm-registration', 'OAuthController@reCon
 Route::match(['get', 'post'], '/restore-password', 'OAuthController@restorePassword');
 Route::match(['get', 'post'], '/complete-restore-password', 'OAuthController@completeRestorePassword');
 
-Route::group(['middleware' => 'auth:api'], function() {
+Route::group(['middleware' => 'auth.access'], function() {
     Route::match(['get', 'post'], '/logout', 'OAuthController@logout');
 });

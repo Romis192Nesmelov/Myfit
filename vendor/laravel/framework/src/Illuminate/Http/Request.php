@@ -516,9 +516,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
      */
     public function user($guard = null)
     {
-        return call_user_func(function () {
-            return User::where('access_token',$this->input('access_token'))->first();
-        }, $guard);
+        return call_user_func($this->getUserResolver(), $guard);
     }
 
     /**
@@ -578,7 +576,12 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
      */
     public function getUserResolver()
     {
-        return $this->userResolver ?: function () {
+        return $this->userResolver ? function () {
+            if (!$this->has('access_token')) return false;
+            $user = User::where('access_token',$this->input('access_token'))->first();
+            if (!$user || $user->access_token_expired < time()) return false;
+            else return $user;
+        } : function () {
             //
         };
     }

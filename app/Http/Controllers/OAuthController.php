@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class OAuthController extends Controller
 {
     use HelperTrait;
-
+    
     public function login(Request $request)
     {
         $this->validate($request, [
