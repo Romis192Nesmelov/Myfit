@@ -10,7 +10,7 @@
 
     @include('emails._content_block', ['content' => ob_get_clean()])
 
-    @include('emails._footer_message_block',['footerContent' => trans('auth.trouble_with_url_button2', [
+    @include('emails._footer_message_block',['footerContent' => trans('auth.trouble_with_url_button', [
         'actionText' => trans('auth.complete_registration'),
         'actionURL' => url('/confirm-registration/'.$token)
     ])])
