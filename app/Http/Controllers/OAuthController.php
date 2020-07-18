@@ -94,8 +94,12 @@ class OAuthController extends Controller
 
         if ($user->active)
             return response()->json(['success' => false, 'error' => trans('auth.already_active')], 403);
-        
-        $this->sendMail($request->input('email'), 'registration', ['token' => $this->getRandToken()]);
+
+        $token = $this->getRandToken();
+        $user->confirm_email_token = $token;
+        $user->save();
+
+        $this->sendMail($request->input('email'), 'registration', ['token' => $token]);
         return response()->json(['success' => true]);
     }
 
