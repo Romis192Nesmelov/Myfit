@@ -134,6 +134,7 @@ class OAuthController extends Controller
     {
         $this->validate($request, ['access_token' => 'required|size:32|exists:users']);
         $user = User::where('access_token',$request->input('access_token'))->first();
+        $user->auth_token = null;
         $user->access_token = null;
         $user->access_token_expired = null;
         $user->save();
