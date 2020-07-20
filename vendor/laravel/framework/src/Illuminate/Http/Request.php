@@ -577,8 +577,8 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     public function getUserResolver()
     {
         return $this->userResolver ? function () {
-            if (!$this->has('access_token')) return false;
-            $user = User::where('access_token',$this->input('access_token'))->first();
+            if (!$this->segment(3)) return false;
+            $user = User::where('access_token',$this->segment(3))->first();
             if (!$user || $user->access_token_expired < time()) return false;
             else return $user;
         } : function () {

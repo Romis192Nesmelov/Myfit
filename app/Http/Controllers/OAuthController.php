@@ -35,10 +35,10 @@ class OAuthController extends Controller
         return response()->json(['success' => true, 'auth_token' => $authToken, 'access_token' => $token, 'expired_at' => $expired], 200);
     }
 
-    public function auth(Request $request)
+    public function auth($token)
     {
-        $this->validate($request, ['auth_token' => 'required|size:32|exists:users']);
-        $user = User::where('auth_token',$request->input('auth_token'))->first();
+        if (!$user = User::where('auth_token',$token)->first())
+            return response()->json(['success' => false, 'error' => trans('auth.token_error')], 400);
 
         if (!$user->active)
             return response()->json(['success' => false, 'error' => trans('auth.not_confirmed_account')], 403);
@@ -53,20 +53,19 @@ class OAuthController extends Controller
     public function register(Request $request)
     {
         $this->validate($request, [
+            'name' => 'required|min:2|max:700',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|max:20|confirmed'
         ]);
 
-        $email = $request->input('email');
         $token = $this->getRandToken();
+        $fields = $this->processingFields($request);
+        $fields['password'] = bcrypt($fields['password']);
+        $fields['confirm_email_token'] = $token;
 
-        User::create([
-            'email' => $email,
-            'password' => bcrypt($request->input('password')),
-            'confirm_email_token' => $token
-        ]);
+        User::create($fields);
 
-        $this->sendMail($email, 'registration', ['token' => $token]);
+        $this->sendMail($fields['email'], 'registration', ['token' => $token]);
         return response()->json(['success' => true]);
     }
     
@@ -119,14 +118,12 @@ class OAuthController extends Controller
         return response()->json(['success' => true]);
     }
 
-    public function completeRestorePassword(Request $request)
+    public function completeRestorePassword(Request $request, $token)
     {
-        $this->validate($request, [
-            'restore_password_token' => 'required|size:32|exists:users',
-            'password' => 'required|min:6|max:20|confirmed'
-        ]);
-
-        $user = User::where('restore_password_token',$request->input('restore_password_token'))->first();
+        $this->validate($request, ['password' => 'required|min:6|max:20|confirmed']);
+        if (!$user = User::where('restore_password_token',$token)->first())
+            return response()->json(['success' => false, 'error' => trans('auth.token_error')], 400);
+            
         $user->password = bcrypt($request->input('password'));
         $user->restore_password_token = null;
         $user->save();
@@ -134,7 +131,7 @@ class OAuthController extends Controller
         return response()->json(['success' => true]);
     }
 
-    public function logout(Request $request)
+    public function logout(Request $request, $token)
     {
         $user = $request->user();
         $user->auth_token = null;
