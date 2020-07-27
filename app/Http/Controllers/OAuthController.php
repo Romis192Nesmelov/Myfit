@@ -104,7 +104,7 @@ class OAuthController extends Controller
 
     public function restorePassword(Request $request)
     {
-        $this->validate($request, ['email' => 'required|email|exist:users']);
+        $this->validate($request, ['email' => 'required|email|exists:users']);
         $user = User::where('email',$request->input('email'))->first();
 
         if (!$user->active)

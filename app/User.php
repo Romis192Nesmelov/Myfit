@@ -21,15 +21,7 @@ class User extends Authenticatable
         'fb_id',
         'vk_id',
         'email',
-        'password'
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
+        'password',
         'active',
         'auth_token',
         'access_token',
