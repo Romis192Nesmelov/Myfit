@@ -6,7 +6,7 @@
     @include('emails._p_block',['content' => trans('auth.confirm_register_part2')])
 
     <?php ob_start(); ?>
-    @include('emails._button_block',['href' => url('/confirm-registration/'.$token), 'buttonText' => trans('auth.complete_registration')])
+    @include('emails._button_block',['href' => 'myfit://confirm-registration/'.$token, 'buttonText' => trans('auth.complete_registration')])
 
     @include('emails._content_block', ['content' => ob_get_clean()])
 
