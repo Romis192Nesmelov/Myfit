@@ -209,7 +209,7 @@ class OAuthController extends Controller
                 'name' => $name ? $name : '',
                 'email' => $email ? $email : '',
                 'password' => '',
-                'active' => 1
+                'active' => 1,
             ]);
         }
 
@@ -220,6 +220,11 @@ class OAuthController extends Controller
 
         if (!$user->name && $name) {
             $user->name = $name;
+            $user->save();
+        }
+
+        if (!$user->auth_token) {
+            $user->auth_token = $this->getRandToken();
             $user->save();
         }
 
