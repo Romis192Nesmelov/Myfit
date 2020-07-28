@@ -224,6 +224,6 @@ class OAuthController extends Controller
         }
 
         list($token, $expired) = $this->createAccessToken($user);
-        return response()->json(['success' => true, 'access_token' => $token, 'expired_at' => $expired], 200);
+        return response()->json(['success' => true, 'auth_token' => $user->auth_token, 'access_token' => $token, 'expired_at' => $expired], 200);
     }
 }
