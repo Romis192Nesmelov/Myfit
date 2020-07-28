@@ -55,9 +55,9 @@ class OAuthController extends Controller
         $this->validate($request, ['user_id' => 'required','access_token' => 'required']);
         $result = json_decode(file_get_contents(
             'https://api.vk.com/method/users.get'
-            .'?user_ids=100456742'
+            .'?user_ids='.$request->input('user_id')
             .'&fields=country'
-            .'&access_token=953983b43b28b0cd7897f2ed9289e47b3f2e2b1f8c1323c2bbfe25f9c1764b190554ec29eb251c8b59264'
+            .'&access_token='.$request->input('access_token')
             .'&v=5.21'));
 
         if (isset($result->error)) return $result->error->error_msg;
