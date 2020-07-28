@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Google_Client;
+use Google_Service_Oauth2;
 
 class OAuthController extends Controller
 {
@@ -52,7 +54,11 @@ class OAuthController extends Controller
 
     public function vkAuth(Request $request)
     {
-        $this->validate($request, ['user_id' => 'required','access_token' => 'required']);
+        $this->validate($request, [
+            'email' => 'required|email',
+            'user_id' => 'required',
+            'access_token' => 'required'
+        ]);
         $result = json_decode(file_get_contents(
             'https://api.vk.com/method/users.get'
             .'?user_ids='.$request->input('user_id')
@@ -66,9 +72,28 @@ class OAuthController extends Controller
             'vk_id',
             $result->response[0]->id,
             $result->response[0]->last_name.' '.$result->response[0]->first_name,
-            null,
+            $request->input('email'),
             isset($result->response[0]->country) ? $result->response[0]->country : null
         );
+    }
+
+    public function googleAuth(Request $request)
+    {
+        $this->validate($request, ['access_token' => 'required']);
+        $googleClient = new Google_Client();
+        $googleClient->setClientId('570125957511-a3e4qu5e7a891one5ki2alicscrjbsqe.apps.googleusercontent.com');
+        $googleClient->setClientSecret('oY9k16jkjLz7fJ9H-TYze22n');
+        $googleClient->addScope("email");
+        $googleClient->addScope("profile");
+        $googleClient->setAccessToken($request->input('access_token'));
+
+        // get profile info
+        $googleOauth = new Google_Service_Oauth2($googleClient);
+        $googleAccountInfo = $googleOauth->userinfo->get();
+        $email = $googleAccountInfo->email;
+        $name = $googleAccountInfo->name;
+
+        return $this->getUser(null, null, $name, $email, null);
     }
 
     public function register(Request $request)
