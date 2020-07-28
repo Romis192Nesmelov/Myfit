@@ -77,6 +77,19 @@ class OAuthController extends Controller
         );
     }
 
+    public function fbAuth(Request $request)
+    {
+        $this->validate($request, ['access_token' => 'required']);
+        $response = json_decode(file_get_contents('https://graph.facebook.com/me?access_token='.$request->input('access_token')));
+        return $this->getUser(
+            'fb_id',
+            $response->id,
+            $response->name,
+            null,
+            null
+        );
+    }
+
     public function googleAuth(Request $request)
     {
         $this->validate($request, ['access_token' => 'required']);
