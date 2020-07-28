@@ -50,6 +50,27 @@ class OAuthController extends Controller
         return response()->json(['success' => true, 'access_token' => $token, 'expired_at' => $expired], 200);
     }
 
+    public function vkAuth(Request $request)
+    {
+        $this->validate($request, ['user_id' => 'required','access_token' => 'required']);
+        $result = json_decode(file_get_contents(
+            'https://api.vk.com/method/users.get'
+            .'?user_ids=100456742'
+            .'&fields=country'
+            .'&access_token=953983b43b28b0cd7897f2ed9289e47b3f2e2b1f8c1323c2bbfe25f9c1764b190554ec29eb251c8b59264'
+            .'&v=5.21'));
+
+        if (isset($result->error)) return $result->error->error_msg;
+
+        return $this->getUser(
+            'vk_id',
+            $result->response[0]->id,
+            $result->response[0]->last_name.' '.$result->response[0]->first_name,
+            null,
+            isset($result->response[0]->country) ? $result->response[0]->country : null
+        );
+    }
+
     public function register(Request $request)
     {
         $this->validate($request, [
@@ -139,5 +160,32 @@ class OAuthController extends Controller
         $user->access_token_expired = null;
         $user->save();
         return response()->json(['success' => true], 200);
+    }
+
+    private function getUser($idFieldName, $userId, $name, $email, $location)
+    {
+        $user = $idFieldName && $userId ? User::where($idFieldName,$email)->first() : User::where('email',$email)->first();
+        if (!$user) {
+            $user = User::create([
+                $idFieldName => $userId,
+                'name' => $name ? $name : '',
+                'email' => $email ? $email : '',
+                'password' => '',
+                'active' => 1
+            ]);
+        }
+
+        if (!$user->location && $location) {
+            $user->location = $location;
+            $user->save();
+        }
+
+        if (!$user->name && $name) {
+            $user->name = $name;
+            $user->save();
+        }
+
+        list($token, $expired) = $this->createAccessToken($user);
+        return response()->json(['success' => true, 'access_token' => $token, 'expired_at' => $expired], 200);
     }
 }

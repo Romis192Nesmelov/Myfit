@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::match(['get', 'post'], '/login', 'OAuthController@login');
 Route::match(['get', 'post'], '/auth/{token}', 'OAuthController@auth');
+Route::match(['get', 'post'], '/vk-auth', 'OAuthController@vkAuth');
 Route::match(['get', 'post'], '/register', 'OAuthController@register');
 Route::match(['get', 'post'], '/confirm-registration/{token}', 'OAuthController@confirmRegistration');
 Route::match(['get', 'post'], '/re-confirm-registration', 'OAuthController@reConfirmRegistration');
