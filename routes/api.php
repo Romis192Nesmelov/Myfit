@@ -32,3 +32,5 @@ Route::match(['get', 'post'], '/complete-restore-password/{token}', 'OAuthContro
 Route::group(['middleware' => 'auth.access'], function() {
     Route::match(['get', 'post'], '/logout/{token}', 'OAuthController@logout');
 });
+
+Route::match(['get', 'post'], '/test', function (){ return response()->json(['success' => true], 200); });
