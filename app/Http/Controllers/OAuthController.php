@@ -26,15 +26,13 @@ class OAuthController extends Controller
         if (!$user->active)
             return response()->json(['success' => false, 'error' => trans('auth.not_confirmed_account')], 403);
 
-        if ($this->checkAuth($user))
-            return response()->json(['success' => false, 'error' => trans('auth.already_authorized')], 400);
-        
-        list($token, $expired) = $this->createAccessToken($user);
-        $authToken = $this->getRandToken();
-        $user->auth_token = $authToken;
-        $user->save();
-
-        return response()->json(['success' => true, 'auth_token' => $authToken, 'access_token' => $token, 'expired_at' => $expired], 200);
+        if (!$this->checkAuth($user)) {
+            list($token, $expired) = $this->createAccessToken($user);
+            $authToken = $this->getRandToken();
+            $user->auth_token = $authToken;
+            $user->save();
+        }
+        return response()->json(['success' => true, 'auth_token' => $user->auth_token, 'access_token' => $user->access_token, 'expired_at' => $user->access_token_expired], 200);
     }
 
     public function auth($token)
