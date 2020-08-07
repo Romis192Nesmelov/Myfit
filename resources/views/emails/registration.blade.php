@@ -12,6 +12,6 @@
 
     @include('emails._footer_message_block',['footerContent' => trans('auth.trouble_with_url_button', [
         'actionText' => trans('auth.complete_registration'),
-        'actionURL' => url('/confirm-registration/'.$token)
+        'actionURL' => 'myfit://confirm-registration/'.$token
     ])])
 @endsection

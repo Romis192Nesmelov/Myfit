@@ -12,6 +12,6 @@
 
     @include('emails._footer_message_block',['footerContent' => trans('auth.trouble_with_url_button', [
         'actionText' => trans('auth.restore_password'),
-        'actionURL' => url('/confirm-registration/'.$token)
+        'actionURL' => 'myfit://complete-restore-password/'.$token
     ])])
 @endsection
