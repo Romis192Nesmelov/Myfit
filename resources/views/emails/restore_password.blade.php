@@ -10,8 +10,8 @@
 
     @include('emails._content_block', ['content' => ob_get_clean()])
 
-    @include('emails._footer_message_block',['footerContent' => trans('auth.trouble_with_url_button', [
-        'actionText' => trans('auth.restore_password'),
+    @include('emails._footer_message_block',[
+        'footerContent' => trans('auth.trouble_with_url_button', ['actionText' => trans('auth.restore_password')]),
         'actionURL' => 'myfit://complete-restore-password/'.$token
-    ])])
+    ])
 @endsection
