@@ -53,6 +53,7 @@ class OAuthController extends Controller
     public function vkAuth(Request $request)
     {
         $this->validate($request, [
+            'email' => 'required|email',
             'user_id' => 'required',
             'access_token' => 'required'
         ]);
@@ -69,7 +70,7 @@ class OAuthController extends Controller
             'vk_id',
             $result->response[0]->id,
             $result->response[0]->last_name.' '.$result->response[0]->first_name,
-            $request->has('email') && $request->input('email') ? $request->input('email') : null,
+            $request->input('email'),
             isset($result->response[0]->country) ? $result->response[0]->country : null
         );
     }
@@ -199,7 +200,7 @@ class OAuthController extends Controller
 
     private function getUser($idFieldName, $userId, $name, $email, $location)
     {
-        $user = $idFieldName && $userId ? User::where($idFieldName,$email)->first() : User::where('email',$email)->first();
+        $user = $idFieldName && $userId ? User::where($idFieldName,$userId)->first() : User::where('email',$email)->first();
         if (!$user) {
             $user = User::create([
                 $idFieldName => $userId,
