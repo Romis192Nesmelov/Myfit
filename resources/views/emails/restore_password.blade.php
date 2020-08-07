@@ -6,12 +6,12 @@
     @include('emails._p_block',['content' => trans('auth.restore_password_part2')])
 
     <?php ob_start(); ?>
-    @include('emails._button_block',['href' => 'myfit://complete-restore-password/'.$token, 'buttonText' => trans('auth.restore_password')])
+    @include('emails._button_block',['href' => url('/complete-restore-password/'.$token), 'buttonText' => trans('auth.restore_password')])
 
     @include('emails._content_block', ['content' => ob_get_clean()])
 
-    @include('emails._footer_message_block',[
-        'footerContent' => trans('auth.trouble_with_url_button', ['actionText' => trans('auth.restore_password')]),
-        'actionURL' => 'myfit://complete-restore-password/'.$token
-    ])
+    @include('emails._footer_message_block',['footerContent' => trans('auth.trouble_with_url_button', [
+        'actionText' => trans('auth.restore_password'),
+        'actionURL' => url('/complete-restore-password/'.$token)
+    ])])
 @endsection
