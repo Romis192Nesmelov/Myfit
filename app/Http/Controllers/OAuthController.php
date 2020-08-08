@@ -145,7 +145,7 @@ class OAuthController extends Controller
 
     public function reConfirmRegistration(Request $request)
     {
-        $this->validate($request, ['email' => 'required|email|exist:users']);
+        $this->validate($request, ['email' => 'required|email|exists:users']);
         $user = User::where('email',$request->input('email'))->first();
 
         if ($user->active)
@@ -225,7 +225,7 @@ class OAuthController extends Controller
             $user->auth_token = $this->getRandToken();
             $user->save();
         }
-        
+
         list($token, $expired) = $this->createAccessToken($user);
         return response()->json(['success' => true, 'auth_token' => $user->auth_token, 'access_token' => $token, 'expired_at' => $expired], 200);
     }
