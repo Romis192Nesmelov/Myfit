@@ -71,7 +71,7 @@ class OAuthController extends Controller
             $result->response[0]->id,
             $result->response[0]->last_name.' '.$result->response[0]->first_name,
             $request->input('email'),
-            isset($result->response[0]->country) ? $result->response[0]->country : null
+            isset($result->response[0]->country) ? $result->response[0]->country->title : null
         );
     }
 
@@ -225,7 +225,7 @@ class OAuthController extends Controller
             $user->auth_token = $this->getRandToken();
             $user->save();
         }
-
+        
         list($token, $expired) = $this->createAccessToken($user);
         return response()->json(['success' => true, 'auth_token' => $user->auth_token, 'access_token' => $token, 'expired_at' => $expired], 200);
     }
