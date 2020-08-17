@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('fb_id',191)->nullable();
             $table->string('vk_id',191)->nullable();
             
-            $table->string('email',191)->unique();
+            $table->string('email',191)->nullable();
             $table->boolean('active')->nullable();
             $table->boolean('admin')->nullable();
             $table->string('password',191);

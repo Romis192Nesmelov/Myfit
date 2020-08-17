@@ -205,7 +205,7 @@ class OAuthController extends Controller
             $user = User::create([
                 $idFieldName => $userId,
                 'name' => $name ? $name : '',
-                'email' => $email ? $email : '',
+                'email' => $email ? $email : null,
                 'password' => '',
                 'active' => 1,
             ]);
