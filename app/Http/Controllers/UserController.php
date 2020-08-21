@@ -12,10 +12,10 @@ class UserController extends Controller
         $dateBorn = date('Y') - 10;
         $this->validate($request, [
             'birthday_year' => 'required|integer|min:1900|max:'.$dateBorn,
-            'height' => 'required|integer|min:50|max:400',
-            'weight' => 'required|integer|min:20|max:500',
-            'waist_girth' => 'required|integer|min:20',
-            'hip_girth' => 'required|integer|min:20'
+            'height' => 'integer|max:400',
+            'weight' => 'integer|max:500',
+            'waist_girth' => 'integer|min:20',
+            'hip_girth' => 'integer|min:20'
         ]);
 
         $fields = $this->processingFields($request);
