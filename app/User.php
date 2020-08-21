@@ -29,6 +29,12 @@ class User extends Authenticatable
         'access_token_expired',
         'confirm_email_token',
         'restore_password_token',
-        'admin'
+        'admin',
+
+        'birthday_year',
+        'height',
+        'weight',
+        'waist_girth',
+        'hip_girth'
     ];
 }

@@ -518,6 +518,7 @@ class ComposerStaticInit65645ebcd03095bed52fc5f75345c6c5
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HelperTrait' => __DIR__ . '/../..' . '/app/Http/Controllers/HelperTrait.php',
         'App\\Http\\Controllers\\OAuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/OAuthController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\AuthMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/AuthMiddleware.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

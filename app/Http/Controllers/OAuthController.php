@@ -27,7 +27,7 @@ class OAuthController extends Controller
             return response()->json(['success' => false, 'error' => trans('auth.not_confirmed_account')], 403);
 
         if (!$this->checkAuth($user)) {
-            list($token, $expired) = $this->createAccessToken($user);
+            $this->createAccessToken($user);
             $authToken = $this->getRandToken();
             $user->auth_token = $authToken;
             $user->save();
@@ -188,7 +188,7 @@ class OAuthController extends Controller
         return response()->json(['success' => true]);
     }
 
-    public function logout(Request $request, $token)
+    public function logout(Request $request)
     {
         $user = $request->user();
         $user->auth_token = null;

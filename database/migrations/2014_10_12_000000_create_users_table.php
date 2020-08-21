@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('name',191);
             $table->string('location',191)->nullable();
 
@@ -30,6 +30,13 @@ class CreateUsersTable extends Migration
             $table->integer('access_token_expired')->nullable();
             $table->string('confirm_email_token',32)->nullable();
             $table->string('restore_password_token',32)->nullable();
+
+            $table->smallInteger('birthday_year')->nullable();
+            $table->smallInteger('height')->nullable();
+            $table->smallInteger('weight')->nullable();
+            $table->smallInteger('waist_girth')->nullable();
+            $table->smallInteger('hip_girth')->nullable();
+            
             $table->rememberToken();
             $table->timestamps();
         });
