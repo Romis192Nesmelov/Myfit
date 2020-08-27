@@ -19,7 +19,7 @@ Route::match('post', '/auth/{token}', 'OAuthController@auth');
 Route::match('post', '/vk-auth', 'OAuthController@vkAuth');
 Route::match('post', '/fb-auth', 'OAuthController@fbAuth');
 Route::match('post', '/google-auth', 'OAuthController@googleAuth');
-Route::match('post', '/register', 'OAuthController@register');
+Route::match(['post','get'], '/register', 'OAuthController@register');
 Route::match('get', '/confirm-registration/{token}', 'OAuthController@confirmRegistration');
 Route::match('post', '/re-confirm-registration', 'OAuthController@reConfirmRegistration');
 Route::match('post', '/restore-password', 'OAuthController@restorePassword');
@@ -28,4 +28,6 @@ Route::match('post', '/complete-restore-password/{token}', 'OAuthController@comp
 Route::group(['middleware' => 'auth.access'], function() {
     Route::match('post', '/logout/{token}', 'OAuthController@logout');
     Route::match(['post','get'], '/user-change/{token}', 'UserController@changeParameters');
+    Route::match(['post','get'], '/get-programs/{token}', 'UserController@getPrograms');
+    Route::match(['post','get'], '/get-trainings/{token}', 'UserController@getTrainings');
 });

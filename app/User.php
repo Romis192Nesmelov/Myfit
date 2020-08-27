@@ -37,4 +37,9 @@ class User extends Authenticatable
         'waist_girth',
         'hip_girth'
     ];
+
+    public function payments()
+    {
+        return $this->hasMany('App\Payment');
+    }
 }
