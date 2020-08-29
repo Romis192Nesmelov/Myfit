@@ -3,9 +3,9 @@
 namespace App;
 use Illuminate\Database\Eloquent\Model;
 
-class TrainingDescription extends Model
+class TrainingPhoto extends Model
 {
-    protected $fillable = ['description','training_id'];
+    protected $fillable = ['photo','training_id'];
 
     public function training()
     {

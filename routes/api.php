@@ -30,4 +30,6 @@ Route::group(['middleware' => 'auth.access'], function() {
     Route::match(['post','get'], '/user-change/{token}', 'UserController@changeParameters');
     Route::match(['post','get'], '/get-programs/{token}', 'UserController@getPrograms');
     Route::match(['post','get'], '/get-trainings/{token}', 'UserController@getTrainings');
+    Route::match(['post','get'], '/get-training-preview/{token}', 'UserController@getTrainingPreview');
+    Route::match(['post','get'], '/get-training/{token}', 'UserController@getTraining');
 });

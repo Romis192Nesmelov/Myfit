@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
 //
 //            $table->string('fb_id',191)->nullable();
 //            $table->string('vk_id',191)->nullable();
-//            
+//
 //            $table->string('email',191)->nullable();
 //            $table->boolean('active')->nullable();
 //            $table->boolean('admin')->nullable();
@@ -36,7 +36,7 @@ class CreateUsersTable extends Migration
 //            $table->smallInteger('weight')->nullable();
 //            $table->smallInteger('waist_girth')->nullable();
 //            $table->smallInteger('hip_girth')->nullable();
-//            
+//
 //            $table->rememberToken();
 //            $table->timestamps();
 //        });

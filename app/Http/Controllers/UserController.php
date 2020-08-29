@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Program;
 use App\Training;
+use App\Payment;
 
 class UserController extends Controller
 {
@@ -37,10 +38,60 @@ class UserController extends Controller
     
     public function getTrainings(Request $request)
     {
-        $this->validate($request, ['program_id' => 'required|integer|exists:programs,id']);
+        $this->validate($request, ['id' => 'required|integer|exists:programs,id']);
         return response()->json([
             'success' => true,
-            'trainings' => Training::with('descriptions')->where('active',1)->select('id','photo','complexity','need_previous_completed','its_cardio','price')->get()->toArray()
+            'trainings' => Training::with('goals')->where('active',1)->where('program_id',$request->input('id'))->select(
+                'id',
+                'photo',
+                'complexity',
+                'need_previous_completed',
+                'its_cardio',
+                'price'
+            )->get()->toArray()
         ], 200);
+    }
+
+    public function getTrainingPreview(Request $request)
+    {
+        $this->validate($request, ['id' => 'required|integer|exists:trainings,id']);
+        $training = Training::with('goals')->where('active',1)->where('id',$request->input('id'))->select(
+                'id',
+                'photo',
+                'complexity',
+                'duration',
+                'periodicity',
+                'equipment',
+                'need_previous_completed',
+                'warning_title',
+                'warning_description',
+                'recommendation_title',
+                'recommendation_description',
+                'its_cardio',
+                'price'
+            )->first()->toArray();
+
+        $training['its_paid'] = $this->checkPaid($request, $training['price']);
+        return response()->json([
+            'success' => true,
+            'training' => $training
+        ], 200);
+    }
+
+    public function getTraining(Request $request)
+    {
+        $this->validate($request, ['id' => 'required|integer|exists:trainings,id']);
+        $training = Training::with('goals')->with('photos')->with('days')->where('active',1)->where('id',$request->input('id'))->first()->toArray();
+        if (!$this->checkPaid($request, $training['price'])) return response()->json(['success' => false, 'error' => trans('auth.training_access_err')], 403);
+        return response()->json([
+            'success' => true,
+            'training' => $training
+        ], 200);
+    }
+
+    private function checkPaid(Request $request, $price)
+    {
+        $paid = Payment::where('user_id',$request->user()->id)->where('training_id',$request->input('id'))->first();
+        return $paid && isset($paid->value) && $paid->value == $price;
     }
 }
