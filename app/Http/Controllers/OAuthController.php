@@ -43,9 +43,6 @@ class OAuthController extends Controller
         if (!$user->active)
             return response()->json(['success' => false, 'error' => trans('auth.not_confirmed_account')], 403);
 
-        if ($this->checkAuth($user))
-            return response()->json(['success' => false, 'error' => trans('auth.wrong_password')], 400);
-
         list($token, $expired) = $this->createAccessToken($user);
         return response()->json(['success' => true, 'access_token' => $token, 'expired_at' => $expired], 200);
     }

@@ -27,6 +27,22 @@ class UserController extends Controller
 
         return response()->json(['success' => true], 200);
     }
+    
+    public function getUser(Request $request)
+    {
+        if (!$request->user()->active) return response()->json(['success' => false, 'error' => trans('auth.not_confirmed_account')], 403);
+        $user = [
+            'name' => $request->user()->name,
+            'email' => $request->user()->email,
+            'location' => $request->user()->location,
+            'birthday_year' => $request->user()->birthday_year,
+            'height' => $request->user()->height,
+            'weight' => $request->user()->weight,
+            'waist_girth' => $request->user()->waist_girth,
+            'hip_girth' => $request->user()->hip_girth
+        ];
+        return response()->json(['success' => true, 'user' => $user], 200);
+    }
 
     public function getPrograms()
     {

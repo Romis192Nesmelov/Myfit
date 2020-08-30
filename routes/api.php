@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::match(['get','post'], '/login', 'OAuthController@login');
-Route::match('post', '/auth/{token}', 'OAuthController@auth');
+Route::match(['get','post'], '/auth/{token}', 'OAuthController@auth');
 Route::match('post', '/vk-auth', 'OAuthController@vkAuth');
 Route::match('post', '/fb-auth', 'OAuthController@fbAuth');
 Route::match('post', '/google-auth', 'OAuthController@googleAuth');
@@ -27,6 +27,7 @@ Route::match('post', '/complete-restore-password/{token}', 'OAuthController@comp
 
 Route::group(['middleware' => 'auth.access'], function() {
     Route::match('post', '/logout/{token}', 'OAuthController@logout');
+    Route::match(['post','get'], '/get-user/{token}', 'UserController@getUser');
     Route::match(['post','get'], '/user-change/{token}', 'UserController@changeParameters');
     Route::match(['post','get'], '/get-programs/{token}', 'UserController@getPrograms');
     Route::match(['post','get'], '/get-trainings/{token}', 'UserController@getTrainings');
