@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Program;
 use App\Training;
 use App\Payment;
+use App\TrainingDay;
 
 class UserController extends Controller
 {
@@ -71,7 +72,8 @@ class UserController extends Controller
     public function getTrainingPreview(Request $request)
     {
         $this->validate($request, ['id' => 'required|integer|exists:trainings,id']);
-        $training = Training::with('goals')->where('active',1)->where('id',$request->input('id'))->select(
+        $id = $request->input('id');
+        $training = Training::with('goals')->where('active',1)->where('id',$id)->select(
                 'id',
                 'photo',
                 'complexity',
@@ -88,6 +90,11 @@ class UserController extends Controller
             )->first()->toArray();
 
         $training['its_paid'] = $this->checkPaid($request, $training['price']);
+        $training['days'] = [];
+        $days = TrainingDay::where('training_id',$id)->get();
+        foreach ($days as $day) {
+            $training['days'][] = count($day->videos);
+        }
         return response()->json([
             'success' => true,
             'training' => $training
@@ -96,9 +103,15 @@ class UserController extends Controller
 
     public function getTraining(Request $request)
     {
-        $this->validate($request, ['id' => 'required|integer|exists:trainings,id']);
-        $training = Training::with('goals')->with('photos')->with('days')->where('active',1)->where('id',$request->input('id'))->first()->toArray();
+        $this->validate($request, [
+            'id' => 'required|integer|exists:trainings,id',
+            'day' => 'required|integer'
+        ]);
+        $id = $request->input('id');
+        $training = Training::with('goals')->with('photos')->where('active',1)->where('id',$id)->first()->toArray();
         if (!$this->checkPaid($request, $training['price'])) return response()->json(['success' => false, 'error' => trans('auth.training_access_err')], 403);
+        $day = TrainingDay::where('training_id',$id)->with('videos')->get()->toArray();
+        $training['day'] = $day[($request->input('day')-1)];
         return response()->json([
             'success' => true,
             'training' => $training
