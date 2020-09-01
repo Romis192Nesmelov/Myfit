@@ -101,6 +101,14 @@ class UserController extends Controller
         ], 200);
     }
 
+    public function getPaidTrainings(Request $request)
+    {
+        return response()->json([
+            'success' => true,
+            'trainings' => Payment::where('user_id',$request->user()->id)->pluck('training_id')->toArray()
+        ], 200);
+    }
+
     public function getTraining(Request $request)
     {
         $this->validate($request, [
