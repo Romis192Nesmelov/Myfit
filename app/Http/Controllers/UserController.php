@@ -56,16 +56,22 @@ class UserController extends Controller
     public function getTrainings(Request $request)
     {
         $this->validate($request, ['id' => 'required|integer|exists:programs,id']);
+        $trainings = Training::with('goals')->where('active',1)->where('program_id',$request->input('id'))->select(
+            'id',
+            'photo',
+            'complexity',
+            'need_previous_completed',
+            'its_cardio',
+            'price'
+        )->get()->toArray();
+
+        for ($i=0;$i<count($trainings);$i++) {
+            $trainings[$i]['its_paid'] = $this->checkPaid($request, $trainings[$i]['price'], $trainings[$i]['id']);
+        }
+
         return response()->json([
             'success' => true,
-            'trainings' => Training::with('goals')->where('active',1)->where('program_id',$request->input('id'))->select(
-                'id',
-                'photo',
-                'complexity',
-                'need_previous_completed',
-                'its_cardio',
-                'price'
-            )->get()->toArray()
+            'trainings' => $trainings
         ], 200);
     }
 
@@ -126,9 +132,9 @@ class UserController extends Controller
         ], 200);
     }
 
-    private function checkPaid(Request $request, $price)
+    private function checkPaid(Request $request, $price, $id=null)
     {
-        $paid = Payment::where('user_id',$request->user()->id)->where('training_id',$request->input('id'))->first();
+        $paid = Payment::where('user_id',$request->user()->id)->where('training_id', ($id ? $id : $request->input('id')))->first();
         return $paid && isset($paid->value) && $paid->value == $price;
     }
 }
