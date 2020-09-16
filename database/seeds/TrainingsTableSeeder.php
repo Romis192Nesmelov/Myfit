@@ -61,7 +61,7 @@ class TrainingsTableSeeder extends Seeder
                     
                     'with_cardio' => $itsCardio ? 1 : $withCardio,
                     'its_cardio' => $itsCardio,
-                    'price' => rand(1000,50000),
+                    'price' => rand(100,999),
                     'active' => 1,
                     'program_id' => $program
                 ]);
