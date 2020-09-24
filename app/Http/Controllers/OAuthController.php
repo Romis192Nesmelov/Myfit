@@ -89,8 +89,8 @@ class OAuthController extends Controller
     {
         $this->validate($request, ['access_token' => 'required']);
         $googleClient = new Google_Client();
-        $googleClient->setClientId('570125957511-a3e4qu5e7a891one5ki2alicscrjbsqe.apps.googleusercontent.com');
-        $googleClient->setClientSecret('oY9k16jkjLz7fJ9H-TYze22n');
+        $googleClient->setClientId('109273416701-9gft4vi4o2nkqh55dugu47f8hugk3jrh.apps.googleusercontent.com');
+        $googleClient->setClientSecret('pojnC3MFi3fJ2o-pWHjGT4L0');
         $googleClient->addScope("email");
         $googleClient->addScope("profile");
         $googleClient->setAccessToken($request->input('access_token'));
