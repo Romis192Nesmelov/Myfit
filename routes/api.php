@@ -18,7 +18,7 @@ Route::match(['get','post'], '/login', 'OAuthController@login');
 Route::match(['get','post'], '/auth/{token}', 'OAuthController@auth');
 Route::match('post', '/vk-auth', 'OAuthController@vkAuth');
 Route::match('post', '/fb-auth', 'OAuthController@fbAuth');
-Route::match('post', '/google-auth', 'OAuthController@googleAuth');
+Route::match(['post','get'], '/google-auth', 'OAuthController@googleAuth');
 Route::match(['post','get'], '/register', 'OAuthController@register');
 Route::match('get', '/confirm-registration/{token}', 'OAuthController@confirmRegistration');
 Route::match('post', '/re-confirm-registration', 'OAuthController@reConfirmRegistration');
