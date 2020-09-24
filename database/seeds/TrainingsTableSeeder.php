@@ -87,7 +87,7 @@ class TrainingsTableSeeder extends Seeder
 
                         for ($v=0;$v<12;$v++) {
                             TrainingVideo::create([
-                                'video' => 'https://youtu.be/bUrvOqjTfks',
+                                'video' => 'https://youtu.be/A0IVAgUz9P0',
                                 'training_day_id' => $trainingDay->id
                             ]);
                         }
