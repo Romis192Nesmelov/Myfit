@@ -9,6 +9,6 @@ class CronController extends Command
 
     public function test()
     {
-        file_put_contents(base_path('public/test.txt'),'test test test');
+        file_put_contents(base_path('public/images/test.txt'),'test test test');
     }
 }
