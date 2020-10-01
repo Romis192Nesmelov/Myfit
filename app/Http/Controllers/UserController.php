@@ -48,6 +48,7 @@ class UserController extends Controller
     {
         if (!$request->user()->active) return response()->json(['success' => false, 'error' => trans('auth.not_confirmed_account')], 403);
         $user = [
+            'avatar' => $request->user()->avatar,
             'name' => $request->user()->name,
             'email' => $request->user()->email,
             'location' => $request->user()->location,
