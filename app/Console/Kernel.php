@@ -24,7 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call('CronController@checkTrainings')->daily();
+//        $schedule->call('CronController@checkTrainings')->daily();
+        $schedule->call('CronController@test')->everyFiveMinutes();
     }
 
     /**
