@@ -30,16 +30,21 @@ class User extends Authenticatable
         'confirm_email_token',
         'restore_password_token',
         'admin',
-
-        'birthday_year',
-        'height',
-        'weight',
-        'waist_girth',
-        'hip_girth'
+        'birthday_year'
     ];
 
+    public function params()
+    {
+        return $this->hasMany('App\UserParam');
+    }
+
+    public function lastParams()
+    {
+        return $this->hasMany('App\UserParam')->latest('id');
+    }
+    
     public function payments()
     {
-        return $this->hasMany('App\Payment');
+        return $this->hasMany('App\Payment')->where('active',1);
     }
 }

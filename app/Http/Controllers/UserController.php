@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use App\UserParam;
 use App\Program;
 use App\Training;
 use App\Payment;
@@ -13,19 +15,32 @@ class UserController extends Controller
     
     public function changeParameters(Request $request)
     {
-        $dateBorn = date('Y') - 10;
-        $this->validate($request, [
-            'birthday_year' => 'required|integer|min:1900|max:'.$dateBorn,
-            'height' => 'integer|max:400',
+        $validationArr = [
             'weight' => 'integer|max:500',
             'waist_girth' => 'integer|min:20',
             'hip_girth' => 'integer|min:20'
-        ]);
+        ];
 
-        $fields = $this->processingFields($request);
+        if ($request->has('birthday_year')) {
+            $dateBorn = date('Y') - 10;
+            $validationArr['birthday_year'] = 'integer|min:1900|max:'.$dateBorn;
+        }
+        if ($request->has('height')) $validationArr['height'] = 'integer|max:400';
+
+        $this->validate($request, $validationArr);
+
         $user = $request->user();
-        $user->update($fields);
+        $fields = $this->processingFields($request);
+        $lastParams = $user->lastParams[0];
+        $lastUpdate = $lastParams->updated_at->today();
+        $checkDate = Carbon::today()->subDays(2);
 
+        if ($lastUpdate <= $checkDate) {
+            $fields['user_id'] = $user->id;
+            UserParam::create($fields);
+        } else {
+            $lastParams->update($fields);
+        }
         return response()->json(['success' => true], 200);
     }
     
@@ -37,12 +52,17 @@ class UserController extends Controller
             'email' => $request->user()->email,
             'location' => $request->user()->location,
             'birthday_year' => $request->user()->birthday_year,
-            'height' => $request->user()->height,
-            'weight' => $request->user()->weight,
-            'waist_girth' => $request->user()->waist_girth,
-            'hip_girth' => $request->user()->hip_girth
+            'height' => $request->user()->lastParams[0]->height,
+            'weight' => $request->user()->lastParams[0]->weight,
+            'waist_girth' => $request->user()->lastParams[0]->waist_girth,
+            'hip_girth' => $request->user()->lastParams[0]->hip_girth
         ];
         return response()->json(['success' => true, 'user' => $user], 200);
+    }
+
+    public function getUserProgress(Request $request)
+    {
+        return response()->json(['success' => true, 'params' => $request->user()->params], 200);
     }
 
     public function getPrograms()
@@ -111,7 +131,7 @@ class UserController extends Controller
     {
         return response()->json([
             'success' => true,
-            'trainings' => Payment::where('user_id',$request->user()->id)->pluck('training_id')->toArray()
+            'trainings' => Payment::where('user_id',$request->user()->id)->where('active',1)->pluck('training_id')->toArray()
         ], 200);
     }
 
@@ -132,9 +152,14 @@ class UserController extends Controller
         ], 200);
     }
 
+    public function trainingCheck()
+    {
+        $this->checkTrainings();
+    }
+
     private function checkPaid(Request $request, $price, $id=null)
     {
-        $paid = Payment::where('user_id',$request->user()->id)->where('training_id', ($id ? $id : $request->input('id')))->first();
+        $paid = Payment::where('user_id',$request->user()->id)->where('training_id', ($id ? $id : $request->input('id')))->where('active',1)->first();
         return $paid && isset($paid->value) && $paid->value == $price;
     }
 }

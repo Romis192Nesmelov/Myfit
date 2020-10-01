@@ -35,6 +35,7 @@ return array(
     'App\\TrainingPhoto' => $baseDir . '/app/TrainingPhoto.php',
     'App\\TrainingVideo' => $baseDir . '/app/TrainingVideo.php',
     'App\\User' => $baseDir . '/app/User.php',
+    'App\\UserParam' => $baseDir . '/app/UserParam.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
     'Asm89\\Stack\\CorsService' => $vendorDir . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',

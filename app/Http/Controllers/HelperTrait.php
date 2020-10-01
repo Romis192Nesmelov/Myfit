@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use App\User;
+use App\Payment;
 
 trait HelperTrait
 {
@@ -35,6 +36,19 @@ trait HelperTrait
     public function getRandToken()
     {
         return md5(time().Str::random(40));
+    }
+    
+    public function checkTrainings()
+    {
+        $paidTrainings = Payment::where('active',1)->get();
+        foreach ($paidTrainings as $paid) {
+            $checkDate = Carbon::today()->subDays($paid->training->duration);
+            $paidDate = $paid->created_at->today();
+            if ($checkDate > $paidDate) {
+                $paid->active = 0;
+                $paid->save();
+            }
+        }
     }
     
     public function processingFields(Request $request, $checkboxFields=null, $ignoreFields=null, $timeFields=null, $colorFields=null)

@@ -108,7 +108,8 @@ class TrainingsTableSeeder extends Seeder
                         Payment::create([
                             'value' => $training->price,
                             'user_id' => $user,
-                            'training_id' => $training->id
+                            'training_id' => $training->id,
+                            'active' => 1
                         ]);
                     } else $notPaid++;
                 }

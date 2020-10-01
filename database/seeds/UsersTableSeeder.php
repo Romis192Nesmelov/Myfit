@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\UserParam;
 
 class UsersTableSeeder extends Seeder
 {
@@ -48,7 +49,14 @@ class UsersTableSeeder extends Seeder
         ];
 
         foreach ($data as $user) {
-            User::create($user);
+            $user = User::create($user);
+            UserParam::create([
+                'height' => 170,
+                'weight' => 70,
+                'waist_girth' => 95,
+                'hip_girth' => 70,
+                'user_id' => $user->id
+            ]);
         }
     }
 }

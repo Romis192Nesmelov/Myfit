@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaymentsTable extends Migration
+class CreateUserParamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreatePaymentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('payments', function (Blueprint $table) {
+        Schema::create('user_params', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('value');
-            $table->boolean('active');
+            $table->smallInteger('height')->nullable();
+            $table->smallInteger('weight');
+            $table->smallInteger('waist_girth');
+            $table->smallInteger('hip_girth');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreatePaymentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payments');
+        Schema::dropIfExists('user_params');
     }
 }

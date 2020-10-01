@@ -542,6 +542,7 @@ class ComposerStaticInit65645ebcd03095bed52fc5f75345c6c5
         'App\\TrainingPhoto' => __DIR__ . '/../..' . '/app/TrainingPhoto.php',
         'App\\TrainingVideo' => __DIR__ . '/../..' . '/app/TrainingVideo.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\UserParam' => __DIR__ . '/../..' . '/app/UserParam.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
