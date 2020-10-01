@@ -44,6 +44,15 @@ class UserController extends Controller
         return response()->json(['success' => true], 200);
     }
     
+    public function uploadAvatar(Request $request)
+    {
+        $this->validate($request, ['avatar' => 'required|image|min:5|max:3000']);
+        $user = $request->user();
+        $fields = $this->processingImage($request, $user, 'avatar', $this->randString().'_'.$user->id, 'images/avatars');
+        $user->update($fields);
+        return response()->json(array_merge(['success' => true],$fields), 200);
+    }
+    
     public function getUser(Request $request)
     {
         if (!$request->user()->active) return response()->json(['success' => false, 'error' => trans('auth.not_confirmed_account')], 403);
@@ -151,11 +160,6 @@ class UserController extends Controller
             'success' => true,
             'training' => $training
         ], 200);
-    }
-
-    public function trainingCheck()
-    {
-        $this->checkTrainings();
     }
 
     private function checkPaid(Request $request, $price, $id=null)

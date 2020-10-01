@@ -25,13 +25,12 @@ Route::match('post', '/re-confirm-registration', 'OAuthController@reConfirmRegis
 Route::match('post', '/restore-password', 'OAuthController@restorePassword');
 Route::match('post', '/complete-restore-password/{token}', 'OAuthController@completeRestorePassword');
 
-//Route::get('/check-trainings', 'UserController@trainingCheck');
-
 Route::group(['middleware' => 'auth.access'], function() {
     Route::match('post', '/logout/{token}', 'OAuthController@logout');
     Route::match(['post','get'], '/get-user/{token}', 'UserController@getUser');
     Route::match(['post','get'], '/get-user-progress/{token}', 'UserController@getUserProgress');
     Route::match(['post','get'], '/user-change/{token}', 'UserController@changeParameters');
+    Route::match('post', '/upload-avatar/{token}', 'UserController@uploadAvatar');
     Route::match(['post','get'], '/get-programs/{token}', 'UserController@getPrograms');
     Route::match(['post','get'], '/get-trainings/{token}', 'UserController@getTrainings');
     Route::match(['post','get'], '/get-paid-trainings/{token}', 'UserController@getPaidTrainings');

@@ -17,3 +17,5 @@ Route::get('/', function () { return view('welcome'); });
 Route::get('/policy', function () { return view('policy'); });
 Route::get('/confirm-registration/{token}', function () { return view('wrong_choice'); });
 Route::get('/complete-restore-password/{token}', function () { return view('wrong_choice'); });
+
+//Route::get('/avatar', function () { return view('avatar'); });

@@ -7,8 +7,8 @@ class CronController extends Command
 {
     use HelperTrait;
 
-    public function test()
+    public function trainingCheck()
     {
-        file_put_contents(base_path('public/images/test.txt'),'test test test');
+        $this->checkTrainings();
     }
 }
