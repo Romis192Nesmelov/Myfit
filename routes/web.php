@@ -19,12 +19,10 @@ Route::get('/confirm-registration/{token}', function () { return view('wrong_cho
 Route::get('/complete-restore-password/{token}', function () { return view('wrong_choice'); });
 Route::match(['post','get'], '/apple-app-site-association', function(){
     return response()->json(['applinks' => [
-        'applinks' => [
-            'apps' => [],
-            'details' => [
-                'appID' => 'TTQXKM6K44.su.fitspace',
-                'paths' => ['*']
-            ]
+        'apps' => [],
+        'details' => [
+            'appID' => 'TTQXKM6K44.su.fitspace',
+            'paths' => ['*']
         ]
     ]]);
 });
