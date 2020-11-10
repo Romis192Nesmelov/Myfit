@@ -18,13 +18,15 @@ Route::get('/policy', function () { return view('policy'); });
 Route::get('/confirm-registration/{token}', function () { return view('wrong_choice'); });
 Route::get('/complete-restore-password/{token}', function () { return view('wrong_choice'); });
 Route::match(['post','get'], '/apple-app-site-association', function(){
-    return response()->json(['applinks' => [
-        'apps' => [],
-        'details' => [
-            'appID' => 'TTQXKM6K44.su.fitspace',
-            'paths' => ['*']
+    return response()->json([
+        'applinks' => [
+            'apps' => [],
+            'details' => [[
+                'appID' => 'TTQXKM6K44.su.fitspace',
+                'paths' => ['*']
+            ]]
         ]
-    ]]);
+    ]);
 });
 
 //Route::get('/avatar', function () { return view('avatar'); });
