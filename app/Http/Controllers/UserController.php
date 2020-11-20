@@ -31,15 +31,17 @@ class UserController extends Controller
 
         $user = $request->user();
         $fields = $this->processingFields($request);
-        $lastParams = $user->lastParams[0];
-        $lastUpdate = $lastParams->updated_at->today();
-        $checkDate = Carbon::today()->subDays(2);
+        $fields['user_id'] = $user->id;
+        if (count($user->lastParams)) {
+            $lastParams = $user->lastParams[0];
+            $lastUpdate = $lastParams->updated_at->today();
+            $checkDate = Carbon::today()->subDays(2);
 
-        if ($lastUpdate <= $checkDate) {
-            $fields['user_id'] = $user->id;
-            UserParam::create($fields);
+            if ($lastUpdate <= $checkDate) UserParam::create($fields);
+            else  $lastParams->update($fields);
+
         } else {
-            $lastParams->update($fields);
+            UserParam::create($fields);
         }
         return response()->json(['success' => true], 200);
     }
