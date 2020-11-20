@@ -62,10 +62,10 @@ class UserController extends Controller
             'email' => $request->user()->email,
             'location' => $request->user()->location,
             'birthday_year' => $request->user()->birthday_year,
-            'height' => $request->user()->lastParams[0]->height,
-            'weight' => $request->user()->lastParams[0]->weight,
-            'waist_girth' => $request->user()->lastParams[0]->waist_girth,
-            'hip_girth' => $request->user()->lastParams[0]->hip_girth
+            'height' => count($request->user()->lastParams) ? $request->user()->lastParams[0]->height : null,
+            'weight' => count($request->user()->lastParams) ? $request->user()->lastParams[0]->weight : null,
+            'waist_girth' => count($request->user()->lastParams) ? $request->user()->lastParams[0]->waist_girth : null,
+            'hip_girth' => count($request->user()->lastParams) ? $request->user()->lastParams[0]->hip_girth : null
         ];
         return response()->json(['success' => true, 'user' => $user], 200);
     }
