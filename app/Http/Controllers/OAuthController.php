@@ -66,7 +66,7 @@ class OAuthController extends Controller
             'vk_id',
             $result->response[0]->id,
             $result->response[0]->last_name.' '.$result->response[0]->first_name,
-            $request->input('email'),
+            $request->has('email') && $request->input('email') ? $request->input('email') : null,
             isset($result->response[0]->country) ? $result->response[0]->country->title : null
         );
     }
