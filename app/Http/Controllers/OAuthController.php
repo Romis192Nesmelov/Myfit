@@ -78,7 +78,7 @@ class OAuthController extends Controller
         return $this->getUser(
             'fb_id',
             $response->id,
-            $response->name,
+            isset($response->name) ? $response->name : null,
             null,
             null
         );
