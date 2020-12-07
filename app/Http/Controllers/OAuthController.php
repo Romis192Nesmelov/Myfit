@@ -50,7 +50,6 @@ class OAuthController extends Controller
     public function vkAuth(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required|email',
             'user_id' => 'required',
             'access_token' => 'required'
         ]);
