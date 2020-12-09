@@ -35,7 +35,7 @@ class UserController extends Controller
 
         if (count($user->lastParams)) {
             $lastParams = $user->lastParams[0];
-            $lastUpdate = $lastParams->created_at;
+            $lastUpdate = $lastParams->created_at->startOfDay();
             $checkDate = Carbon::today()->subDays(2);
 
             if ($lastUpdate <= $checkDate) UserParam::create($fields);
