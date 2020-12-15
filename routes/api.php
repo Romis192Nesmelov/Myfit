@@ -35,7 +35,7 @@ Route::group(['middleware' => 'auth.access'], function() {
     Route::match(['post','get'], '/get-trainings/{token}', 'UserController@getTrainings');
     Route::match(['post','get'], '/get-paid-trainings/{token}', 'UserController@getPaidTrainings');
     
-    Route::match(['post','get'], '/set-paid-trainings/{token}', 'UserController@setPaidTraining');
+    Route::match(['post','get'], '/set-paid-training/{token}', 'UserController@setPaidTraining');
     Route::match(['post','get'], '/get-video-advices/{token}', 'UserController@getVideoAdvices');
     Route::match(['post','get'], '/set-video-advice/{token}', 'UserController@setVideoAdvice');
     Route::match(['post','get'], '/get-feeds/{token}', 'UserController@getFeeds');

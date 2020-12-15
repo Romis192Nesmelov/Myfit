@@ -9,6 +9,6 @@ class CronController extends Command
 
     public function trainingCheck()
     {
-        $this->checkTrainings();
+//        $this->checkTrainings();
     }
 }
