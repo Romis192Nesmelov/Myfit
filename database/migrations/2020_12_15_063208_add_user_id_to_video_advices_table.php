@@ -13,7 +13,7 @@ class AddUserIdToVideoAdvicesTable extends Migration
      */
     public function up()
     {
-        Schema::table('video_advices', function (Blueprint $table) {
+        Schema::table('video_advice', function (Blueprint $table) {
             $table->bigInteger('user_id', false, true);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
@@ -26,8 +26,8 @@ class AddUserIdToVideoAdvicesTable extends Migration
      */
     public function down()
     {
-        Schema::table('video_advices', function (Blueprint $table) {
-            $table->dropForeign('video_advices_user_id_foreign');
+        Schema::table('video_advice', function (Blueprint $table) {
+            $table->dropForeign('video_advice_user_id_foreign');
             $table->dropColumn('user_id');
         });
     }

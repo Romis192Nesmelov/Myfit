@@ -13,7 +13,7 @@ class CreateVideoAdviceTable extends Migration
      */
     public function up()
     {
-        Schema::create('video_advices', function (Blueprint $table) {
+        Schema::create('video_advice', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('duration')->nullable();
             $table->boolean('paid')->nullable();
@@ -29,6 +29,6 @@ class CreateVideoAdviceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('video_advices');
+        Schema::dropIfExists('video_advice');
     }
 }

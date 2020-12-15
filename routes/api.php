@@ -36,11 +36,11 @@ Route::group(['middleware' => 'auth.access'], function() {
     Route::match(['post','get'], '/get-paid-trainings/{token}', 'UserController@getPaidTrainings');
     
     Route::match(['post','get'], '/set-paid-training/{token}', 'UserController@setPaidTraining');
-    Route::match(['post','get'], '/get-video-advices/{token}', 'UserController@getVideoAdvices');
+    Route::match(['post','get'], '/get-video-advice/{token}', 'UserController@getVideoAdvice');
     Route::match(['post','get'], '/set-video-advice/{token}', 'UserController@setVideoAdvice');
     Route::match(['post','get'], '/get-feeds/{token}', 'UserController@getFeeds');
     Route::match(['post','get'], '/set-feed/{token}', 'UserController@setFeed');
-    Route::match(['post','get'], '/get-video-advices-price/{token}', 'UserController@getVideoAdvicesPrice');
+    Route::match(['post','get'], '/get-video-advice-price/{token}', 'UserController@getVideoAdvicePrice');
     Route::match(['post','get'], '/get-feeds-price/{token}', 'UserController@getFeedsPrice');
     
     Route::match(['post','get'], '/get-training-preview/{token}', 'UserController@getTrainingPreview');

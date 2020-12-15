@@ -195,19 +195,19 @@ class UserController extends Controller
         ], 200);
     }
 
-    public function getVideoAdvicesPrice()
+    public function getVideoAdvicePrice()
     {
         return response()->json([
             'success' => true,
-            'price' => Settings::where('name','video_advices_price')->pluck('value')->toArray()
+            'price' => Settings::where('name','video_advices_price')->pluck('value')[0]
         ], 200);
     }
 
-    public function getVideoAdvices(Request $request)
+    public function getVideoAdvice(Request $request)
     {
         return response()->json([
             'success' => true,
-            'video_advices' => VideoAdvice::where('user_id',$request->user()->id)->toArray()
+            'video_advices' => VideoAdvice::where('user_id',$request->user()->id)->get()->toArray()
         ], 200);
     }
 
@@ -226,21 +226,21 @@ class UserController extends Controller
             $advice->paid = $paid;
             $advice->save();
         } else {
-            VideoAdvice::create([
+            $advice = VideoAdvice::create([
                 'user_id' => $request->user()->id,
                 'duration' => $duration,
                 'paid' => $paid,
                 'new' => 1
             ]);
         }
-        return response()->json(['success' => true], 200);
+        return response()->json(['success' => true, 'video_advice' => $advice->toArray()], 200);
     }
 
     public function getFeedsPrice()
     {
         return response()->json([
             'success' => true,
-            'price' => Settings::where('name','feeds_price')->pluck('value')->toArray()
+            'price' => Settings::where('name','feeds_price')->pluck('value')[0]
         ], 200);
     }
 
@@ -248,7 +248,7 @@ class UserController extends Controller
     {
         return response()->json([
             'success' => true,
-            'video_advices' => Feed::where('user_id',$request->user()->id)->toArray()
+            'video_advices' => Feed::where('user_id',$request->user()->id)->get()->toArray()
         ], 200);
     }
 
@@ -265,13 +265,13 @@ class UserController extends Controller
             $feed->paid = $paid;
             $feed->save();
         } else {
-            VideoAdvice::create([
+            $feed = Feed::create([
                 'user_id' => $request->user()->id,
                 'paid' => $paid,
                 'new' => 1
             ]);
         }
-        return response()->json(['success' => true], 200);
+        return response()->json(['success' => true, 'feed' => $feed->toArray()], 200);
     }
 
     private function checkPaid(Request $request, $price, $id=null)
