@@ -8,6 +8,9 @@ use App\Program;
 use App\Training;
 use App\Payment;
 use App\TrainingDay;
+use App\VideoAdvice;
+use App\Feed;
+use App\Settings;
 
 class UserController extends Controller
 {
@@ -147,6 +150,33 @@ class UserController extends Controller
             'trainings' => Payment::where('user_id',$request->user()->id)->where('active',1)->pluck('training_id')->toArray()
         ], 200);
     }
+    
+    public function setPaidTraining(Request $request)
+    {
+        $this->validate($request, [
+            'id' => 'required|integer|exists:trainings,id',
+            'value' => 'required|integer'
+        ]);
+        $trainingId = $request->input('id');
+        $payment = Payment::where('training_id',$trainingId)->where('user_id',$request->user()->id)->first();
+        if ($payment && isset($payment->active) && $payment->active) return response()->json(['success' => false, 'error' => trans('payment.already_paid')], 403);
+        elseif ($payment && isset($payment->active) && !$payment->active) {
+            $payment->active = 1;
+            $payment->save();
+        } else {
+            $payment = Payment::create([
+                'value' => $request->input('value'),
+                'user_id' => $request->user()->id,
+                'training_id' => $trainingId,
+                'active' => 1
+            ]);
+        }
+        
+        return response()->json([
+            'success' => true,
+            'payment_id' => $payment->id
+        ], 200);
+    }
 
     public function getTraining(Request $request)
     {
@@ -163,6 +193,85 @@ class UserController extends Controller
             'success' => true,
             'training' => $training
         ], 200);
+    }
+
+    public function getVideoAdvicesPrice()
+    {
+        return response()->json([
+            'success' => true,
+            'price' => Settings::where('name','video_advices_price')->pluck('value')->toArray()
+        ], 200);
+    }
+
+    public function getVideoAdvices(Request $request)
+    {
+        return response()->json([
+            'success' => true,
+            'video_advices' => VideoAdvice::where('user_id',$request->user()->id)->toArray()
+        ], 200);
+    }
+
+    public function setVideoAdvice(Request $request)
+    {
+        if ($request->has('id')) $validationArr['id'] = 'required|integer|exists:video_advices,id';
+        if (isset($validationArr)) $this->validate($request, $validationArr);
+
+        $duration = $request->has('duration') ? $request->input('duration') : 0;
+        $paid = $request->has('paid') && $request->input('paid');
+
+        if ($request->has('id')) {
+            $advice = VideoAdvice::find($request->has('id'));
+            if ($advice->user_id != $request->user()->id) return response()->json(['success' => false, 'error' => trans('auth.access_denied')], 403);
+            $advice->duration = $duration;
+            $advice->paid = $paid;
+            $advice->save();
+        } else {
+            VideoAdvice::create([
+                'user_id' => $request->user()->id,
+                'duration' => $duration,
+                'paid' => $paid,
+                'new' => 1
+            ]);
+        }
+        return response()->json(['success' => true], 200);
+    }
+
+    public function getFeedsPrice()
+    {
+        return response()->json([
+            'success' => true,
+            'price' => Settings::where('name','feeds_price')->pluck('value')->toArray()
+        ], 200);
+    }
+
+    public function getFeeds(Request $request)
+    {
+        return response()->json([
+            'success' => true,
+            'video_advices' => Feed::where('user_id',$request->user()->id)->toArray()
+        ], 200);
+    }
+
+    public function setFeed(Request $request)
+    {
+        if ($request->has('id')) $validationArr['id'] = 'required|integer|exists:feeds,id';
+        if (isset($validationArr)) $this->validate($request, $validationArr);
+
+        $paid = $request->has('paid') && $request->input('paid');
+
+        if ($request->has('id')) {
+            $feed = Feed::find($request->has('id'));
+            if ($feed->user_id != $request->user()->id) return response()->json(['success' => false, 'error' => trans('auth.access_denied')], 403);
+            $feed->paid = $paid;
+            $feed->save();
+        } else {
+            VideoAdvice::create([
+                'user_id' => $request->user()->id,
+                'paid' => $paid,
+                'new' => 1
+            ]);
+        }
+        return response()->json(['success' => true], 200);
     }
 
     private function checkPaid(Request $request, $price, $id=null)

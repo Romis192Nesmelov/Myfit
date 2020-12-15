@@ -48,4 +48,14 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Payment')->where('active',1);
     }
+
+    public function videoAdvices()
+    {
+        return $this->hasMany('App\VideoAdvice');
+    }
+
+    public function feeds()
+    {
+        return $this->hasMany('App\Feed');
+    }
 }
