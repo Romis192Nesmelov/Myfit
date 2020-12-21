@@ -292,6 +292,7 @@ class UserController extends Controller
             $feed = Feed::create([
                 'user_id' => $request->user()->id,
                 'paid' => $paid,
+                'comment' => $request->has('comment') ? $request->input('comment') : null,
                 'new' => 1
             ]);
         }
