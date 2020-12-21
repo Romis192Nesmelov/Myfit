@@ -16,6 +16,7 @@ class CreateFeedsTable extends Migration
         Schema::create('feeds', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('recipe')->nullable();
+            $table->text('comment')->nullable();
             $table->boolean('paid')->nullable();
             $table->boolean('new');
             $table->timestamps();

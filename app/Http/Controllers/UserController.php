@@ -205,10 +205,22 @@ class UserController extends Controller
 
     public function getVideoAdvice(Request $request)
     {
-        return response()->json([
-            'success' => true,
-            'video_advices' => VideoAdvice::where('user_id',$request->user()->id)->get()->toArray()
-        ], 200);
+        if ($request->has('id') && $request->input('id')) {
+            $advice = Feed::find($request->input('id'));
+            if ($advice->user_id != $request->user()->id) {
+                return response()->json(['success' => false, 'error' => trans('auth.access_denied')], 403);
+            } else {
+                return response()->json([
+                    'success' => true,
+                    'video_advice' => $advice->toArray()
+                ], 200);
+            }
+        } else {
+            return response()->json([
+                'success' => true,
+                'video_advice' => VideoAdvice::where('user_id',$request->user()->id)->get()->toArray()
+            ], 200);
+        }
     }
 
     public function setVideoAdvice(Request $request)
@@ -246,10 +258,22 @@ class UserController extends Controller
 
     public function getFeeds(Request $request)
     {
-        return response()->json([
-            'success' => true,
-            'video_advices' => Feed::where('user_id',$request->user()->id)->get()->toArray()
-        ], 200);
+        if ($request->has('id') && $request->input('id')) {
+            $feed = Feed::find($request->input('id'));
+            if ($feed->user_id != $request->user()->id) {
+                return response()->json(['success' => false, 'error' => trans('auth.access_denied')], 403);
+            } else {
+                return response()->json([
+                    'success' => true,
+                    'video_feed' => $feed->toArray()
+                ], 200);
+            }
+        } else {
+            return response()->json([
+                'success' => true,
+                'video_feeds' => Feed::where('user_id',$request->user()->id)->get()->toArray()
+            ], 200);
+        }
     }
 
     public function setFeed(Request $request)
