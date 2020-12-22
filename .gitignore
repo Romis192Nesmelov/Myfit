@@ -11,3 +11,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+addmigrate.sh
+cashclear.sh
+host_connect.sh
+migrate.sh
