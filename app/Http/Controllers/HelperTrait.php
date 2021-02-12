@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use App\User;
 use App\Payment;
 
 trait HelperTrait
 {
+    public $data = [];
+    
     public function randString()
     {
         return md5(rand(0,100000));
@@ -188,4 +191,10 @@ trait HelperTrait
         $dR *= 255; $dG *= 255; $dB *= 255;
         return 'rgb('.round($dR).', '.round($dG).', '.round($dB).')';
     }
+
+    public function saveCompleteMessage()
+    {
+        Session::flash('message',trans('content.save_complete'));
+    }
+
 }

@@ -28,5 +28,14 @@ Route::match(['post','get'], '/apple-app-site-association', function(){
         ]
     ]);
 });
+Route::get('/login', 'AuthController@login');
+Route::get('/logout', 'AuthController@logout');
+Route::post('/login', 'AuthController@attempt');
+Route::get('/admin', 'AdminController@index');
+
+Route::get('/admin/users/{slug?}', 'AdminController@users');
+Route::post('/admin/user', 'AdminController@editUser');
+Route::post('/admin/delete-user', 'AdminController@deleteUser');
+
 
 //Route::get('/avatar', function () { return view('avatar'); });

@@ -12,12 +12,13 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    
+    'enter' => 'Войти',
     'message_from' => 'Сообщение от ',
     'trouble_with_url_button' => 'Если у вас возникли проблемы с нажатием кнопки: :actionText, скопируйте и вставьте приведенный ниже URL-адрес в свой веб-браузер: <a href=":actionURL" target="_blank">:actionURL</a>',
     'throttle' => 'Слишком много попыток. Пожалуйста, попробуйте через :seconds секунд.',
     'token_error' => 'Не верный токен!',
     'token_expired' => 'Время действия токена истекло!',
+    'password' => 'Пароль',
     'wrong_password' => 'Не верный пароль!',
 
     'complete_registration' => 'Завершить регистрацию',
@@ -33,6 +34,7 @@ return [
     'already_active' => 'Пользователь уже активирован!',
     
     'admin' => 'Админ',
+    'user' => 'Пользователь',
     'register_date' => 'Дата регистрации',
 
     'restore_password_head' => 'Восстановление пароля',
@@ -44,5 +46,10 @@ return [
     'fb_oauth_err2' => 'Ошибка - нет токена по коду',
     'auth_err' => 'Ошибка авторизации',
     'training_access_err' => 'Выбранная тренировка не была вами оплачена!',
-    'access_denied' => 'Доступ запрещен'
+    'access_denied' => 'Доступ запрещен',
+
+    'login_to_your_account' => 'Войдите в свой аккаунт',
+    'login_head' => 'Пожалуйста, войдите,<br> используя свой E-mail и пароль.',
+    'remember_me' => 'Запомнить меня',
+    'user_profile' => 'Профиль пользователя'
 ];
