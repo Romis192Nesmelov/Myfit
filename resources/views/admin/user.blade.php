@@ -3,7 +3,7 @@
 @section('content')
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h4 class="panel-title">{{ isset($data['user']) ? 'Редактирование пользователя '.$data['user']->email : 'Добавление пользователя' }}</h4>
+            <h4 class="panel-title">{!! isset($data['user']) ? trans('content.editing_user').' <b>'.$data['user']->email.'</b>' : trans('content.adding_user') !!}</h4>
         </div>
         <div class="panel-body">
             <form class="form-horizontal" enctype="multipart/form-data" action="{{ url('/admin/user') }}" method="post">
@@ -12,15 +12,42 @@
                     <input type="hidden" name="id" value="{{ $data['user']->id }}">
                 @endif
 
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    @include('admin._image_block', [
+                        'head' => trans('content.avatar'),
+                        'preview' => isset($data['user']) ? $data['user']->avatar : null,
+                        'full' => isset($data['user']) ? $data['user']->avatar : null,
+                        'name' => 'avatar'
+                    ])
+                    <div class="panel panel-flat">
+                        <div class="panel-body">
+                            @include('admin._radio_button_block', [
+                                'name' => 'admin',
+                                'values' => [
+                                    ['val' => 1, 'descript' => trans('auth.admin')],
+                                    ['val' => 0, 'descript' => trans('auth.user')]
+                                ],
+                                'activeValue' => isset($data['user']) ? $data['user']->admin : 0
+                            ])
+
+                            @include('admin._checkbox_block',[
+                                'name' => 'active',
+                                'label' => trans('content.user_active'),
+                                'checked' => isset($data['user']) ? $data['user']->active : 1
+                            ])
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-sm-12 col-xs-12">
                     <div class="panel panel-flat">
                         <div class="panel-body">
                             @include('admin._input_block', [
-                                'label' => 'Имя',
+                                'label' => trans('content.user_name'),
                                 'name' => 'name',
                                 'type' => 'text',
                                 'max' => 255,
-                                'placeholder' => 'Имя пользователя',
+                                'placeholder' => trans('content.user_name'),
                                 'value' => isset($data['user']) ? $data['user']->name : ''
                             ])
 
@@ -29,88 +56,57 @@
                                 'name' => 'email',
                                 'type' => 'email',
                                 'max' => 100,
-                                'placeholder' => 'E-mail пользователя',
+                                'placeholder' => 'E-mail',
                                 'value' => isset($data['user']) ? $data['user']->email : ''
                             ])
 
-                            @include('admin._input_block', [
-                                'label' => 'Телефон',
-                                'name' => 'phone',
-                                'type' => 'tel',
-                                'placeholder' => '+7(___)__-__-__',
-                                'value' => isset($data['user']) ? $data['user']->phone : ''
+                            @include('admin._combobox_group_block',[
+                                'label' => trans('content.location'),
+                                'name' => 'location',
+                                'useNull' => true,
+                                'items' => $data['locations'],
+                                'selected' => isset($data['user']) ? $data['user']->location : ''
                             ])
 
-                            @if (isset($data['user']) && !Auth::user()->is_admin)
-                                @include('admin._input_block', [
-                                    'label' => 'Старый пароль',
-                                    'name' => 'old_password',
-                                    'type' => 'password',
-                                    'max' => 50,
-                                    'placeholder' => 'Старый пароль пользователя',
-                                    'value' => ''
-                                ])
-                            @endif
+                            @include('admin._combobox_group_block',[
+                                'label' => trans('content.birthday_year'),
+                                'name' => 'birthday_year',
+                                'useNull' => true,
+                                'items' => $data['years'],
+                                'selected' => isset($data['user']) ? $data['user']->birthday_year : ''
+                            ])
 
                             <div class="panel panel-flat">
                                 @if (isset($data['user']))
                                     <div class="panel-heading">
-                                        <h4 class="text-grey-300">Если вы не хотите менять пароль, то оставьте эти поля пустыми</h4>
+                                        <h4 class="text-grey-300">{{ trans('content.change_password_notice') }}</h4>
                                     </div>
                                 @endif
 
                                 <div class="panel-body">
                                     @include('admin._input_block', [
-                                        'label' => 'Новый пароль',
+                                        'label' => trans('auth.password'),
                                         'name' => 'password',
                                         'type' => 'password',
                                         'max' => 50,
-                                        'placeholder' => 'Пароль пользователя',
+                                        'placeholder' => trans('auth.password'),
                                         'value' => ''
                                     ])
 
                                     @include('admin._input_block', [
-                                        'label' => 'Подтверждение пароля',
+                                        'label' => trans('auth.confirm_password'),
                                         'name' => 'password_confirmation',
                                         'type' => 'password',
                                         'max' => 50,
-                                        'placeholder' => 'Подтверждение пароля',
+                                        'placeholder' => trans('auth.confirm_password'),
                                         'value' => ''
                                     ])
 
                                 </div>
                             </div>
+                            @include('admin._button_block', ['type' => 'submit', 'icon' => ' icon-floppy-disk', 'text' => trans('content.save'), 'addClass' => 'pull-right'])
                         </div>
                     </div>
-
-                    @if (Auth::user()->is_admin)
-                        <div class="panel panel-flat">
-                            <div class="panel-body">
-                                @include('admin._radio_button_block', [
-                                    'name' => 'is_admin',
-                                    'values' => [
-                                        ['val' => 1, 'descript' => 'Администратор'],
-                                        ['val' => 0, 'descript' => 'Пользователь']
-                                    ],
-                                    'activeValue' => isset($data['user']) ? $data['user']->is_admin : 0
-                                ])
-                            </div>
-                        </div>
-                    @endif
-
-                    <div class="panel panel-flat">
-                        <div class="panel-body">
-                            @include('admin._checkbox_block', [
-                                'label' => 'Отправлять оповещения по почте',
-                                'name' => 'send_email',
-                                'checked' => isset($data['user']) ? $data['user']->send_email : 1
-                            ])
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    @include('_button_block', ['type' => 'submit', 'icon' => ' icon-floppy-disk', 'text' => trans('admin_content.save'), 'addClass' => 'pull-right'])
                 </div>
             </form>
         </div>

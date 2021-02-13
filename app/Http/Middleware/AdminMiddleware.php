@@ -16,11 +16,11 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::user()->admin) {
+        if (Auth::guest() || !Auth::user()->admin) {
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->back();
+                return redirect('/login');
             }
         }
         return $next($request);

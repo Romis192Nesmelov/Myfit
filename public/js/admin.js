@@ -16,24 +16,24 @@ $(document).ready(function () {
     bindSeenAll();
 
     // Getting new messages
-    setInterval(function () {
-        $.post('/admin/get-new-messages',{
-            '_token': $('input[name=_token]').val()
-        }, function (data) {
-            if (data.success) {
-                var countContainer = $('#message-counter');
-
-                if (!countContainer.length) {
-                    $('#message-counter-container').append(
-                        $('<span></span>').attr('id','message-counter').addClass('badge bg-warning-400')
-                    );
-                    newMessages(data.counter, data.messages);
-                } else if (parseInt(countContainer.html()) != data.counter) {
-                    newMessages(data.counter, data.messages);
-                }
-            }
-        });
-    }, 30000);
+    // setInterval(function () {
+    //     $.post('/admin/get-new-messages',{
+    //         '_token': $('input[name=_token]').val()
+    //     }, function (data) {
+    //         if (data.success) {
+    //             var countContainer = $('#message-counter');
+    //
+    //             if (!countContainer.length) {
+    //                 $('#message-counter-container').append(
+    //                     $('<span></span>').attr('id','message-counter').addClass('badge bg-warning-400')
+    //                 );
+    //                 newMessages(data.counter, data.messages);
+    //             } else if (parseInt(countContainer.html()) != data.counter) {
+    //                 newMessages(data.counter, data.messages);
+    //             }
+    //         }
+    //     });
+    // }, 30000);
     
     // Phone mask
     $('input[name=phone]').mask("+7(999)999-99-99");
@@ -80,6 +80,30 @@ $(document).ready(function () {
     // Change pagination on data-tables
     $('table.datatable-basic').on('draw.dt', function () {
         bindDelete();
+    });
+
+    // Display range input value
+    $('input[type=range]').on('input', function () {
+        var _self = $(this);
+        var valCell = _self.parents('table.range-input').find('.value input');
+        valCell.val(_self.val());
+    });
+
+    $('table.range-input .value input').change(function () {
+        var _self = $(this);
+        var inputRange = _self.parents('table.range-input').find('input[type=range]');
+        var parentInputRange = inputRange.parents('td');
+        var attrInputRange = {
+            'class':'form-control pull-left',
+            'min':inputRange.attr('min'),
+            'max':inputRange.attr('max'),
+            'name':inputRange.attr('name'),
+            'type':'range',
+            'value':_self.val()
+        };
+        inputRange.remove();
+        var newInput = $('<input>').attr(attrInputRange);
+        parentInputRange.append(newInput);
     });
 });
 

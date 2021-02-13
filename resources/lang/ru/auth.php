@@ -19,6 +19,7 @@ return [
     'token_error' => 'Не верный токен!',
     'token_expired' => 'Время действия токена истекло!',
     'password' => 'Пароль',
+    'confirm_password' => 'Подтверждение пароля',
     'wrong_password' => 'Не верный пароль!',
 
     'complete_registration' => 'Завершить регистрацию',

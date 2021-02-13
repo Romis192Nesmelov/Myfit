@@ -37,5 +37,8 @@ Route::get('/admin/users/{slug?}', 'AdminController@users');
 Route::post('/admin/user', 'AdminController@editUser');
 Route::post('/admin/delete-user', 'AdminController@deleteUser');
 
+Route::get('/admin/settings', 'AdminController@settings');
+Route::post('/admin/settings', 'AdminController@editSettings');
+
 
 //Route::get('/avatar', function () { return view('avatar'); });
