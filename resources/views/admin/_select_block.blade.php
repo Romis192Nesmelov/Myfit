@@ -10,7 +10,7 @@
                 @endforeach
             @else
                 @foreach ($values as $value)
-                    <option value="{{ $value->id }}" {{ (!count($errors) ? $value->id == $selected : $value->id == old($name)) ? 'selected' : '' }}>{{ $value->name }}</option>
+                    <option value="{{ $value->id }}" {{ (!count($errors) ? $value->id == $selected : $value->id == old($name)) ? 'selected' : '' }}>{{ isset($value->name) ? $value->name : $value->title }}</option>
                 @endforeach
             @endif
         </select>

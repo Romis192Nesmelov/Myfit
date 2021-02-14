@@ -41,6 +41,10 @@ Route::get('/admin/programs', 'AdminController@programs');
 Route::post('/admin/program', 'AdminController@editProgram');
 Route::post('/admin/delete-program', 'AdminController@deleteProgram');
 
+Route::get('/admin/trainings', 'AdminController@trainings');
+Route::post('/admin/training', 'AdminController@editTraining');
+Route::post('/admin/delete-training', 'AdminController@deleteTraining');
+
 Route::get('/admin/settings', 'AdminController@settings');
 Route::post('/admin/settings', 'AdminController@editSettings');
 

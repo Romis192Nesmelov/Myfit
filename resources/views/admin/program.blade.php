@@ -55,4 +55,23 @@
             </form>
         </div>
     </div>
+
+    @if (isset($data['program']))
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h4 class="panel-title">{{ trans('content.trainings_of_program') }}</h4>
+            </div>
+            <div class="panel-body">
+                @if (count($data['program']->trainings))
+                    @include('admin._modal_delete_block',['modalId' => 'delete-modal', 'function' => 'delete-training', 'head' => trans('content.confirm_delete_program')])
+                    @include('admin._trainings_table_block',['trainings' => $data['program']->trainings])
+                    <div class="panel-body">
+                        @include('admin._add_button_block',['href' => 'programs/add?program_id='.$data['program']->id, 'text' => trans('content.add_training')])
+                    </div>
+                @else
+                    <h1 class="text-center">{{ trans('content.trainings_not_found') }}</h1>
+                @endif
+            </div>
+        </div>
+    @endif
 @endsection

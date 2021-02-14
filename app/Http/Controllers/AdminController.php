@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\User;
 use App\Program;
+use App\Training;
 use App\Settings;
 //use Carbon\Carbon;
 
@@ -84,7 +85,7 @@ class AdminController extends UserController
     
     public function programs(Request $request, $slug=null)
     {
-        $this->breadcrumbs = ['users' => trans('content.programs')];
+        $this->breadcrumbs = ['programs' => trans('content.programs')];
         if ($request->has('id')) {
             $this->data['program'] = Program::findOrFail($request->input('id'));
             $this->breadcrumbs['programs?id='.$this->data['program']->id] = $this->data['program']->title;
@@ -93,7 +94,6 @@ class AdminController extends UserController
             $this->breadcrumbs['programs/add'] = trans('content.adding_program');
             return $this->showView('program');
         } else {
-            $this->data['programs'] = Program::all();
             return $this->showView('programs');
         }
     }
@@ -129,13 +129,46 @@ class AdminController extends UserController
         $this->validate($request, ['id' => 'required|integer|exists:programs,id']);
         $program = Program::find($request->input('id'));
         foreach ($program->trainings as $training) {
-            $this->unlinkFile($training, 'photo');
-            foreach ($training->photos as $photo) {
-                $this->unlinkFile($photo, 'photo');
-            }
+            $this->deletingTraining($training);
         }
         $program->delete();
         return response()->json(['success' => true]);
+    }
+    
+    public function trainings(Request $request, $slug=null)
+    {
+        $this->breadcrumbs = ['trainings' => trans('content.programs')];
+        if ($request->has('id')) {
+            $this->data['training'] = Training::findOrFail($request->input('id'));
+            $this->breadcrumbs['trainings?id='.$this->data['training']->id] = $this->data['training']->main_warning_title;
+            return $this->showView('training');
+        } else if ($slug && $slug == 'add') {
+            $this->breadcrumbs['programs/add'] = trans('content.adding_training');
+            return $this->showView('training');
+        } else {
+            return $this->showView('trainings');
+        }
+    }
+
+    public function editTraining(Request $request)
+    {
+        
+    }
+
+    public function deleteTraining(Request $request)
+    {
+        $this->validate($request, ['id' => 'required|integer|exists:training,id']);
+        $this->deletingTraining(Training::find($request->input('id')));
+        return response()->json(['success' => true]);
+    }
+    
+    private function deletingTraining(Training $training)
+    {
+        $this->unlinkFile($training, 'photo');
+        foreach ($training->photos as $photo) {
+            $this->unlinkFile($photo, 'photo');
+        }
+        $training->delete();
     }
 
     public function settings()
@@ -180,9 +213,15 @@ class AdminController extends UserController
 
     private function showView($view)
     {
+        $programs = Program::all();
+        $programsSubMenu = [];
+        foreach ($programs as $program) {
+            $programsSubMenu[] = ['href' => 'id='.$program->id, 'name' => $program->title];
+        }
+        
         $menus = [
             ['href' => 'users', 'name' => trans('content.users'), 'icon' => 'icon-users'],
-            ['href' => 'programs', 'name' => trans('content.programs'), 'icon' => 'icon-folder-open2'],
+            ['href' => 'programs', 'name' => trans('content.programs'), 'icon' => 'icon-folder-open2', 'submenu' => $programsSubMenu],
             ['href' => 'settings', 'name' => trans('content.settings'), 'icon' => 'icon-gear']
         ];
 
@@ -190,6 +229,7 @@ class AdminController extends UserController
 
         return view('admin.'.$view, [
             'breadcrumbs' => $this->breadcrumbs,
+            'programs' => $programs,
             'data' => $this->data,
             'menus' => $menus
         ]);
