@@ -7,9 +7,9 @@
     <div class="panel-body edit-image-preview">
         @if (isset($preview) && $preview)
             @if (isset($full) && $full)
-                <a class="img-preview" href="{{ $full }}">
+                <a class="img-preview" href="{{ asset($full) }}">
             @endif
-                <img src="{{ $preview }}?{{ md5(rand(1,100000)*time()) }}" />
+                <img src="{{ asset($preview) }}?{{ md5(rand(1,100000)*time()) }}" />
             @if (isset($preview) && $preview)
                 </a>
             @endif
