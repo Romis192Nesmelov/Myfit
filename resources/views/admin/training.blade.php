@@ -4,7 +4,7 @@
 @section('content')
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h4 class="panel-title">{!! isset($data['training']) ? trans('content.editing_training',['program' => $data['training']->program->title]) : trans('content.adding_training') !!}</h4>
+            <h4 class="panel-title">{!! isset($data['training']) ? trans('content.editing_training',['program' => $data['training']->program->title]).' '.$data['training']->duration.' '.trans('content.weeks').'/'.$data['training']->periodicity : trans('content.adding_training') !!}</h4>
         </div>
         <div class="panel-body">
             <form class="form-horizontal" enctype="multipart/form-data" action="{{ url('/admin/training') }}" method="post">
@@ -299,11 +299,130 @@
                     </div>
                     <div class="panel panel-flat">
                         <div class="panel-body">
-                            @include('admin._button_block', ['type' => 'submit', 'icon' => ' icon-floppy-disk', 'text' => trans('content.save'), 'addClass' => 'pull-right'])
+                            @include('admin._save_button_block')
                         </div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+    @if (isset($data['training']))
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h4 class="panel-title">{{ trans('content.training_days') }}</h4>
+            </div>
+            <div class="panel-body">
+                @if (count($data['training']->days))
+                    @include('admin._modal_delete_block',['modalId' => 'delete-day-modal', 'function' => 'delete-day', 'head' => trans('content.confirm_delete_day')])
+                    <table class="table datatable-basic table-items">
+                        <tr>
+                            <th class="id">{{ trans('content.day') }}</th>
+                            <th class="text-left">{{ trans('content.emphasis') }}</th>
+                            <th class="text-center">{{ trans('content.video_count') }}</th>
+                            <th class="text-center">{{ trans('content.created_at') }}</th>
+                            <th class="text-center">{{ trans('content.updated_at') }}</th>
+                            <th class="text-center">{{ trans('content.delete') }}</th>
+                        </tr>
+                        @foreach ($data['training']->days as $k => $day)
+                            <tr role="row" id="{{ 'day_'.$day->id }}">
+                                <td class="id">{{ $k+1 }}</td>
+                                <td class="text-left"><a href="/admin/day?id={{ $day->id }}">{{ $day->emphasis }}</a></td>
+                                <td class="text-center"><b>{{ count($day->videos) }}</b></td>
+                                <td class="text-center">{{ $day->created_at }}</td>
+                                <td class="text-center">{{ $day->updated_at }}</td>
+                                <td class="delete"><span del-data="{{ $day->id }}" modal-data="delete-day-modal" class="glyphicon glyphicon-remove-circle"></span></td>
+                            </tr>
+                        @endforeach
+                    </table>
+                @else
+                    <h2 class="text-center">{{ trans('content.no_content') }}</h2>
+                @endif
+            </div>
+            <div class="panel-body">
+                @include('admin._add_button_block',['href' => 'day/add?training_id='.$data['training']->id, 'text' => trans('content.add_day')])
+            </div>
+        </div>
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h4 class="panel-title">{{ trans('content.training_goals') }}</h4>
+            </div>
+            <div class="panel-body">
+                @if (count($data['training']->goals))
+                    @include('admin._modal_delete_block',['modalId' => 'delete-goal-modal', 'function' => 'delete-day', 'head' => trans('content.confirm_delete_goal')])
+                    <form class="form-horizontal" action="{{ url('/admin/goals') }}" method="post">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $data['training']->id }}">
+                        <table class="table datatable-basic table-items">
+                            <tr>
+                                <th class="id">#</th>
+                                <th></th>
+                                <th class="text-left">{{ trans('content.goal') }}</th>
+                                <th class="text-center">{{ trans('content.created_at') }}</th>
+                                <th class="text-center">{{ trans('content.updated_at') }}</th>
+                                <th class="text-center">{{ trans('content.delete') }}</th>
+                            </tr>
+                            @foreach ($data['training']->goals as $k => $goal)
+                                <tr role="row" id="{{ 'goal_'.$goal->id }}">
+                                    <td class="id">{{ $k+1 }}</td>
+                                    <th></th>
+                                    <td class="text-left">
+                                        @include('admin._input_block', [
+                                            'name' => 'goal_id'.$goal->id,
+                                            'type' => 'text',
+                                            'placeholder' => trans('content.goal'),
+                                            'value' => $goal->goal
+                                        ])
+                                    </td>
+                                    <td class="text-center">{{ $goal->created_at }}</td>
+                                    <td class="text-center">{{ $goal->updated_at }}</td>
+                                    <td class="delete"><span del-data="{{ $goal->id }}" modal-data="delete-goal-modal" class="glyphicon glyphicon-remove-circle"></span></td>
+                                </tr>
+                            @endforeach
+                            <tr role="row">
+                                <td class="id"></td>
+                                <th></th>
+                                <td class="text-left">
+                                    @include('admin._input_block', [
+                                        'name' => 'goal_add',
+                                        'type' => 'text',
+                                        'placeholder' => trans('content.add_goal'),
+                                        'value' => ''
+                                    ])
+                                </td>
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td class="delete"></td>
+                            </tr>
+                        </table>
+                        @include('admin._save_button_block')
+                    </form>
+                @else
+                    <h2 class="text-center">{{ trans('content.no_content') }}</h2>
+                @endif
+            </div>
+        </div>
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h4 class="panel-title">{{ trans('content.training_photos') }}</h4>
+            </div>
+            <div class="panel-body">
+                @if (count($data['training']->photos))
+                    @include('admin._modal_delete_block',['modalId' => 'delete-photo-modal', 'function' => 'delete-photo', 'head' => trans('content.confirm_delete_photo')])
+                    <form class="form-horizontal" action="{{ url('/admin/photos') }}" method="post">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $data['training']->id }}">
+                        @foreach ($data['training']->photos as $photo)
+                            @include('admin._photo_container_block',['photo' => $photo])
+                        @endforeach
+                        @include('admin._photo_container_block',['photo' => null])
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            @include('admin._save_button_block')
+                        </div>
+                    </form>
+                @else
+                    <h2 class="text-center">{{ trans('content.no_content') }}</h2>
+                @endif
+            </div>
+        </div>
+    @endif
 @endsection

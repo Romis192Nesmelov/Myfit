@@ -37,13 +37,26 @@ Route::get('/admin/users/{slug?}', 'AdminController@users');
 Route::post('/admin/user', 'AdminController@editUser');
 Route::post('/admin/delete-user', 'AdminController@deleteUser');
 
-Route::get('/admin/programs', 'AdminController@programs');
+Route::get('/admin/programs/{slug?}', 'AdminController@programs');
 Route::post('/admin/program', 'AdminController@editProgram');
 Route::post('/admin/delete-program', 'AdminController@deleteProgram');
 
-Route::get('/admin/trainings', 'AdminController@trainings');
+Route::get('/admin/trainings/{slug?}', 'AdminController@trainings');
 Route::post('/admin/training', 'AdminController@editTraining');
 Route::post('/admin/delete-training', 'AdminController@deleteTraining');
+
+Route::get('/admin/day/{slug?}', 'AdminController@day');
+Route::post('/admin/day', 'AdminController@editDay');
+Route::post('/admin/delete-day', 'AdminController@deleteDay');
+
+Route::post('/admin/videos', 'AdminController@editVideos');
+Route::post('/admin/delete-video', 'AdminController@deleteVideo');
+
+Route::post('/admin/goals', 'AdminController@editGoals');
+Route::post('/admin/delete-goal', 'AdminController@deleteGoal');
+
+Route::post('/admin/photos', 'AdminController@editPhotos');
+Route::post('/admin/delete-photo', 'AdminController@deletePhoto');
 
 Route::get('/admin/settings', 'AdminController@settings');
 Route::post('/admin/settings', 'AdminController@editSettings');

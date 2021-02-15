@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Program;
 use App\Training;
+use App\TrainingDay;
+use App\TrainingVideo;
+use App\TrainingGoal;
+use App\TrainingPhoto;
 use App\Settings;
 //use Carbon\Carbon;
 
@@ -137,12 +141,16 @@ class AdminController extends UserController
     
     public function trainings(Request $request, $slug=null)
     {
-        $this->breadcrumbs = ['trainings' => trans('content.programs')];
+        $this->breadcrumbs = ['programs' => trans('content.programs')];
         if ($request->has('id')) {
             $this->data['training'] = Training::findOrFail($request->input('id'));
-            $this->breadcrumbs['trainings?id='.$this->data['training']->id] = $this->data['training']->main_warning_title;
+            $this->breadcrumbs['programs?id='.$this->data['training']->program->id] = $this->data['training']->program->title;
+            $this->breadcrumbs['trainings?id='.$this->data['training']->id] = $this->data['training']->duration.' '.trans('content.weeks').'/'.$this->data['training']->periodicity;
             return $this->showView('training');
         } else if ($slug && $slug == 'add') {
+            $this->validate($request, ['program_id' => 'required|integer|exists:programs,id']);
+            $program = Program::find($request->input('program_id'));
+            $this->breadcrumbs['programs?id='.$program->id] = $program->title;
             $this->breadcrumbs['programs/add'] = trans('content.adding_training');
             return $this->showView('training');
         } else {
@@ -152,7 +160,56 @@ class AdminController extends UserController
 
     public function editTraining(Request $request)
     {
+        $validationArr = [
+            'complexity' => 'required|integer|min:1|max:6',
+            'duration' => 'required|integer|min:1|max:10',
+            'periodicity' => 'regex:/^((\d+)\s(раз(а)?)\s(в)\s(неделю))$/',
+            'equipment' => 'required|max:191',
+
+            'warning_title' => 'required|max:191',
+            'warning_description' => 'required|max:1000',
+            'recommendation_title' => 'required|max:191',
+            'recommendation_description' => 'required|max:1000',
+
+            'warmup_warning_title' => 'max:191',
+            'warmup_warning_description' => 'max:1000',
+            'warmup_recommendation_title' => 'max:191',
+            'warmup_recommendation_description' => 'max:1000',
+
+            'main_warning_title' => 'required|max:191',
+            'main_warning_description' => 'required|max:1000',
+            'main_recommendation_title' => 'required|max:191',
+            'main_recommendation_description' => 'required|max:1000',
+
+            'main_cardio_title' => 'max:191',
+            'main_cardio_description' => 'max:1000',
+
+            'hitch_warning_title' => 'max:191',
+            'hitch_warning_description' => 'max:1000',
+            'hitch_recommendation_title' => 'max:191',
+            'hitch_recommendation_description' => 'max:1000',
+
+            'price' => 'required|integer|min:50|max:10000',
+            'program_id' => 'required|integer|exists:programs,id'
+        ];
         
+        $fields = $this->processingFields($request,['with_cardio','its_cardio','active'],'photo');
+        if ($fields['its_cardio']) $fields['with_cardio'] = 0;
+
+        if ($request->has('id')) {
+            $validationArr['id'] = 'required|integer|exists:trainings,id';
+            $this->validate($request, $validationArr);
+            $training = Training::findOrFail($request->input('id'));
+        } else {
+            $this->validate($request, $validationArr);
+            $training = Training::create($fields);
+        }
+
+        if ($request->file('photo')) $fields = array_merge($fields, $this->processingImage($request, $program, 'photo', 'program'.$program->id, 'images/programs'));
+        $training->update($fields);
+
+        $this->saveCompleteMessage();
+        return redirect()->back();
     }
 
     public function deleteTraining(Request $request)
@@ -169,6 +226,143 @@ class AdminController extends UserController
             $this->unlinkFile($photo, 'photo');
         }
         $training->delete();
+    }
+    
+    public function day(Request $request, $slug=null)
+    {
+        $this->breadcrumbs = ['programs' => trans('content.programs')];
+        if ($request->has('id')) {
+            $this->data['day'] = TrainingDay::findOrFail($request->input('id'));
+            $this->breadcrumbs['programs?id='.$this->data['day']->training->program->id] = $this->data['day']->training->program->title;
+            $this->breadcrumbs['trainings?id='.$this->data['day']->training->id] = $this->data['day']->training->duration.' '.trans('content.weeks').'/'.$this->data['day']->training->periodicity;
+            $this->breadcrumbs['day?id='.$this->data['day']->id] = trans('content.day_id',['id' => $this->data['day']->id]);
+        } else if ($slug && $slug == 'add') {
+            $this->validate($request, ['training_id' => 'required|integer|exists:trainings,id']);
+            $training = Training::find($request->input('program_id'));
+            $this->breadcrumbs['programs?id='.$training->program->id] = $training->program->title;
+            $this->breadcrumbs['trainings?id='.$training->id] = trans('content.training_id',['id' => $training->id]);
+            $this->breadcrumbs['day/add'] = trans('content.adding_day');
+        }
+        return $this->showView('day');
+    }
+    
+    public function editDay(Request $request)
+    {
+        $validationArr = [
+            'training_id' => 'required|integer|exists:trainings,id',
+            'emphasis' => 'required|min:3|max:191'
+        ];
+        $fields = $this->processingFields($request);
+
+        if ($request->has('id')) {
+            $validationArr['id'] = 'required|integer|exists:training_days,id';
+            $this->validate($request, $validationArr);
+            $day = TrainingDay::findOrFail($request->input('id'));
+            $day->update($fields);
+        } else {
+            $this->validate($request, $validationArr);
+            TrainingDay::create($fields);
+        }
+        $this->saveCompleteMessage();
+        return redirect()->back();
+    }
+    
+    public function deleteDay(Request $request)
+    {
+        return $this->deleteSomething($request, new TrainingDay());
+    }
+
+    public function editGoals(Request $request)
+    {
+        $this->validate($request, ['id' => 'required|integer|exists:trainings,id']);
+        $trainingId = $request->input('id');
+        $addGoal = $request->input('goal_add');
+        $trainingGoals = TrainingGoal::where('training_id',$trainingId)->get();
+        foreach ($trainingGoals as $goal) {
+            $goalText = $request->input('goal_id'.$goal->id);
+            if ($goalText && $goalText != $goal->goal) {
+                $goal->goal = $goalText;
+                $goal->save();
+            } else if (!$goalText) $goal->delete();
+        }
+
+        if ($addGoal) {
+            TrainingGoal::create([
+                'goal' => $addGoal,
+                'training_id' => $trainingId
+            ]);
+        }
+        $this->saveCompleteMessage();
+        return redirect()->back();
+    }
+    
+    public function deleteGoal(Request $request)
+    {
+        return $this->deleteSomething($request, new TrainingGoal());
+    }
+    
+    public function editPhotos(Request $request)
+    {
+        $this->validate($request, ['id' => 'required|integer|exists:trainings,id']);
+        $trainingId = $request->input('id');
+        $addPhoto = $request->file('photo_add');
+        $trainingPhotos = TrainingPhoto::where('training_id',$trainingId)->get();
+        foreach ($trainingPhotos as $photo) {
+            $inPhoto = $request->input('photo_id'.$photo->id);
+            if ($inPhoto) {
+                $field = $this->processingImage($request, $photo, 'photo', 'photo'.$photo->id, 'images/potos');
+                $photo->update($field);
+            }
+        }
+
+        if ($addPhoto) {
+            $photo = TrainingPhoto::create([
+                'photo' => '',
+                'training_id' => $trainingId
+            ]);
+            $field = $this->processingImage($request, $photo, 'photo', 'photo'.$photo->id, 'images/potos');
+            $photo->update($field);
+        }
+        $this->saveCompleteMessage();
+        return redirect()->back();
+    }
+    
+    public function deletePhoto(Request $request)
+    {
+        return $this->deleteSomething($request, new TrainingPhoto(), 'photo');
+    }
+    
+    public function editVideo(Request $request)
+    {
+        $changeHref = function($href) {
+            return str_replace('https://youtu.be/','https://www.youtube.com/embed/',$href);
+        };
+
+        $this->validate($request, ['id' => 'required|integer|exists:training_days,id']);
+        $dayId = $request->input('id');
+        $addVideo = $request->input('video_add');
+        $dayVideos = TrainingVideo::where('training_day_id',$dayId)->get();
+        foreach ($dayVideos as $video) {
+            $href = $request->input('video_id'.$video->id);
+            if ($href && $href != $video->video) {
+                $video->video = $changeHref($href);
+                $video->save();
+            } else if (!$href) $video->delete();
+        }
+
+        if ($addVideo) {
+            TrainingVideo::create([
+                'video' => $changeHref($addVideo),
+                'training_day_id' => $dayId
+            ]);
+        }
+        $this->saveCompleteMessage();
+        return redirect()->back();
+    }
+
+    public function deleteVideo(Request $request)
+    {
+        return $this->deleteSomething($request, new TrainingVideo());
     }
 
     public function settings()
@@ -216,12 +410,13 @@ class AdminController extends UserController
         $programs = Program::all();
         $programsSubMenu = [];
         foreach ($programs as $program) {
-            $programsSubMenu[] = ['href' => 'id='.$program->id, 'name' => $program->title];
+            $programsSubMenu[] = ['href' => '?id='.$program->id, 'name' => $program->title];
         }
         
         $menus = [
             ['href' => 'users', 'name' => trans('content.users'), 'icon' => 'icon-users'],
-            ['href' => 'programs', 'name' => trans('content.programs'), 'icon' => 'icon-folder-open2', 'submenu' => $programsSubMenu],
+            ['href' => 'programs', 'name' => trans('content.programs'), 'icon' => 'icon-tree6', 'submenu' => $programsSubMenu],
+            ['href' => 'trainings', 'name' => trans('content.trainings'), 'icon' => 'icon-accessibility'],
             ['href' => 'settings', 'name' => trans('content.settings'), 'icon' => 'icon-gear']
         ];
 

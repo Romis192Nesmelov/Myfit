@@ -21,7 +21,7 @@
                         @endforeach
                     </div>
                 </div>
-                @include('admin._button_block', ['type' => 'submit', 'icon' => ' icon-floppy-disk', 'text' => trans('content.save'), 'addClass' => 'pull-right'])
+                @include('admin._save_button_block')
             </form>
         </div>
     </div>

@@ -48,7 +48,7 @@
                                 'value' => isset($data['program']) ? $data['program']->description : '',
                                 'simple' => true
                             ])
-                            @include('admin._button_block', ['type' => 'submit', 'icon' => ' icon-floppy-disk', 'text' => trans('content.save'), 'addClass' => 'pull-right'])
+                            @include('admin._save_button_block')
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                     @include('admin._modal_delete_block',['modalId' => 'delete-modal', 'function' => 'delete-training', 'head' => trans('content.confirm_delete_program')])
                     @include('admin._trainings_table_block',['trainings' => $data['program']->trainings])
                     <div class="panel-body">
-                        @include('admin._add_button_block',['href' => 'programs/add?program_id='.$data['program']->id, 'text' => trans('content.add_training')])
+                        @include('admin._add_button_block',['href' => 'trainings/add?program_id='.$data['program']->id, 'text' => trans('content.add_training')])
                     </div>
                 @else
                     <h1 class="text-center">{{ trans('content.trainings_not_found') }}</h1>

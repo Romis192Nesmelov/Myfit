@@ -2,6 +2,10 @@
     font-weight: bolder;
 }
 
+/*table.table-items {*/
+    /*width: 100%;*/
+/*}*/
+
 .id {
     width: 20px;
     text-align: center;
@@ -11,40 +15,10 @@ td.image {
     width: 10%;
 }
 
-table.task-files {
-    width: 100%;
-}
-
-table.task-files tr {
-    border-bottom: 1px solid lightgrey;
-}
-
-table.task-files td.file {
-    width: 90%;
-    text-align: left;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
 td.image img,
-.edit-image-preview img,
-.main-image img {
+.edit-image-preview img {
     width: 100%;
     border: 2px solid grey;
-}
-
-td.value .percents {
-    padding: 2px 3px;
-    border-radius: 2px;
-    color: white;
-    font-size: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: red;
-}
-
-td.value .percents.paid {
-    background-color: green;
 }
 
 .delete {
@@ -78,38 +52,6 @@ input[type=number] {
     color: #337ab7;
 }
 
-.range-input {
-    width: 100%;
-}
-
-.range-input td {
-    text-align: center;
-    vertical-align: middle;
-}
-
-.range-input .min-max {
-    width: 70px;
-}
-
-.range-input .value {
-    width: 150px;
-    font-weight: bold;
-    padding: 0 5px;
-}
-
-.range-input .value input {
-    width: 100%;
-    text-align: center;
-    padding: 0;
-    float: left;
-}
-
-.range-input .value div {
-    padding-top: 5px;
-    margin-left: 5px;
-    float: left;
-}
-
 textarea {
     width: 100%;
     height: 200px;
@@ -122,39 +64,40 @@ textarea {
     margin-bottom: 20px;
 }
 
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus {
-    background-color: #00a512;
-    border-color: #00a512;
-}
-
-.total-line {
-    width: 100%;
-    padding: 10px;
-    font-size: 15px;
-    border-top: 1px solid lightgrey;
-    text-align: right;
-}
-
-.icon-big {
-    font-size: 28px;
-}
-
-.p-slider {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.rs-container .rs-selected {
-    background-color: #00a512;
-    border-color: #43A047;
-}
-
 .btn-primary {
     background-color: #00a512;
     border-color: #43A047;
 }
+
+.video-container {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid grey;
+}
+
+.icon-delete {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    padding-top: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    left: 100%;
+    top: -10px;
+    text-align: center;
+    background-color: white;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+.icon-delete:hover {
+    color: red;
+}
+
+.video-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
