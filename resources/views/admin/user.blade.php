@@ -12,7 +12,7 @@
                     <input type="hidden" name="id" value="{{ $data['user']->id }}">
                 @endif
 
-                <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="col-md-3 col-sm-12 col-xs-12 avatar">
                     @include('admin._image_block', [
                         'head' => trans('content.avatar'),
                         'preview' => isset($data['user']) ? $data['user']->avatar : null,

@@ -53,8 +53,7 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $data['day']->id }}">
                         @foreach($data['day']->videos as $video)
-                            @php $videoHref = str_replace('https://youtu.be/','https://www.youtube.com/embed/',$video->video); @endphp
-                            @include('admin._video_container_block',['id' => $video->id, 'videoHref' => $videoHref])
+                            @include('admin._video_container_block',['id' => $video->id, 'videoHref' => $video->video])
                         @endforeach
                         @include('admin._video_container_block',['name' => 'video_add'])
                         <div class="col-md-12 col-sm-12 col-xs-12">

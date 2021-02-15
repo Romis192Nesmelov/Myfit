@@ -19,11 +19,7 @@
                 </tr>
                 @foreach ($data['users'] as $user)
                     <tr role="row" id="{{ 'user_'.$user->id }}">
-                        <td class="text-center image">
-                            @if ($user->avatar)
-                                <a class="img-preview" href="{{ asset($user->avatar) }}"><img src="{{ asset($user->avatar) }}" /></a>
-                            @endif
-                        </td>
+                        <td class="text-center image avatar">@include('admin._user_avatar_block',['user' => $user])</td>
                         <td class="text-center head"><a href="/admin/users?id={{ $user->id }}">{{ $user->name }}</a></td>
                         <td class="text-center head">@include('admin._email_href_block',['email' => $user->email])</td>
                         <td class="text-center">{{ $user->birthday_year }}</td>

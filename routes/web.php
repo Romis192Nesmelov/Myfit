@@ -58,6 +58,14 @@ Route::post('/admin/delete-goal', 'AdminController@deleteGoal');
 Route::post('/admin/photos', 'AdminController@editPhotos');
 Route::post('/admin/delete-photo', 'AdminController@deletePhoto');
 
+Route::get('/admin/video-advice', 'AdminController@videoAdvice');
+Route::post('/admin/video-advice', 'AdminController@editVideoAdvice');
+Route::post('/admin/delete-video-advice', 'AdminController@deleteVideoAdvice');
+
+Route::get('/admin/feed', 'AdminController@feed');
+Route::post('/admin/feed', 'AdminController@editFeed');
+Route::post('/admin/delete-feed', 'AdminController@deleteFeed');
+
 Route::get('/admin/settings', 'AdminController@settings');
 Route::post('/admin/settings', 'AdminController@editSettings');
 

@@ -11,6 +11,26 @@
     text-align: center;
 }
 
+.image img {
+    width: 100%;
+}
+
+.avatar-icon {
+    width: 80px;
+    height: 80px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    color: grey;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.avatar-icon i {
+    font-size: 50px;
+    margin-top: 10px;
+}
+
 td.image {
     width: 10%;
 }
@@ -19,6 +39,11 @@ td.image img,
 .edit-image-preview img {
     width: 100%;
     border: 2px solid grey;
+}
+
+.avatar img,
+.image.avatar img {
+    border: none;
 }
 
 .delete {

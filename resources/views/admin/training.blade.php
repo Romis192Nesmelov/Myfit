@@ -408,7 +408,7 @@
             <div class="panel-body">
                 @if (count($data['training']->photos))
                     @include('admin._modal_delete_block',['modalId' => 'delete-photo-modal', 'function' => 'delete-photo', 'head' => trans('content.confirm_delete_photo')])
-                    <form class="form-horizontal" action="{{ url('/admin/photos') }}" method="post">
+                    <form class="form-horizontal" enctype="multipart/form-data" action="{{ url('/admin/photos') }}" method="post">
                         {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $data['training']->id }}">
                         @foreach ($data['training']->photos as $photo)

@@ -10,6 +10,9 @@ use App\TrainingDay;
 use App\TrainingVideo;
 use App\TrainingGoal;
 use App\TrainingPhoto;
+use App\VideoAdvice;
+use App\Feed;
+use App\Payment;
 use App\Settings;
 //use Carbon\Carbon;
 
@@ -365,6 +368,68 @@ class AdminController extends UserController
         return $this->deleteSomething($request, new TrainingVideo());
     }
 
+    public function videoAdvice(Request $request)
+    {
+        $this->breadcrumbs = ['video-advice' => trans('content.video_advice')];
+        if ($request->has('id')) {
+            $this->data['advice'] = VideoAdvice::findOrFail($request->input('id'));
+            $this->breadcrumbs['video-advices?id='.$this->data['advice']->id] = trans('content.video_advice_by',['date' => $this->data['advice']->updated_at]);
+            return $this->showView('video_advice');
+        } else {
+            VideoAdvice::where('new',1)->update(['new' => 0]);
+            $this->data['advices'] = VideoAdvice::orderBy('created_at','desc')->get();
+            return $this->showView('video_advices');
+        }
+    }
+
+    public function editVideoAdvice(Request $request)
+    {
+        $this->validate($request, ['id' => 'required|integer|exists:video_advice,id']);
+        $fields = $this->processingFields($request,'paid');
+        $advice = VideoAdvice::find($request->input('id'));
+        $advice->update($fields);
+        $this->saveCompleteMessage();
+        return redirect('/admin/video-advice');
+    }
+
+    public function deleteVideoAdvice(Request $request)
+    {
+        return $this->deleteSomething($request, new VideoAdvice());
+    }
+
+    public function feed(Request $request)
+    {
+        $this->breadcrumbs = ['feed' => trans('content.feed')];
+        if ($request->has('id')) {
+            $this->data['feed'] = Feed::findOrFail($request->input('id'));
+            $this->breadcrumbs['feed?id='.$this->data['feed']->id] = trans('content.feed_by',['date' => $this->data['feed']->updated_at]);
+            return $this->showView('feed');
+        } else {
+            Feed::where('new',1)->update(['new' => 0]);
+            $this->data['feeds'] = Feed::orderBy('created_at','desc')->get();
+            return $this->showView('feeds');
+        }
+    }
+
+    public function editFeed(Request $request)
+    {
+        $this->validate($request, [
+            'id' => 'required|integer|exists:feeds,id',
+            'recipe' => 'required|min:5|max:2000',
+            'comment' => 'max:2000',
+        ]);
+        $fields = $this->processingFields($request,'paid');
+        $feed = Feed::find($request->input('id'));
+        $feed->update($fields);
+        $this->saveCompleteMessage();
+        return redirect('/admin/feed');
+    }
+
+    public function deleteFeed(Request $request)
+    {
+        return $this->deleteSomething($request, new Feed());
+    }
+
     public function settings()
     {
         $this->breadcrumbs = ['users' => trans('content.settings')];
@@ -417,7 +482,9 @@ class AdminController extends UserController
             ['href' => 'users', 'name' => trans('content.users'), 'icon' => 'icon-users'],
             ['href' => 'programs', 'name' => trans('content.programs'), 'icon' => 'icon-tree6', 'submenu' => $programsSubMenu],
             ['href' => 'trainings', 'name' => trans('content.trainings'), 'icon' => 'icon-accessibility'],
-            ['href' => 'settings', 'name' => trans('content.settings'), 'icon' => 'icon-gear']
+            ['href' => 'settings', 'name' => trans('content.settings'), 'icon' => 'icon-gear'],
+            ['href' => 'video-advice', 'name' => trans('content.video_advice'), 'icon' => 'icon-video-camera3'],
+            ['href' => 'feed', 'name' => trans('content.feed'), 'icon' => 'icon-reading']
         ];
 
 //        $this->data['messages'] = $this->getMessages();

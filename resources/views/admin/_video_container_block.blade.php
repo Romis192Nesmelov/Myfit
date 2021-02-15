@@ -1,6 +1,7 @@
 <div class="col-md-4 col-sm-6 col-xs-12" {{ isset($id) ? 'id=video_'.$id : '' }}>
     <div class="panel panel-flat">
         <div class="panel-body">
+            @php $videoHref = str_replace('https://youtu.be/','https://www.youtube.com/embed/',$videoHref); @endphp
             @if (isset($id))
                 <div class="icon-delete"><span del-data="{{ $id }}" modal-data="delete-video-modal" class="glyphicon glyphicon-remove-circle"></span></div>
             @endif
