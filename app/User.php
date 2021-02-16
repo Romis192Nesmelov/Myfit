@@ -36,7 +36,7 @@ class User extends Authenticatable
 
     public function params()
     {
-        return $this->hasMany('App\UserParam');
+        return $this->hasMany('App\UserParam')->orderBy('created_at','desc');
     }
 
     public function lastParams()

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\User;
+use App\UserParam;
 use App\Program;
 use App\Training;
 use App\TrainingDay;
@@ -88,6 +89,47 @@ class AdminController extends UserController
     public function deleteUser(Request $request)
     {
         return $this->deleteSomething($request, new User(), 'avatar');
+    }
+    
+    public function editUserParam(Request $request)
+    {
+        $this->validate($request, ['id' => $this->validationUser]);
+        $userId = $request->input('id');
+        $params = ['height','weight','waist_girth','hip_girth'];
+        $userParams = UserParam::where('user_id',$userId)->get();
+
+        foreach ($userParams as $userParam) {
+            $changedParams = false;
+            foreach ($params as $param) {
+                $inputName = 'param'.$userParam->id.'_'.$param;
+                if ($request->has($inputName)) {
+                    $value = $request->input($inputName);
+                    if ($value > 300) $value = 300;
+                    if ($userParam[$param] != $value) {
+                        $userParam[$param] = $value;
+                        $changedParams = true;
+                    }
+                }
+            }
+            if ($changedParams) $userParam->save();
+        }
+
+        $newParams = false;
+        $fields = ['user_id' => $userId];
+        foreach ($params as $param) {
+            $value = $request->input('param_add_'.$param);
+            $fields[$param] = $value;
+            if ($value) $newParams = true;
+        }
+        if ($newParams) UserParam::create($fields);
+
+        $this->saveCompleteMessage();
+        return redirect()->back();
+    }
+    
+    public function deleteUserParam(Request $request)
+    {
+        return $this->deleteSomething($request, new UserParam());
     }
     
     public function programs(Request $request, $slug=null)

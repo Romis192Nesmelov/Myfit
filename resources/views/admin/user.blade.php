@@ -111,4 +111,50 @@
             </form>
         </div>
     </div>
+    @if (isset($data['user']))
+        @include('admin._modal_delete_block',['modalId' => 'delete-modal', 'function' => 'delete-user-param', 'head' => trans('content.confirm_delete_user_param')])
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h4 class="panel-title">{{ trans('content.user_progress') }}</h4>
+            </div>
+            <div class="panel-body">
+                @php $xAxis = []; @endphp
+                @foreach($data['user']->params as $param)
+                    @php $xAxis[] = $param->created_at->format('d.m.Y'); @endphp
+                @endforeach
+                @include('admin._chart_container_block', [
+                    'xAxis' => $xAxis,
+                    'legend' => [
+                        trans('content.height'),
+                        trans('content.weight'),
+                        trans('content.waist_girth'),
+                        trans('content.hip_girth'),
+                    ],
+                    'chartId' => 'user-progress'
+                ])
+                <form class="form-horizontal" action="{{ url('/admin/user-params') }}" method="post">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="id" value="{{ $data['user']->id }}">
+                    <table class="table datatable-basic table-items">
+                        <tr>
+                            <th class="text-center">{{ trans('content.height') }}</th>
+                            <th class="text-center">{{ trans('content.weight') }}</th>
+                            <th class="text-center">{{ trans('content.waist_girth') }}</th>
+                            <th class="text-center">{{ trans('content.hip_girth') }}</th>
+                            <th class="text-center">{{ trans('content.created_at') }}</th>
+                            <th class="text-center">{{ trans('content.delete') }}</th>
+                        </tr>
+                        @include('admin._user_params_table_row_block',['param' => null])
+                        @foreach($data['user']->params as $k => $param)
+                            @include('admin._user_params_table_row_block',['param' => $param])
+                            @foreach(['height','weight','waist_girth','hip_girth'] as $i => $item)
+                                <script>window.statisticsData[0].dataHorAxis[parseInt("{{ $i }}")].data[parseInt("{{ count($data['user']->params)-$k-1 }}")] = parseInt("{{ $param[$item] }}");</script>
+                            @endforeach
+                        @endforeach
+                    </table>
+                    @include('admin._save_button_block')
+                </form>
+            </div>
+        </div>
+    @endif
 @endsection

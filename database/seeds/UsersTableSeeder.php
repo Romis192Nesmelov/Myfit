@@ -50,13 +50,17 @@ class UsersTableSeeder extends Seeder
 
         foreach ($data as $user) {
             $user = User::create($user);
-            UserParam::create([
-                'height' => 170,
-                'weight' => 70,
-                'waist_girth' => 95,
-                'hip_girth' => 70,
-                'user_id' => $user->id
-            ]);
+            $countParams = rand(5,20);
+
+            for ($i=0;$i<$countParams;$i++) {
+                UserParam::create([
+                    'height' => 170 + rand(0,5),
+                    'weight' => 90 - rand(0,20),
+                    'waist_girth' => 95 + rand(0,10),
+                    'hip_girth' => 70,
+                    'user_id' => $user->id
+                ]);
+            }
         }
     }
 }

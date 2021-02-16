@@ -37,6 +37,9 @@ Route::get('/admin/users/{slug?}', 'AdminController@users');
 Route::post('/admin/user', 'AdminController@editUser');
 Route::post('/admin/delete-user', 'AdminController@deleteUser');
 
+Route::post('/admin/user-params', 'AdminController@editUserParam');
+Route::post('/admin/delete-user-param', 'AdminController@deleteUserParam');
+
 Route::get('/admin/programs/{slug?}', 'AdminController@programs');
 Route::post('/admin/program', 'AdminController@editProgram');
 Route::post('/admin/delete-program', 'AdminController@deleteProgram');

@@ -1,5 +1,4 @@
 window.userInteract = false;
-// window.allMonths = ['Янв.', 'Фев.', 'Март', 'Апр.', 'Май', 'Июнь', 'Июль', 'Авг.', 'Сент.', 'Окт.', 'Нояб.', 'Декаб.'];
 window.statisticsData = [];
 
 $(document).click(function () {
@@ -237,4 +236,12 @@ function bindDelete() {
     });
     
     
+}
+
+function cloneArrayData(data) {
+    var newData = [];
+    $.each(data, function (k,item) {
+        newData[k] = item;
+    });
+    return newData;
 }

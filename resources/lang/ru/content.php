@@ -140,4 +140,10 @@ return [
     'error_payment' => 'Платеж с такими значениями уже существует!',
     'payment_active' => 'Платеж активен',
     'payment_not_active' => 'Платеж не активен',
+    'user_progress' => 'Прогресс пользователя',
+    'height' => 'Рост',
+    'weight' => 'Вес',
+    'waist_girth' => 'Обхват талии',
+    'hip_girth' => 'Обхват бедер',
+    'confirm_delete_user_param' => 'Вы действительно хотите удалить эти параметры?',
 ];
