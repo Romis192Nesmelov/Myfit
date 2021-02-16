@@ -11,7 +11,7 @@ class ProgramsTableSeeder extends Seeder
         for ($i=0;$i<5;$i++) {
             Program::create([
                 'photo' => 'images/programs/program'.($i+1).'.jpg',
-                'title' => 'Тестовая программа',
+                'title' => 'Тестовая программа №'.($i+1),
                 'description' => $description,
                 'active' => 1
             ]);

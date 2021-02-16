@@ -123,6 +123,29 @@ $(document).ready(function () {
         var newInput = $('<input>').attr(attrInputRange);
         parentInputRange.append(newInput);
     });
+
+    // Change users select
+    bindChangeUserSelect();
+
+    // Change trainings select in payment page
+    $('.payment select[name=training_id]').change(function () {
+        var id = $(this).val(),
+            programNameBlock = $('.program span'),
+            trainingPriceBlock = $('.training-price span'),
+            inputValue = $('input[name=value]');
+
+        $.post('/admin/get-training', {
+            '_token': $('input[name=_token]').val(),
+            'id': id
+        }, function (data) {
+            if (data.success) {
+                programNameBlock.html(data.program);
+                trainingPriceBlock.html(data.price);
+                inputValue.val(data.value);
+                inputValue.attr('max',data.value);
+            }
+        });
+    });
 });
 
 function deleteItem(obj) {
@@ -134,6 +157,27 @@ function deleteItem(obj) {
     localStorage.setItem('delete_modal',obj.attr('modal-data'));
 
     deleteModal.modal('show');
+}
+
+function bindChangeUserSelect() {
+    $('select[name=user_id]').change(function () {
+        var id = $(this).val(),
+            parent = $(this).parents('.panel-body'),
+            userBlock = parent.find('.user-block');
+
+        $.post('/admin/get-user', {
+            '_token': $('input[name=_token]').val(),
+            'id': id,
+        }, function (data) {
+            if (data.success) {
+                userBlock.html(data.user);
+                $('.image.avatar a.img-preview').fancybox({
+                    padding: 3
+                });
+                bindChangeUserSelect();
+            }
+        });
+    });
 }
 
 function bindSeenAll() {

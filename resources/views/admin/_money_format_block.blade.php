@@ -1,0 +1,1 @@
+<b>{{ number_format($value, 2, ',', ' ').'₽' }}</b>

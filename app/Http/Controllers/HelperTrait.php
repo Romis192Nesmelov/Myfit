@@ -15,6 +15,11 @@ use App\Payment;
 trait HelperTrait
 {
     public $data = [];
+    public $validationUser = 'required|integer|exists:users,id';
+    public $validationPassword = 'required|confirmed|min:3|max:50';
+    public $validationProgram = 'required|integer|exists:programs,id';
+    public $validationTraining = 'required|integer|exists:trainings,id';
+    public $validationTrainingDay = 'required|integer|exists:training_days,id';
     
     public function randString()
     {
@@ -169,7 +174,6 @@ trait HelperTrait
         if ($location && !in_array($location,$locations)) $locations[] = $location;
         return $locations;
     }
-
 
     public function getBirthdayYears()
     {

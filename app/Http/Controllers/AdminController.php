@@ -61,18 +61,18 @@ class AdminController extends UserController
         $fields = $this->processingFields($request, 'active', ['old_password','avatar']);
 
         if ($request->has('id')) {
-            $validationArr['id'] = 'required|integer|exists:users,id';
+            $validationArr['id'] = $this->validationUser;
             $validationArr['email'] .= ','.$request->input('id');
 
             if ($request->input('password')) {
-                $validationArr['password'] = 'required|confirmed|min:3|max:50';
+                $validationArr['password'] = $this->validationPassword;
                 $fields['password'] = bcrypt($fields['password']);
             } else unset($fields['password']);
 
             $this->validate($request, $validationArr);
             $user = User::findOrFail($request->input('id'));
         } else {
-            $validationArr['password'] = 'required|confirmed|min:3|max:50';
+            $validationArr['password'] = $this->validationPassword;
             $this->validate($request, $validationArr);
             $fields['password'] = bcrypt($fields['password']);
             $user = User::create($fields);
@@ -114,7 +114,7 @@ class AdminController extends UserController
         $fields = $this->processingFields($request, 'active','photo');
 
         if ($request->has('id')) {
-            $validationArr['id'] = 'required|integer|exists:programs,id';
+            $validationArr['id'] = $this->validationProgram;
             $validationArr['title'] .= ','.$request->input('id');
 
             $this->validate($request, $validationArr);
@@ -133,7 +133,7 @@ class AdminController extends UserController
     
     public function deleteProgram(Request $request)
     {
-        $this->validate($request, ['id' => 'required|integer|exists:programs,id']);
+        $this->validate($request, ['id' => $this->validationProgram]);
         $program = Program::find($request->input('id'));
         foreach ($program->trainings as $training) {
             $this->deletingTraining($training);
@@ -151,7 +151,7 @@ class AdminController extends UserController
             $this->breadcrumbs['trainings?id='.$this->data['training']->id] = $this->data['training']->duration.' '.trans('content.weeks').'/'.$this->data['training']->periodicity;
             return $this->showView('training');
         } else if ($slug && $slug == 'add') {
-            $this->validate($request, ['program_id' => 'required|integer|exists:programs,id']);
+            $this->validate($request, ['program_id' => $this->validationProgram]);
             $program = Program::find($request->input('program_id'));
             $this->breadcrumbs['programs?id='.$program->id] = $program->title;
             $this->breadcrumbs['programs/add'] = trans('content.adding_training');
@@ -193,14 +193,14 @@ class AdminController extends UserController
             'hitch_recommendation_description' => 'max:1000',
 
             'price' => 'required|integer|min:50|max:10000',
-            'program_id' => 'required|integer|exists:programs,id'
+            'program_id' => $this->validationProgram
         ];
         
         $fields = $this->processingFields($request,['with_cardio','its_cardio','active'],'photo');
         if ($fields['its_cardio']) $fields['with_cardio'] = 0;
 
         if ($request->has('id')) {
-            $validationArr['id'] = 'required|integer|exists:trainings,id';
+            $validationArr['id'] = $this->validationTraining;
             $this->validate($request, $validationArr);
             $training = Training::findOrFail($request->input('id'));
         } else {
@@ -217,7 +217,7 @@ class AdminController extends UserController
 
     public function deleteTraining(Request $request)
     {
-        $this->validate($request, ['id' => 'required|integer|exists:training,id']);
+        $this->validate($request, ['id' => $this->validationTraining]);
         $this->deletingTraining(Training::find($request->input('id')));
         return response()->json(['success' => true]);
     }
@@ -240,7 +240,7 @@ class AdminController extends UserController
             $this->breadcrumbs['trainings?id='.$this->data['day']->training->id] = $this->data['day']->training->duration.' '.trans('content.weeks').'/'.$this->data['day']->training->periodicity;
             $this->breadcrumbs['day?id='.$this->data['day']->id] = trans('content.day_id',['id' => $this->data['day']->id]);
         } else if ($slug && $slug == 'add') {
-            $this->validate($request, ['training_id' => 'required|integer|exists:trainings,id']);
+            $this->validate($request, ['training_id' => $this->validationTraining]);
             $training = Training::find($request->input('program_id'));
             $this->breadcrumbs['programs?id='.$training->program->id] = $training->program->title;
             $this->breadcrumbs['trainings?id='.$training->id] = trans('content.training_id',['id' => $training->id]);
@@ -252,13 +252,13 @@ class AdminController extends UserController
     public function editDay(Request $request)
     {
         $validationArr = [
-            'training_id' => 'required|integer|exists:trainings,id',
+            'training_id' => $this->validationTraining,
             'emphasis' => 'required|min:3|max:191'
         ];
         $fields = $this->processingFields($request);
 
         if ($request->has('id')) {
-            $validationArr['id'] = 'required|integer|exists:training_days,id';
+            $validationArr['id'] = $this->validationTrainingDay;
             $this->validate($request, $validationArr);
             $day = TrainingDay::findOrFail($request->input('id'));
             $day->update($fields);
@@ -277,7 +277,7 @@ class AdminController extends UserController
 
     public function editGoals(Request $request)
     {
-        $this->validate($request, ['id' => 'required|integer|exists:trainings,id']);
+        $this->validate($request, ['id' => $this->validationTraining]);
         $trainingId = $request->input('id');
         $addGoal = $request->input('goal_add');
         $trainingGoals = TrainingGoal::where('training_id',$trainingId)->get();
@@ -306,7 +306,7 @@ class AdminController extends UserController
     
     public function editPhotos(Request $request)
     {
-        $this->validate($request, ['id' => 'required|integer|exists:trainings,id']);
+        $this->validate($request, ['id' => $this->validationTraining]);
         $trainingId = $request->input('id');
         $addPhoto = $request->file('photo_add');
         $trainingPhotos = TrainingPhoto::where('training_id',$trainingId)->get();
@@ -341,7 +341,7 @@ class AdminController extends UserController
             return str_replace('https://youtu.be/','https://www.youtube.com/embed/',$href);
         };
 
-        $this->validate($request, ['id' => 'required|integer|exists:training_days,id']);
+        $this->validate($request, ['id' => $this->validationTrainingDay]);
         $dayId = $request->input('id');
         $addVideo = $request->input('video_add');
         $dayVideos = TrainingVideo::where('training_day_id',$dayId)->get();
@@ -429,6 +429,73 @@ class AdminController extends UserController
     {
         return $this->deleteSomething($request, new Feed());
     }
+    
+    public function payments(Request $request, $slug=null)
+    {
+        $this->breadcrumbs = ['payments' => trans('content.payments')];
+        if ($request->has('id')) {
+            $this->data['payment'] = Payment::findOrFail($request->input('id'));
+            $this->breadcrumbs['payments?id='.$this->data['payment']->id] = trans('content.payment_by',['date' => $this->data['payment']->created_at]);
+            $this->data['users'] = User::all();
+            return $this->showView('payment');
+        } else if ($slug && $slug == 'add') {
+            $this->breadcrumbs['payments/add'] = trans('content.adding_user');
+            $this->data['users'] = User::all();
+            return $this->showView('payment');
+        } else {
+            $this->data['payments'] = Payment::orderBy('created_at','desc')->get();
+            return $this->showView('payments');
+        }
+    }
+    
+    public function editPayment(Request $request)
+    {
+        $validationArr = [
+            'user_id' => $this->validationUser,
+            'training_id' => $this->validationTraining,
+            'value' => 'required|integer|min:50',
+        ];
+        $fields = $this->processingFields($request, 'active');
+        $training = Training::find($fields['training_id']);
+        $fields['value'] = $fields['value'] > $training->price ? $training->price : $fields['value'];
+
+        if ($request->has('id')) {
+            $validationArr['id'] = 'required|integer|exists:payments,id';
+            $this->validate($request, $validationArr);
+            $payment = Payment::find($request->input('id'));
+            $payment->update($fields);
+        } else {
+            $this->validate($request, $validationArr);
+            Payment::create($fields);
+        }
+        $this->saveCompleteMessage();
+        return redirect('/admin/payments');
+    }
+
+    public function deletePayment(Request $request)
+    {
+        return $this->deleteSomething($request, new Payment());
+    }
+    
+    public function getUser(Request $request)
+    {
+        $this->validate($request, ['id' => $this->validationUser]);
+        $user =  User::find($request->input('id'));
+        $userBlock = view('admin._user_creds_block',[
+            'title' => trans('content.user_why_created_payment'),
+            'user' => $user,
+            'users' => User::all()
+        ])->render();
+        return response()->json(['success' => true, 'user' => $userBlock]);
+    }
+
+    public function getTraining(Request $request)
+    {
+        $this->validate($request, ['id' => $this->validationTraining]);
+        $training = Training::find($request->input('id'));
+        $price = view('admin._money_format_block', ['value' => $training->price])->render();
+        return response()->json(['success' => true, 'program' => $training->program->title, 'value' => $training->price, 'price' => $price]);
+    }
 
     public function settings()
     {
@@ -484,7 +551,8 @@ class AdminController extends UserController
             ['href' => 'trainings', 'name' => trans('content.trainings'), 'icon' => 'icon-accessibility'],
             ['href' => 'settings', 'name' => trans('content.settings'), 'icon' => 'icon-gear'],
             ['href' => 'video-advice', 'name' => trans('content.video_advice'), 'icon' => 'icon-video-camera3'],
-            ['href' => 'feed', 'name' => trans('content.feed'), 'icon' => 'icon-reading']
+            ['href' => 'feed', 'name' => trans('content.feed'), 'icon' => 'icon-reading'],
+            ['href' => 'payments', 'name' => trans('content.payments'), 'icon' => 'icon-wallet'],
         ];
 
 //        $this->data['messages'] = $this->getMessages();

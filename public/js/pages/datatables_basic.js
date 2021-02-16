@@ -42,7 +42,7 @@ $(function() {
         'paging': true,
         'sort': false,
         // 'order': [[0, 'asc']],
-        'pageLength': 200
+        'pageLength': 10
     });
 
     // Alternative pagination

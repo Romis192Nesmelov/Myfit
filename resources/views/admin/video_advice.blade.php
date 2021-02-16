@@ -9,18 +9,10 @@
             <form class="form-horizontal" action="{{ url('/admin/video-advice') }}" method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="id" value="{{ $data['advice']->id }}">
-
-                <div class="col-md-3 col-sm-12 col-xs-12">
-                    <div class="panel panel-flat">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">{{ trans('content.user_why_created_request') }}</h4>
-                        </div>
-                        <div class="panel-body">
-                            @include('admin._user_creds_block',['user' => $data['advice']->user])
-                        </div>
-                    </div>
-                </div>
-
+                @include('admin._user_creds_block',[
+                    'title' => trans('content.user_why_created_request'),
+                    'user' => $user
+                ])
                 <div class="col-md-9 col-sm-12 col-xs-12">
                     <div class="panel panel-flat">
                         <div class="panel-body">

@@ -46,6 +46,13 @@ td.image img,
     border: none;
 }
 
+.user-name,
+.user-email {
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
 .delete {
     text-align: center;
 }

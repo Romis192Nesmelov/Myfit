@@ -17,7 +17,7 @@
                     'status' => $training->complexity
                 ])
             </td>
-            <td class="text-center">{{ $training->price }}₽</td>
+            <td class="text-center">@include('admin._money_format_block',['value' => $training->price])</td>
             <td class="text-center">
                 @include('admin._status_block', [
                     'status' => $training->active,

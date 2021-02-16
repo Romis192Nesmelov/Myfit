@@ -69,5 +69,12 @@ Route::post('/admin/delete-feed', 'AdminController@deleteFeed');
 Route::get('/admin/settings', 'AdminController@settings');
 Route::post('/admin/settings', 'AdminController@editSettings');
 
+Route::get('/admin/payments/{slug?}', 'AdminController@payments');
+Route::post('/admin/payment', 'AdminController@editPayment');
+Route::post('/admin/delete-payment', 'AdminController@deletePayment');
+
+Route::post('/admin/get-user', 'AdminController@getUser');
+Route::post('/admin/get-training', 'AdminController@getTraining');
+
 
 //Route::get('/avatar', function () { return view('avatar'); });
