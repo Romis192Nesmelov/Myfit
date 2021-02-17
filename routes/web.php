@@ -79,5 +79,9 @@ Route::post('/admin/delete-payment', 'AdminController@deletePayment');
 Route::post('/admin/get-user', 'AdminController@getUser');
 Route::post('/admin/get-training', 'AdminController@getTraining');
 
+Route::get('/admin/messages', 'AdminController@messages');
+Route::post('/admin/delete-message', 'AdminController@deleteMessage');
+Route::post('/admin/seen-all', 'AdminController@seenAll');
+
 
 //Route::get('/avatar', function () { return view('avatar'); });

@@ -10,6 +10,7 @@ use App\Payment;
 use App\TrainingDay;
 use App\VideoAdvice;
 use App\Feed;
+use App\Message;
 use App\Settings;
 
 class UserController extends Controller
@@ -158,17 +159,31 @@ class UserController extends Controller
             'value' => 'required|integer'
         ]);
         $trainingId = $request->input('id');
+        $value = $request->input('value');
         $payment = Payment::where('training_id',$trainingId)->where('user_id',$request->user()->id)->first();
         if ($payment && isset($payment->active) && $payment->active) return response()->json(['success' => false, 'error' => trans('payment.already_paid')], 403);
         elseif ($payment && isset($payment->active) && !$payment->active) {
             $payment->active = 1;
             $payment->save();
         } else {
+            $message = Message::create(['new' => 1]);
             $payment = Payment::create([
-                'value' => $request->input('value'),
+                'value' => $value,
                 'user_id' => $request->user()->id,
                 'training_id' => $trainingId,
-                'active' => 1
+                'active' => 1,
+                'message_id' => $message->id
+            ]);
+
+            $this->messageMailer([
+                'head' => trans('messages.new_payment_head', ['value' => $value]),
+                'message' => trans('messages.new_payment_text',[
+                    'user' => view('admin._user_href_block',['user' => $request->user()])->render(),
+                    'date' => $payment->created_at->format('d.m.Y'),
+                    'value' => $value
+                ]),
+                'url' => '/admin/payments?id='.$payment->id,
+                'buttonText' => trans('messages.new_payment_button_text')
             ]);
         }
         
@@ -206,7 +221,7 @@ class UserController extends Controller
     public function getVideoAdvice(Request $request)
     {
         if ($request->has('id') && $request->input('id')) {
-            $advice = Feed::find($request->input('id'));
+            $advice = VideoAdvice::find($request->input('id'));
             if ($advice->user_id != $request->user()->id) {
                 return response()->json(['success' => false, 'error' => trans('auth.access_denied')], 403);
             } else {
@@ -238,11 +253,23 @@ class UserController extends Controller
             $advice->paid = $paid;
             $advice->save();
         } else {
+            $message = Message::create(['new' => 1]);
             $advice = VideoAdvice::create([
                 'user_id' => $request->user()->id,
                 'duration' => $duration,
                 'paid' => $paid,
-                'new' => 1
+                'message_id' => $message->id
+            ]);
+
+            $this->messageMailer([
+                'head' => trans('messages.new_video_advice_head'),
+                'message' => trans('messages.new_request_text',[
+                    'user' => view('admin._user_href_block',['user' => $request->user()])->render(),
+                    'date' => $advice->created_at->format('d.m.Y'),
+                    'status' => $paid ? trans('content.payed') : trans('content.not_payed')
+                ]),
+                'url' => '/admin/video-advice?id='.$advice->id,
+                'buttonText' => trans('messages.new_request_button_text')
             ]);
         }
         return response()->json(['success' => true, 'video_advice' => $advice->toArray()], 200);
@@ -289,11 +316,23 @@ class UserController extends Controller
             $feed->paid = $paid;
             $feed->save();
         } else {
+            $message = Message::create(['new' => 1]);
             $feed = Feed::create([
                 'user_id' => $request->user()->id,
                 'paid' => $paid,
                 'comment' => $request->has('comment') ? $request->input('comment') : null,
-                'new' => 1
+                'message_id' => $message->id
+            ]);
+
+            $this->messageMailer([
+                'head' => trans('messages.new_feed_head'),
+                'message' => trans('messages.new_request_text',[
+                    'user' => view('admin._user_href_block',['user' => $request->user()])->render(),
+                    'date' => $feed->created_at->format('d.n.Y'),
+                    'status' => $paid ? trans('content.payed') : trans('content.not_payed')
+                ]),
+                'url' => '/admin/feed?id='.$feed->id,
+                'buttonText' => trans('messages.new_request_button_text')
             ]);
         }
         return response()->json(['success' => true, 'feed' => $feed->toArray()], 200);

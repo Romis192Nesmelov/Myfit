@@ -1,0 +1,1 @@
+<a href="{{ url('/admin/users?id='.$user->id) }}">{{ $user->email ? $user->email : ($user->name ? $user->name : trans('content.unknown_user')) }}</a>

@@ -186,26 +186,9 @@ function bindSeenAll() {
             '_token': $('input[name=_token]').val(),
         }, function (data) {
             if (data.success) {
-                var counter = $('#message-counter'),
-                    messageCount = parseInt(counter.html()),
-                    title = $('title'),
-                    titleText = title.html();
-
-                if (data.messages.length == messageCount) {
-                    counter.remove();
-                    $('#seen-all').remove();
-                    var newTitleCounter = '';
-                } else {
-                    counter.html(data.messages.length);
-                    newTitleCounter = '('+data.messages.length+') ';
-                }
-
-                counter.html(data.messages.length);
-                $.each(data.messages, function (k,id) {
-                    $('#message'+id).remove();
-                });
-
-                title.html(titleText.replace(/^(\(\d+\)\s)/g,newTitleCounter));
+                $('#message-counter').remove();
+                $('#seen-all').remove();
+                $('ul.media-list').html('');
             }
         });
     });

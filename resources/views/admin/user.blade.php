@@ -31,6 +31,12 @@
                             ])
 
                             @include('admin._checkbox_block',[
+                                'name' => 'receive_messages',
+                                'label' => trans('content.receive_messages'),
+                                'checked' => isset($data['user']) ? $data['user']->receive_messages : 0
+                            ])
+
+                            @include('admin._checkbox_block',[
                                 'name' => 'active',
                                 'label' => trans('content.user_active'),
                                 'checked' => isset($data['user']) ? $data['user']->active : 1

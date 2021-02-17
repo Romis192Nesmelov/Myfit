@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Feed;
 use App\User;
+use App\Message;
 
 class FeedsTableSeeder extends Seeder
 {
@@ -18,12 +19,13 @@ class FeedsTableSeeder extends Seeder
         }
 
         for ($i=0;$i<50;$i++) {
+            $message = Message::create(['new' => 1]);
             Feed::create([
                 'user_id' => $users[rand(0,count($users)-1)],
                 'recipe' => getString(),
                 'comment' => getString(),
                 'paid' => rand(0,1),
-                'new' => 1
+                'message_id' => $message->id
             ]);
         }
     }

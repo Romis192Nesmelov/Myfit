@@ -3,7 +3,7 @@
 @section('content')
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h4 class="panel-title">{{ trans('content.feed_by',['date' => $data['feed']->updated_at]) }}</h4>
+            <h4 class="panel-title">{{ trans('content.feed_by',['date' => $data['feed']->updated_at->format('d.m.Y')]) }}</h4>
         </div>
         <div class="panel-body">
             <form class="form-horizontal" action="{{ url('/admin/feed') }}" method="post">

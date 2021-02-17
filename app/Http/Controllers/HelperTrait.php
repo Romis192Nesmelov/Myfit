@@ -258,6 +258,14 @@ trait HelperTrait
         if (isset($table[$file]) && $table[$file] && file_exists($fullPath)) unlink($fullPath);
     }
 
+    public function messageMailer(array $fields)
+    {
+        $users = User::where('active',1)->where('admin',1)->where('receive_messages',1)->get();
+        foreach ($users as $user) {
+            if ($user->email) $this->sendMail($user->email, 'message', $fields);
+        }
+    }
+
     public function sendMail($destination, $template, array $fields, $copyTo=null, $pathToFile=null)
     {
         $title = Config::get('app.name');

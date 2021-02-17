@@ -3,7 +3,7 @@
 @section('content')
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h4 class="panel-title">{{ isset($data['payment']) ? trans('content.payment_by',['date' => $data['payment']->created_at]) : trans('content.adding_payment') }}</h4>
+            <h4 class="panel-title">{{ isset($data['payment']) ? trans('content.payment_by',['date' => $data['payment']->created_at->format('d.m.Y')]) : trans('content.adding_payment') }}</h4>
         </div>
         <div class="panel-body">
             <form class="form-horizontal" action="{{ url('/admin/payment') }}" method="post">

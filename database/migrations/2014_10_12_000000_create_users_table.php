@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('email',191)->nullable();
             $table->boolean('active')->nullable();
             $table->boolean('admin')->nullable();
+            $table->boolean('receive_messages')->nullable();
             $table->string('password',191);
             $table->string('auth_token',32)->nullable();
             $table->string('access_token',32)->nullable();

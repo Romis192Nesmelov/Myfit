@@ -328,8 +328,8 @@
                                 <td class="id">{{ $k+1 }}</td>
                                 <td class="text-left"><a href="/admin/day?id={{ $day->id }}">{{ $day->emphasis }}</a></td>
                                 <td class="text-center"><b>{{ count($day->videos) }}</b></td>
-                                <td class="text-center">{{ $day->created_at }}</td>
-                                <td class="text-center">{{ $day->updated_at }}</td>
+                                <td class="text-center">{{ $day->created_at->format('d.m.Y') }}</td>
+                                <td class="text-center">{{ $day->updated_at->format('d.m.Y') }}</td>
                                 <td class="delete"><span del-data="{{ $day->id }}" modal-data="delete-day-modal" class="glyphicon glyphicon-remove-circle"></span></td>
                             </tr>
                         @endforeach
@@ -373,8 +373,8 @@
                                             'value' => $goal->goal
                                         ])
                                     </td>
-                                    <td class="text-center">{{ $goal->created_at }}</td>
-                                    <td class="text-center">{{ $goal->updated_at }}</td>
+                                    <td class="text-center">{{ $goal->created_at->format('d.m.Y') }}</td>
+                                    <td class="text-center">{{ $goal->updated_at->format('d.m.Y') }}</td>
                                     <td class="delete"><span del-data="{{ $goal->id }}" modal-data="delete-goal-modal" class="glyphicon glyphicon-remove-circle"></span></td>
                                 </tr>
                             @endforeach

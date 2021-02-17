@@ -20,8 +20,8 @@
                     @foreach ($data['payments'] as $payment)
                         <tr role="row" id="{{ 'payment_'.$payment }}">
                             <td class="text-center image avatar">@include('admin._user_avatar_block',['user' => $payment->user])</td>
-                            <td class="text-center head"><a href="/admin/users?id={{ $payment->user->id }}">{{ $payment->user->name }}</a></td>
-                            <td class="text-center"><a href="/admin/payments?id={{ $payment->id }}">{{ trans('content.payment_by',['date' => $payment->created_at]) }}</a></td>
+                            <td class="text-center head">@include('admin._user_href_block',['user' => $payment->user])</td>
+                            <td class="text-center"><a href="/admin/payments?id={{ $payment->id }}">{{ trans('content.payment_by',['date' => $payment->created_at->format('d.m.Y')]) }}</a></td>
                             <td class="text-center {{ $payment->value < $payment->training->price ? 'text-danger' : 'text-green-800' }}">
                                 @include('admin._money_format_block',['value' => $payment->value])/
                                 @include('admin._money_format_block',['value' => $payment->training->price])

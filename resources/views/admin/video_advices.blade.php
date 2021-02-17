@@ -1,10 +1,9 @@
-
 @extends('layouts.admin')
 
 @section('content')
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h4 class="panel-title">{{ trans('content.video_advices') }}</h4>
+            <h4 class="panel-title">{{ trans('content.video_advice') }}</h4>
         </div>
         <div class="panel-body">
             @if (count($data['advices']))
@@ -21,7 +20,7 @@
                     @foreach ($data['advices'] as $advice)
                         <tr role="row" id="{{ 'advice_'.$advice->id }}">
                             <td class="text-center image">@include('admin._user_avatar_block',['user' => $advice->user])</td>
-                            <td class="text-center head"><a href="/admin/users?id={{ $advice->user->id }}">{{ $advice->user->name }}</a><br>{{ $advice->created_at }}</td>
+                            <td class="text-center head"><a href="/admin/users?id={{ $advice->user->id }}">{{ $advice->user->name }}</a><br>{{ $advice->created_at->format('d.m.Y') }}</td>
                             <td class="text-center head">{{ $advice->duration.trans('content.minutes') }}</td>
                             <td class="text-center">@include('admin._status_block', ['status' => $advice->paid, 'trueLabel' => trans('content.paid'), 'falseLabel' => trans('content.not_paid')])</td>
                             <td class="text-center"><a href="/admin/video-advice?id={{ $advice->id }}"><span class="icon-pencil5"></span></a></td>

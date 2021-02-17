@@ -31,6 +31,7 @@ class User extends Authenticatable
         'confirm_email_token',
         'restore_password_token',
         'admin',
+        'receive_messages',
         'birthday_year'
     ];
 

@@ -17,7 +17,6 @@ class CreateVideoAdviceTable extends Migration
             $table->bigIncrements('id');
             $table->integer('duration')->nullable();
             $table->boolean('paid')->nullable();
-            $table->boolean('new');
             $table->timestamps();
         });
     }

@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Евгений Степаненко',
                 'email' => 'jekadevelop@gmail.com',
-                'password' => '',
+                'password' => '$2y$10$a1lAnS5mcBEXzdsexLOwVukxJKMLxnvUFyS3qVKFtCGfxaf1AYBMm',
                 'active' => 1,
                 'admin' => 0
             ],

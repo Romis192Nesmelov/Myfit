@@ -101,18 +101,6 @@ class TrainingsTableSeeder extends Seeder
                         'training_id' => $training->id
                     ]);
                 }
-
-                $notPaid = 0;
-                foreach ($users as $user) {
-                    if (rand(0,1) || $notPaid >= $trainingsCount/2) {
-                        Payment::create([
-                            'value' => $training->price,
-                            'user_id' => $user,
-                            'training_id' => $training->id,
-                            'active' => 1
-                        ]);
-                    } else $notPaid++;
-                }
             }
         }
     }
