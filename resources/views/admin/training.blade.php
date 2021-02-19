@@ -424,5 +424,17 @@
                 @endif
             </div>
         </div>
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h4 class="panel-title">{{ trans('content.users_who_had_buy_the_training') }}</h4>
+            </div>
+            <div class="panel-body">
+                @if (count($data['training']->payments))
+                    @include('admin._payments_table_block',['payments' => $data['training']->payments])
+                @else
+                    <h2 class="text-center">{{ trans('content.no_content') }}</h2>
+                @endif
+            </div>
+        </div>
     @endif
 @endsection

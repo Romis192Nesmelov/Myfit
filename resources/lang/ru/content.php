@@ -157,5 +157,6 @@ return [
     'confirm_delete_message' => 'Вы действительно хотите удалить это сообщение?',
     'new_message' => 'Новое',
     'not_new_message' => 'Не новое',
-    'message_text' => 'Текст сообщения'
+    'message_text' => 'Текст сообщения',
+    'users_who_had_buy_the_training' => 'Пользователи, купившие тренировку',
 ];

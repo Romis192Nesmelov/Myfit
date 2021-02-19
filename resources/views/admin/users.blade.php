@@ -12,7 +12,7 @@
                 <tr>
                     <th class="text-center">{{ trans('content.avatar') }}</th>
                     <th class="text-center">{{ trans('content.user_name') }}</th>
-                    <th class="text-center">E-mail</th>
+                    <th class="text-center">{{ trans('auth.registration_via_social_networks') }}</th>
                     <th class="text-center">{{ trans('content.birthday_year') }}</th>
                     <th class="text-center">{{ trans('content.status') }}</th>
                     <th class="text-center">{{ trans('content.delete') }}</th>
@@ -21,7 +21,15 @@
                     <tr role="row" id="{{ 'user_'.$user->id }}">
                         <td class="text-center image avatar">@include('admin._user_avatar_block',['user' => $user])</td>
                         <td class="text-center head">@include('admin._user_href_block',['user' => $user])</td>
-                        <td class="text-center head">@include('admin._email_href_block',['email' => $user->email])</td>
+                        <td class="text-center head">
+                            @if ($user->fb_id)
+                                <i class="fa fa-facebook-official"></i>
+                            @elseif ($user->vk_id)
+                                <i class="fa fa-vk"></i>
+                            @elseif ($user->email && !$user->password)
+                                <i class="fa fa-google-plus"></i>
+                            @endif
+                        </td>
                         <td class="text-center">{{ $user->birthday_year }}</td>
                         <td class="text-center">
                             @include('admin._status_block', ['status' => $user->admin, 'trueLabel' => trans('auth.admin'), 'falseLabel' => trans('auth.user')])
