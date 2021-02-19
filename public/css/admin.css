@@ -103,6 +103,15 @@ textarea {
     resize: vertical;
 }
 
+table.range-input {
+    width: 100%;
+}
+
+table.range-input td.value {
+    width: 15%;
+    padding-right: 10px;
+}
+
 .modal-body {
     background-color: #f1f1f1;
     border: 1px solid #eaeaea;
