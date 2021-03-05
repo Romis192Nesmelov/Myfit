@@ -133,6 +133,7 @@ class UserController extends Controller
             )->first()->toArray();
 
         $training['its_paid'] = $this->checkPaid($request, $training['price']);
+        $training['periodicity'] = $this->setNumeralPeriodicity($training['periodicity']);
         $training['days'] = [];
         $days = TrainingDay::where('training_id',$id)->get();
         foreach ($days as $day) {
@@ -203,6 +204,8 @@ class UserController extends Controller
         $training = Training::with('goals')->with('photos')->where('active',1)->where('id',$id)->first()->toArray();
         if (!$this->checkPaid($request, $training['price'])) return response()->json(['success' => false, 'error' => trans('auth.training_access_err')], 403);
         $day = TrainingDay::where('training_id',$id)->with('videos')->get()->toArray();
+        
+        $training['periodicity'] = $this->setNumeralPeriodicity($training['periodicity']);
         $training['day'] = $day[($request->input('day')-1)];
         return response()->json([
             'success' => true,

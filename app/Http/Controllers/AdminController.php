@@ -209,7 +209,7 @@ class AdminController extends UserController
         $validationArr = [
             'complexity' => 'required|integer|min:1|max:6',
             'duration' => 'required|integer|min:1|max:10',
-            'periodicity' => 'regex:/^((\d+)\s(раз(а)?)\s(в)\s(неделю))$/',
+            'periodicity' => 'required|integer|min:1|max:7',
             'equipment' => 'required|max:191',
 
             'warning_title' => 'required|max:191',

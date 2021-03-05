@@ -18,7 +18,7 @@ class CreateTrainingsTable extends Migration
             $table->string('photo',191);
             $table->smallInteger('complexity');
             $table->smallInteger('duration');
-            $table->string('periodicity',191);
+            $table->smallInteger('periodicity');
             $table->string('equipment',191);
             $table->smallInteger('need_previous_completed');
             

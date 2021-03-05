@@ -25,6 +25,11 @@ trait HelperTrait
     {
         return md5(rand(0,100000));
     }
+    
+    public function setNumeralPeriodicity($value)
+    {
+        return view('_case_numeral_periodicity_block',['value' => $value])->render();
+    }
 
     public function checkAuth(User $user)
     {

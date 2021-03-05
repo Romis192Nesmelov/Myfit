@@ -75,7 +75,7 @@ return [
     'high_medium' => 'Выше среднего',
     'high' => 'Высокий',
     'duration' => 'Длительность',
-    'periodicity' => 'Периодичность',
+    'periodicity' => 'Периодичность (раз в неделю)',
     'equipment' => 'Оборудование',
     'need_previous_completed' => 'Необходимость завершения предыдущей',
     'warning_title' => 'Заголовок',

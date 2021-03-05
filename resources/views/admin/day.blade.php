@@ -4,7 +4,15 @@
 @section('content')
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h4 class="panel-title">{!! isset($data['day']) ? trans('content.editing_day',['program' => $data['day']->training->program->title, 'training' => $data['day']->training->duration.' '.trans('content.weeks').'/'.$data['day']->training->periodicity]) : trans('content.adding_day') !!}</h4>
+            <h4 class="panel-title">
+                {!!
+                isset($data['day'])
+                    ? trans('content.editing_day',[
+                        'program' => $data['day']->training->program->title,
+                        'training' => $data['day']->training->duration.' '.trans('content.weeks').'/'.view('_case_numeral_periodicity_block',['value' => $data['day']->training->periodicity])->render()])
+                    : trans('content.adding_day')
+                !!}
+            </h4>
         </div>
         <div class="panel-body">
             <form class="form-horizontal" action="{{ url('/admin/day') }}" method="post">

@@ -4,7 +4,13 @@
 @section('content')
     <div class="panel panel-flat">
         <div class="panel-heading">
-            <h4 class="panel-title">{!! isset($data['training']) ? trans('content.editing_training',['program' => $data['training']->program->title]).' '.$data['training']->duration.' '.trans('content.weeks').'/'.$data['training']->periodicity : trans('content.adding_training') !!}</h4>
+            <h4 class="panel-title">
+                {!!
+                isset($data['training'])
+                ? trans('content.editing_training',['program' => $data['training']->program->title]).' '.$data['training']->duration.' '.trans('content.weeks').'/'.view('_case_numeral_periodicity_block',['value' => $data['training']->periodicity])->render()
+                : trans('content.adding_training')
+                !!}
+            </h4>
         </div>
         <div class="panel-body">
             <form class="form-horizontal" enctype="multipart/form-data" action="{{ url('/admin/training') }}" method="post">
@@ -77,9 +83,11 @@
                             @include('admin._input_block', [
                                 'label' => trans('content.periodicity'),
                                 'name' => 'periodicity',
-                                'type' => 'text',
+                                'type' => 'number',
+                                'min' => 1,
+                                'max' => 6,
                                 'placeholder' => trans('content.periodicity'),
-                                'value' => isset($data['training']) ? $data['training']->periodicity : '1 раз в неделю'
+                                'value' => isset($data['training']) ? $data['training']->periodicity : 1
                             ])
 
                             @include('admin._checkbox_block',[
