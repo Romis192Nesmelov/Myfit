@@ -4,7 +4,7 @@
         @foreach ($programs as $program)
             <optgroup label="{{ $program->title }}">
                 @foreach ($program->trainings as $training)
-                    <option value="{{ $training->id }}" {{ (!count($errors) ? $training->id == $selected : $training->id == old('training_id')) ? 'selected' : '' }}>{{ $training->duration.' '.trans('content.weeks').'/'.$training->periodicity }}</option>
+                    <option value="{{ $training->id }}" {{ (!count($errors) ? $training->id == $selected : $training->id == old('training_id')) ? 'selected' : '' }}>{{ view('admin._case_numeral_duration_block',['value1' => $training->duration])->render().'/'.$training->periodicity }}</option>
                 @endforeach
             </optgroup>
         @endforeach

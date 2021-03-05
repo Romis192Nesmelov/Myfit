@@ -33,14 +33,14 @@
                 <h4 class="panel-title">{{ trans('content.video') }}</h4>
             </div>
             <div class="panel-body">
-                @if (count($data['day']->photos))
+                @if (count($data['day']->videos))
                     <form class="form-horizontal" action="{{ url('/admin/videos') }}" method="post">
                         {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $data['day']->id }}">
                         @foreach($data['day']->videos as $video)
                             @include('admin._video_container_block',['id' => $video->id, 'videoHref' => $video->video])
                         @endforeach
-                        @include('admin._video_container_block',['name' => 'video_add'])
+                        @include('admin._video_container_block',['name' => 'video_add', 'videoHref' => ''])
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             @include('admin._save_button_block')
                         </div>
