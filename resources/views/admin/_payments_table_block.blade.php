@@ -3,7 +3,7 @@
     <tr>
         <th class="text-center">{{ trans('content.avatar') }}</th>
         <th class="text-center">{{ trans('content.user_why_created_payment') }}</th>
-        <th class="text-center">{{ trans('content.program').'/'.trans('content.training') }}</th>
+        <th class="text-center">{{ trans('content.payments_date') }}</th>
         <th class="text-center">{{ trans('content.payment_value').'/'.trans('content.price') }}</th>
         <th class="text-center">{{ trans('content.status') }}</th>
         <th class="text-center">{{ trans('content.delete') }}</th>

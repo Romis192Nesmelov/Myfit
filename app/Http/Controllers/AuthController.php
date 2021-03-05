@@ -24,8 +24,8 @@ class AuthController extends Controller
             'email' => 'required|email|exists:users',
             'password' => 'required|min:5|max:20'
         ]);
-        
-        if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password'), 'active' => 1])) return redirect()->intended('admin/users');
+
+        if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password'), 'active' => 1], 1)) return redirect()->intended('admin/users');
         else return redirect()->back()->withInput()->withErrors(['email' => trans('auth.wrong_password')]);
     }
 

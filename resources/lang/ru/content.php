@@ -137,6 +137,7 @@ return [
     'payed' => 'Оплачено',
     'not_payed' => 'Не оплачено',
     'payment_by' => 'Платеж от :date',
+    'payments_date' => 'Дата платежа',
     'adding_payment' => 'Добавление платежа',
     'add_payment' => 'Добавить платеж',
     'confirm_delete_payment' => 'Вы действительно хотите удалить запись об этом платеже?',
