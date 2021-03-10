@@ -10,6 +10,14 @@
                 'full' => $photo ? $photo->photo : null,
                 'name' => $photo ? 'photo_id'.$photo->id : 'photo_add'
             ])
+            @include('admin._radio_button_block', [
+                'name' => $photo ? 'type_id'.$photo->id : 'type_add',
+                'values' => [
+                    ['val' => 1, 'descript' => trans('content.warmup')],
+                    ['val' => 2, 'descript' => trans('content.hitch')]
+                ],
+                'activeValue' => $photo ? $photo->type : 1
+            ])
         </div>
     </div>
 </div>

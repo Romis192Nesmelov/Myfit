@@ -89,7 +89,8 @@ td.delete > span {
     position: static;
 }
 
-input[type=number] {
+input[type=number],
+.number-style input {
     height: 50px;
     font-size: 30px;
     font-weight: bold;

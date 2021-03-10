@@ -20,7 +20,7 @@ $(document).ready(function () {
 
         if (value) {
             placeholder.hide();
-            value = value.replace('https://youtu.be/','https://www.youtube.com/embed/');
+            // value = value.replace('https://youtu.be/','https://www.youtube.com/embed/');
             $(this).val(value);
             videoContainer.append('<iframe src="'+value+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
         } else {

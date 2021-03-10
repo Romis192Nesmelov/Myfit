@@ -19,7 +19,6 @@ trait HelperTrait
     public $validationPassword = 'required|confirmed|min:3|max:50';
     public $validationProgram = 'required|integer|exists:programs,id';
     public $validationTraining = 'required|integer|exists:trainings,id';
-    public $validationTrainingDay = 'required|integer|exists:training_days,id';
     
     public function randString()
     {

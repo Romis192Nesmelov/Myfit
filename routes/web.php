@@ -48,16 +48,13 @@ Route::get('/admin/trainings/{slug?}', 'AdminController@trainings');
 Route::post('/admin/training', 'AdminController@editTraining');
 Route::post('/admin/delete-training', 'AdminController@deleteTraining');
 
-Route::get('/admin/day/{slug?}', 'AdminController@day');
-Route::post('/admin/day', 'AdminController@editDay');
-Route::post('/admin/delete-day', 'AdminController@deleteDay');
-
 Route::post('/admin/videos', 'AdminController@editVideos');
 Route::post('/admin/delete-video', 'AdminController@deleteVideo');
 
 Route::post('/admin/goals', 'AdminController@editGoals');
 Route::post('/admin/delete-goal', 'AdminController@deleteGoal');
 
+Route::get('/admin/photos', 'AdminController@photos');
 Route::post('/admin/photos', 'AdminController@editPhotos');
 Route::post('/admin/delete-photo', 'AdminController@deletePhoto');
 

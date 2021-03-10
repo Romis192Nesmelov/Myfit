@@ -16,6 +16,7 @@ class CreateTrainingPhotosTable extends Migration
         Schema::create('training_photos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('photo',191);
+            $table->smallInteger('type');
             $table->timestamps();
         });
     }

@@ -53,14 +53,9 @@ class Training extends Model
         return $this->hasMany('App\TrainingGoal');
     }
 
-    public function photos()
+    public function videos()
     {
-        return $this->hasMany('App\TrainingPhoto');
-    }
-
-    public function days()
-    {
-        return $this->hasMany('App\TrainingDay')->with('videos');
+        return $this->hasMany('App\TrainingVideo');
     }
 
     public function payments()

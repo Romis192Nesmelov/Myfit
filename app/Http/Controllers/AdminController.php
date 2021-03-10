@@ -7,7 +7,6 @@ use App\User;
 use App\UserParam;
 use App\Program;
 use App\Training;
-use App\TrainingDay;
 use App\TrainingVideo;
 use App\TrainingGoal;
 use App\TrainingPhoto;
@@ -208,7 +207,7 @@ class AdminController extends UserController
     {
         $validationArr = [
             'complexity' => 'required|integer|min:1|max:6',
-            'duration' => 'required|integer|min:1|max:10',
+            'duration' => 'regex:/^(\d(\s?-\s?\d)?)$/',
             'periodicity' => 'required|integer|min:1|max:7',
             'equipment' => 'required|max:191',
 
@@ -240,6 +239,7 @@ class AdminController extends UserController
         ];
 
         $fields = $this->processingFields($request, ['with_cardio', 'its_cardio', 'active'], 'photo');
+        $fields['duration'] = str_replace(' ','',$fields['duration']);
         if ($fields['its_cardio']) $fields['with_cardio'] = 0;
 
         if ($request->has('id')) {
@@ -253,7 +253,7 @@ class AdminController extends UserController
 
         if ($request->file('photo')) $fields = array_merge($fields, $this->processingImage($request, $program, 'photo', 'program' . $program->id, 'images/programs'));
         $training->update($fields);
-
+        
         $this->saveCompleteMessage();
         return redirect()->back();
     }
@@ -272,50 +272,6 @@ class AdminController extends UserController
             $this->unlinkFile($photo, 'photo');
         }
         $training->delete();
-    }
-
-    public function day(Request $request, $slug = null)
-    {
-        $this->breadcrumbs = ['programs' => trans('content.programs')];
-        if ($request->has('id')) {
-            $this->data['day'] = TrainingDay::findOrFail($request->input('id'));
-            $this->breadcrumbs['programs?id=' . $this->data['day']->training->program->id] = $this->data['day']->training->program->title;
-            $this->breadcrumbs['trainings?id=' . $this->data['day']->training->id] = $this->data['day']->training->duration . ' ' . trans('content.weeks') . '/' . $this->data['day']->training->periodicity;
-            $this->breadcrumbs['day?id=' . $this->data['day']->id] = trans('content.day_id', ['id' => $this->data['day']->id]);
-        } else if ($slug && $slug == 'add') {
-            $this->validate($request, ['training_id' => $this->validationTraining]);
-            $training = Training::find($request->input('program_id'));
-            $this->breadcrumbs['programs?id=' . $training->program->id] = $training->program->title;
-            $this->breadcrumbs['trainings?id=' . $training->id] = trans('content.training_id', ['id' => $training->id]);
-            $this->breadcrumbs['day/add'] = trans('content.adding_day');
-        }
-        return $this->showView('day');
-    }
-
-    public function editDay(Request $request)
-    {
-        $validationArr = [
-            'training_id' => $this->validationTraining,
-            'emphasis' => 'required|min:3|max:191'
-        ];
-        $fields = $this->processingFields($request);
-
-        if ($request->has('id')) {
-            $validationArr['id'] = $this->validationTrainingDay;
-            $this->validate($request, $validationArr);
-            $day = TrainingDay::findOrFail($request->input('id'));
-            $day->update($fields);
-        } else {
-            $this->validate($request, $validationArr);
-            TrainingDay::create($fields);
-        }
-        $this->saveCompleteMessage();
-        return redirect()->back();
-    }
-
-    public function deleteDay(Request $request)
-    {
-        return $this->deleteSomething($request, new TrainingDay());
     }
 
     public function editGoals(Request $request)
@@ -347,26 +303,36 @@ class AdminController extends UserController
         return $this->deleteSomething($request, new TrainingGoal());
     }
 
+    public function photos()
+    {
+        $this->breadcrumbs = ['photos' => trans('content.photos')];
+        $this->data['photos'] = TrainingPhoto::all();
+        return $this->showView('photos');
+    }
+
     public function editPhotos(Request $request)
     {
-        $this->validate($request, ['id' => $this->validationTraining]);
-        $trainingId = $request->input('id');
         $addPhoto = $request->file('photo_add');
-        $trainingPhotos = TrainingPhoto::where('training_id', $trainingId)->get();
+        $trainingPhotos = TrainingPhoto::all();
         foreach ($trainingPhotos as $photo) {
-            $inPhoto = $request->input('photo_id' . $photo->id);
+            $inPhoto = $request->input('photo_id'.$photo->id);
+            $inPhotoType = $request->input('type_id'.$photo->id);
             if ($inPhoto) {
-                $field = $this->processingImage($request, $photo, 'photo', 'photo' . $photo->id, 'images/potos');
+                $field = $this->processingImage($request, $photo, 'photo', 'photo'.$photo->id, 'images/photos');
                 $photo->update($field);
+            }
+            if ($photo->type != $inPhotoType) {
+                $photo->type = $inPhotoType;
+                $photo->save();
             }
         }
 
         if ($addPhoto) {
             $photo = TrainingPhoto::create([
                 'photo' => '',
-                'training_id' => $trainingId
+                'type' => $request->input('type_add')
             ]);
-            $field = $this->processingImage($request, $photo, 'photo', 'photo' . $photo->id, 'images/potos');
+            $field = $this->processingImage($request, $photo, 'photo', 'photo'.$photo->id, 'images/photos');
             $photo->update($field);
         }
         $this->saveCompleteMessage();
@@ -378,28 +344,30 @@ class AdminController extends UserController
         return $this->deleteSomething($request, new TrainingPhoto(), 'photo');
     }
 
-    public function editVideo(Request $request)
+    public function editVideos(Request $request)
     {
-        $changeHref = function ($href) {
-            return str_replace('https://youtu.be/', 'https://www.youtube.com/embed/', $href);
-        };
+//        $changeHref = function ($href) {
+//            return str_replace('https://youtu.be/', 'https://www.youtube.com/embed/', $href);
+//        };
 
-        $this->validate($request, ['id' => $this->validationTrainingDay]);
-        $dayId = $request->input('id');
+        $this->validate($request, ['id' => $this->validationTraining]);
+        $trainingId = $request->input('id');
         $addVideo = $request->input('video_add');
-        $dayVideos = TrainingVideo::where('training_day_id', $dayId)->get();
+        $dayVideos = TrainingVideo::where('training_id', $trainingId)->get();
         foreach ($dayVideos as $video) {
             $href = $request->input('video_id' . $video->id);
             if ($href && $href != $video->video) {
-                $video->video = $changeHref($href);
+//                $video->video = $changeHref($href);
+                $video->video = $href;
                 $video->save();
             } else if (!$href) $video->delete();
         }
 
         if ($addVideo) {
             TrainingVideo::create([
-                'video' => $changeHref($addVideo),
-                'training_day_id' => $dayId
+//                'video' => $changeHref($addVideo),
+                'video' => $addVideo,
+                'training_id' => $trainingId
             ]);
         }
         $this->saveCompleteMessage();
@@ -616,6 +584,7 @@ class AdminController extends UserController
             ['href' => 'users', 'name' => trans('content.users'), 'icon' => 'icon-users'],
             ['href' => 'programs', 'name' => trans('content.programs'), 'icon' => 'icon-tree6', 'submenu' => $programsSubMenu],
             ['href' => 'trainings', 'name' => trans('content.trainings'), 'icon' => 'icon-accessibility'],
+            ['href' => 'photos', 'name' => trans('content.photos'), 'icon' => 'icon-stack-picture'],
             ['href' => 'settings', 'name' => trans('content.settings'), 'icon' => 'icon-gear'],
             ['href' => 'video-advice', 'name' => trans('content.video_advice'), 'icon' => 'icon-video-camera3'],
             ['href' => 'feed', 'name' => trans('content.feed'), 'icon' => 'icon-reading'],

@@ -4,16 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTrainingIdTrainingDaysTable extends Migration
+class AddTrainingIdToTrainingVideosTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::table('training_days', function (Blueprint $table) {
+        Schema::table('training_videos', function (Blueprint $table) {
             $table->bigInteger('training_id', false, true);
             $table->foreign('training_id')->references('id')->on('trainings')->onDelete('cascade')->onUpdate('cascade');
         });
@@ -26,8 +21,8 @@ class AddTrainingIdTrainingDaysTable extends Migration
      */
     public function down()
     {
-        Schema::table('training_days', function (Blueprint $table) {
-            $table->dropForeign('training_days_training_id_foreign');
+        Schema::table('training_videos', function (Blueprint $table) {
+            $table->dropForeign('training_videos_training_id_foreign');
             $table->dropColumn('training_id');
         });
     }
