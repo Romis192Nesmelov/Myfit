@@ -1001,6 +1001,8 @@ class TrainingsTableSeeder extends Seeder
         ];
         
         $dataVideos = [
+
+            // Main FireFox
             ['video' => 'https://youtu.be/npIGLZQ3ubU','training_id' => 1],
             ['video' => 'https://youtu.be/TElU897ym3E','training_id' => 1],
             ['video' => 'https://youtu.be/BeeqBwdImuI','training_id' => 1],
@@ -1018,11 +1020,11 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/8H3jK0TSK0Y','training_id' => 2],
             ['video' => 'https://youtu.be/q6eEri6PXkw','training_id' => 2],
             ['video' => 'https://youtu.be/Nj5cd9g4_lQ','training_id' => 2],
-            ['video' => '','training_id' => 2],
-            ['video' => '','training_id' => 2],
-            ['video' => '','training_id' => 2],
-            ['video' => '','training_id' => 2],
-            ['video' => '','training_id' => 2],
+            ['video' => 'https://youtu.be/JIqIyogTOUE','training_id' => 2],
+            ['video' => 'https://youtu.be/MAmTmShHQds','training_id' => 2],
+            ['video' => 'https://youtu.be/vF91oyV30Ss','training_id' => 2],
+            ['video' => 'https://youtu.be/em_uGSqo1MM','training_id' => 2],
+            ['video' => 'https://youtu.be/qCb0MBUwzkM','training_id' => 2],
 
             ['video' => 'https://youtu.be/c7FKxhxXp7M','training_id' => 3],
             ['video' => 'https://youtu.be/RLgSolITwuQ','training_id' => 3],
@@ -1034,6 +1036,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/6pkPuyBWtQI','training_id' => 3],
             ['video' => 'https://youtu.be/xVs9NEPwcxc','training_id' => 3],
 
+            // WorkUbuntu FireFox
             ['video' => 'https://youtu.be/1f-B_8-bvIA','training_id' => 4],
             ['video' => 'https://youtu.be/oxYHfd0MNTw','training_id' => 4],
             ['video' => 'https://youtu.be/_2zhw14A6Aw','training_id' => 4],
@@ -1045,6 +1048,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => '','training_id' => 4],
             ['video' => '','training_id' => 4],
 
+            // Xrenovo FireFox
             ['video' => 'https://youtu.be/P7oxKXcgzKM','training_id' => 5],
             ['video' => 'https://youtu.be/tM-uLDruRI4','training_id' => 5],
             ['video' => 'https://youtu.be/9p0-PiiC0sc','training_id' => 5],
@@ -1066,6 +1070,29 @@ class TrainingsTableSeeder extends Seeder
             ['video' => '','training_id' => 6],
             ['video' => '','training_id' => 6],
             ['video' => '','training_id' => 6],
+
+            // Main Opera
+            ['video' => 'https://youtu.be/05wn-qKB08s','training_id' => 7],
+            ['video' => 'https://youtu.be/iXOY8Z18xZ4','training_id' => 7],
+            ['video' => 'https://youtu.be/o-bUZ7jAVHY','training_id' => 7],
+            ['video' => 'https://youtu.be/AVoPYqgorhM','training_id' => 7],
+            ['video' => 'https://youtu.be/3uUjptfUqpA','training_id' => 7],
+            ['video' => 'https://youtu.be/ypCRKanrznY','training_id' => 7],
+            ['video' => 'https://youtu.be/EOa-i53pJwk','training_id' => 7],
+            ['video' => 'https://youtu.be/DzvNqUxYgBI','training_id' => 7],
+            ['video' => 'https://youtu.be/AmRe1U3Y-vE','training_id' => 7],
+            ['video' => 'https://youtu.be/gLKouvNXxy0','training_id' => 7],
+            ['video' => 'https://youtu.be/XMktHamptxE','training_id' => 7],
+
+            ['video' => 'https://youtu.be/5j2VbJSC2wc','training_id' => 8],
+            ['video' => 'https://youtu.be/XkXhvCaLPyU','training_id' => 8],
+            ['video' => 'https://youtu.be/sL5MFOTQgLE','training_id' => 8],
+            ['video' => 'https://youtu.be/c1nf2Nk0l9g','training_id' => 8],
+            ['video' => 'https://youtu.be/gFuMInlhvbw','training_id' => 8],
+            ['video' => '','training_id' => 8],
+            ['video' => '','training_id' => 8],
+            ['video' => '','training_id' => 8],
+            ['video' => '','training_id' => 8],
         ];
         
         foreach ($dataTrainings as $k => $training) {
