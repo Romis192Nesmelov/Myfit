@@ -1002,7 +1002,7 @@ class TrainingsTableSeeder extends Seeder
         
         $dataVideos = [
 
-            // Main FireFox
+            // Main FireFox myfit.robot@gmail.com
             ['video' => 'https://youtu.be/npIGLZQ3ubU','training_id' => 1],
             ['video' => 'https://youtu.be/TElU897ym3E','training_id' => 1],
             ['video' => 'https://youtu.be/BeeqBwdImuI','training_id' => 1],
@@ -1036,7 +1036,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/6pkPuyBWtQI','training_id' => 3],
             ['video' => 'https://youtu.be/xVs9NEPwcxc','training_id' => 3],
 
-            // WorkUbuntu FireFox
+            // WorkUbuntu FireFox nesmelov.robot@gmail.com
             ['video' => 'https://youtu.be/1f-B_8-bvIA','training_id' => 4],
             ['video' => 'https://youtu.be/oxYHfd0MNTw','training_id' => 4],
             ['video' => 'https://youtu.be/_2zhw14A6Aw','training_id' => 4],
@@ -1048,7 +1048,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => '','training_id' => 4],
             ['video' => '','training_id' => 4],
 
-            // Xrenovo FireFox
+            // Xrenovo FireFox mail.robot192@gmail.com
             ['video' => 'https://youtu.be/P7oxKXcgzKM','training_id' => 5],
             ['video' => 'https://youtu.be/tM-uLDruRI4','training_id' => 5],
             ['video' => 'https://youtu.be/9p0-PiiC0sc','training_id' => 5],
@@ -1071,7 +1071,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => '','training_id' => 6],
             ['video' => '','training_id' => 6],
 
-            // Main Opera
+            // Main Opera robot.stroter@gmail.com
             ['video' => 'https://youtu.be/05wn-qKB08s','training_id' => 7],
             ['video' => 'https://youtu.be/iXOY8Z18xZ4','training_id' => 7],
             ['video' => 'https://youtu.be/o-bUZ7jAVHY','training_id' => 7],
@@ -1093,6 +1093,41 @@ class TrainingsTableSeeder extends Seeder
             ['video' => '','training_id' => 8],
             ['video' => '','training_id' => 8],
             ['video' => '','training_id' => 8],
+
+            // Main FireFox myfit.robot@gmail.com
+            ['video' => 'https://youtu.be/ZB2c8djKmGU','training_id' => 9],
+            ['video' => 'https://youtu.be/ET75eNkiJmc','training_id' => 9],
+            ['video' => 'https://youtu.be/AkLka-Ap0JQ','training_id' => 9],
+            ['video' => 'https://youtu.be/-MBeFpyRVCs','training_id' => 9],
+            ['video' => 'https://youtu.be/yq5Ds_-kPPQ','training_id' => 9],
+            ['video' => 'https://youtu.be/y-wByQr4X6Q','training_id' => 9],
+            ['video' => 'https://youtu.be/mK4BGl5h4o0','training_id' => 9],
+            ['video' => 'https://youtu.be/-ZL022S7ftk','training_id' => 9],
+            ['video' => 'https://youtu.be/hxz_d5K8xhA','training_id' => 9],
+            ['video' => 'https://youtu.be/zHlTCD0sWTo','training_id' => 9],
+
+            // Old FireFox nesmelov.and.company@gmail.com
+            ['video' => 'https://youtu.be/5pMGx_UYXr0','training_id' => 10],
+            ['video' => 'https://youtu.be/bvYXTnURGOM','training_id' => 10],
+            ['video' => 'https://youtu.be/yFgFpsAlSDQ','training_id' => 10],
+            ['video' => 'https://youtu.be/va-T1GO7fFs','training_id' => 10],
+            ['video' => 'https://youtu.be/KBpy0mZrdMA','training_id' => 10],
+            ['video' => 'https://youtu.be/f74_cXZdkZY','training_id' => 10],
+            ['video' => 'https://youtu.be/onzcU7VpTgM','training_id' => 10],
+            ['video' => 'https://youtu.be/hejF1jzzFrA','training_id' => 10],
+            ['video' => 'https://youtu.be/fX_omK_cFnE','training_id' => 10],
+            ['video' => 'https://youtu.be/Wa-T8TQKp04','training_id' => 10],
+
+            ['video' => 'https://youtu.be/AMq-NzCGRfA','training_id' => 11],
+            ['video' => 'https://youtu.be/o1GpFICWu0Q','training_id' => 11],
+            ['video' => 'https://youtu.be/k9jc193Nxs8','training_id' => 11],
+            ['video' => 'https://youtu.be/rsP_kKHq-A4','training_id' => 11],
+            ['video' => 'https://youtu.be/5Q2J5NBOR1c','training_id' => 11],
+            ['video' => 'https://youtu.be/XAQWwrxnyY4','training_id' => 11],
+            ['video' => '','training_id' => 11],
+            ['video' => '','training_id' => 11],
+            ['video' => '','training_id' => 11],
+            ['video' => '','training_id' => 11],
         ];
         
         foreach ($dataTrainings as $k => $training) {
