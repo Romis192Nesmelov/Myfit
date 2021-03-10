@@ -1044,6 +1044,28 @@ class TrainingsTableSeeder extends Seeder
             ['video' => '','training_id' => 4],
             ['video' => '','training_id' => 4],
             ['video' => '','training_id' => 4],
+
+            ['video' => 'https://youtu.be/P7oxKXcgzKM','training_id' => 5],
+            ['video' => 'https://youtu.be/tM-uLDruRI4','training_id' => 5],
+            ['video' => 'https://youtu.be/9p0-PiiC0sc','training_id' => 5],
+            ['video' => 'https://youtu.be/Kr4iwi3v9l4','training_id' => 5],
+            ['video' => 'https://youtu.be/GNyZJkYd61o','training_id' => 5],
+            ['video' => 'https://youtu.be/uBjzfdZUyVI','training_id' => 5],
+            ['video' => 'https://youtu.be/z3RwdkoyJCo','training_id' => 5],
+            ['video' => 'https://youtu.be/PkoktJoyG5Q','training_id' => 5],
+            ['video' => 'https://youtu.be/FloCR9umaao','training_id' => 5],
+            ['video' => 'https://youtu.be/jg7_E60jTeM','training_id' => 5],
+
+            ['video' => 'https://youtu.be/dz0yVRGK68w','training_id' => 6],
+            ['video' => 'https://youtu.be/zZHyVINpAUQ','training_id' => 6],
+            ['video' => 'https://youtu.be/Ds2SNmbtT0Q','training_id' => 6],
+            ['video' => 'https://youtu.be/_iMYsmLurBs','training_id' => 6],
+            ['video' => 'https://youtu.be/FvyjhkN8Row','training_id' => 6],
+            ['video' => 'https://youtu.be/aOao4qwS2xg','training_id' => 6],
+            ['video' => '','training_id' => 6],
+            ['video' => '','training_id' => 6],
+            ['video' => '','training_id' => 6],
+            ['video' => '','training_id' => 6],
         ];
         
         foreach ($dataTrainings as $k => $training) {
