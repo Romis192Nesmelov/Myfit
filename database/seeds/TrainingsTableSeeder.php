@@ -303,9 +303,9 @@ class TrainingsTableSeeder extends Seeder
             [
                 'name' => 'Общеукрепляющие программа',
                 'complexity' => 2,
-                'duration' => 8,
+                'duration' => 6,
                 'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч',
+                'equipment' => 'гимнастический коврик / fit ball',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
@@ -318,8 +318,8 @@ class TrainingsTableSeeder extends Seeder
                 'main_recommendation_title' => '',
                 'main_recommendation_description' => '',
 
-                'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю по 15-20 минут.',
-                'main_cardio_description' => 'Частота пульса 70-80% от максима.',
+                'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю по 15-20 минут',
+                'main_cardio_description' => 'Частота пульса 70-80% от максима',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
@@ -337,8 +337,8 @@ class TrainingsTableSeeder extends Seeder
                 'name' => 'ССС и ДС',
                 'complexity' => 2,
                 'duration' => 6,
-                'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/скакалка/гантели по 1-2 кг',
+                'periodicity' => '2-3',
+                'equipment' => 'гимнастический коврик/гимнастический мяч/скакалка',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
@@ -351,7 +351,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_recommendation_title' => '',
                 'main_recommendation_description' => '',
 
-                'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю по 15-20 минут.',
+                'main_cardio_title' => 'Оздоровительная ходьба 2-3 раза в неделю по 15-20 минут.',
                 'main_cardio_description' => 'Частота пульса 70-75% от максима.',
 
                 'hitch_warning_title' => '',
@@ -369,9 +369,9 @@ class TrainingsTableSeeder extends Seeder
             [
                 'name' => 'Верхний плечевой пояс',
                 'complexity' => 2,
-                'duration' => 8,
+                'duration' => 6,
                 'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/гантели по 1-2 кг',
+                'equipment' => 'гимнастический коврик/гимнастический мяч/скакалка/гантели по1-2 кг',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
@@ -379,7 +379,7 @@ class TrainingsTableSeeder extends Seeder
                 'warmup_recommendation_title' => '',
                 'warmup_recommendation_description' => '',
 
-                'main_warning_title' => '13 упражнений (видео)',
+                'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
                 'main_recommendation_title' => '',
                 'main_recommendation_description' => '',
@@ -398,13 +398,14 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 3
             ],
+            
             // #4 id:12
             [
                 'name' => 'Коленные суставы',
                 'complexity' => 2,
                 'duration' => 8,
                 'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/резиновый эспандер (легкий)',
+                'equipment' => 'гимнастический коврик/гимнастический мяч',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
@@ -418,7 +419,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю 15 минут.',
-                'main_cardio_description' => ' Темп медленный.',
+                'main_cardio_description' => 'Темп медленный.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
@@ -435,9 +436,9 @@ class TrainingsTableSeeder extends Seeder
             [
                 'name' => 'Поясничный отдел',
                 'complexity' => 2,
-                'duration' => 6,
+                'duration' => 8,
                 'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/fit ball',
+                'equipment' => 'гимнастический коврик/гимнастический мяч',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
@@ -451,7 +452,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю 15 минут.',
-                'main_cardio_description' => ' Темп медленный.',
+                'main_cardio_description' => 'Темп медленный.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
@@ -466,11 +467,11 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #6 id:14
             [
-                'name' => 'Укрепление мышц таза',
+                'name' => 'Укрепление мышц тазового дна',
                 'complexity' => 2,
-                'duration' => 6,
+                'duration' => 8,
                 'periodicity' => '2-3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/скакалка',
+                'equipment' => 'гимнастический коврик/гимнастический мяч/резиновый эспандер (легкий)',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
@@ -484,7 +485,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 2-3 раза в неделю по 20 минут.',
-                'main_cardio_description' => ' Частота пульса 70-75% от максима.',
+                'main_cardio_description' => 'Частота пульса 70-75% от максима.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
@@ -503,7 +504,7 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 2,
                 'duration' => 8,
                 'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч',
+                'equipment' => 'гимнастический коврик/гимнастический мяч/гантели 2 кг',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
@@ -511,7 +512,7 @@ class TrainingsTableSeeder extends Seeder
                 'warmup_recommendation_title' => '',
                 'warmup_recommendation_description' => '',
 
-                'main_warning_title' => '12 упражнений (видео)',
+                'main_warning_title' => '13 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
                 'main_recommendation_title' => '',
                 'main_recommendation_description' => '',
@@ -571,42 +572,6 @@ class TrainingsTableSeeder extends Seeder
             // #2 id:17
             [
                 'name' => 'TRX №2',
-                'complexity' => 2,
-                'duration' => 6,
-                'periodicity' => '2-3',
-                'equipment' => 'ленты TRX/гимнастический коврик/скакалка',
-                'need_previous_completed' => 0,
-
-                'recommendation_title' => 'Рекомендация!',
-                'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
-
-                'warmup_warning_title' => '6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
-
-                'main_warning_title' => '10 упражнений (видео)',
-                'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
-
-                'main_cardio_title' => '1-2 раза в неделю 30-40 минут.',
-                'main_cardio_description' => ' Частота пульса 70-80 % от максима.',
-
-                'hitch_warning_title' => 'стрейч 4 упражнений (фото)',
-                'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
-
-                'with_cardio' => 1,
-                'its_cardio' => 0,
-                'price' => 3499,
-                'active' => 1,
-                'program_id' => 4
-            ],
-            // #3 id:18
-            [
-                'name' => 'TRX №3',
                 'complexity' => 4,
                 'duration' => 6,
                 'periodicity' => '2-3',
@@ -640,9 +605,9 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 4
             ],
-            // #4 id:19
+            // #3 id:18
             [
-                'name' => 'TRX №4',
+                'name' => 'TRX №3',
                 'complexity' => 5,
                 'duration' => 6,
                 'periodicity' => '2-3',
@@ -676,7 +641,43 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 4
             ],
-            
+            // #4 id:19
+            [
+                'name' => 'TRX №4',
+                'complexity' => 2,
+                'duration' => 6,
+                'periodicity' => '2-3',
+                'equipment' => 'ленты TRX/гимнастический коврик/скакалка',
+                'need_previous_completed' => 0,
+
+                'recommendation_title' => 'Рекомендация!',
+                'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
+
+                'warmup_warning_title' => '6 упражнений (фото)',
+                'warmup_warning_description' => '',
+                'warmup_recommendation_title' => '',
+                'warmup_recommendation_description' => '',
+
+                'main_warning_title' => '10 упражнений (видео)',
+                'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
+                'main_recommendation_title' => '',
+                'main_recommendation_description' => '',
+
+                'main_cardio_title' => '1-2 раза в неделю 30-40 минут.',
+                'main_cardio_description' => ' Частота пульса 70-80 % от максима.',
+
+                'hitch_warning_title' => 'стрейч 4 упражнений (фото)',
+                'hitch_warning_description' => '',
+                'hitch_recommendation_title' => '',
+                'hitch_recommendation_description' => '',
+
+                'with_cardio' => 1,
+                'its_cardio' => 0,
+                'price' => 3499,
+                'active' => 1,
+                'program_id' => 4
+            ],
+
             // Program#5
             // #1 id:20
             [
@@ -970,27 +971,25 @@ class TrainingsTableSeeder extends Seeder
 
             //------------------------------------------------------------------- 50+
             // Общеукрепляющие программа
-            ['goal' => 'Укрепление мышц и восстановление эластичности поясничного отдела позвоночника.','training_id' => 9],
+            ['goal' => 'Общеукрепляющая программа тренировок','training_id' => 9],
 
-            // ССС и ДС
-            ['goal' => 'Укрепление мышц, суставов, связок верхнего плечевого пояса','training_id' => 10],
-            ['goal' => 'Проработка шейно-воротниковой зоны','training_id' => 10],
-            ['goal' => 'Общее укрепление организма','training_id' => 10],
+            ['goal' => 'Укрепление ССС и Дыхательной системы','training_id' => 10],
+            ['goal' => 'Повышение общего тонуса организма','training_id' => 10],
 
-            ['goal' => 'Укрепление мышц и связок голеностопного сустава, улучшение подвижности в нем','training_id' => 11],
-            ['goal' => 'Общеукрепляющие упражнения','training_id' => 11],
+            ['goal' => 'Укрепление мышц, суставов, связок верхнего плечевого пояса','training_id' => 11],
+            ['goal' => 'Проработка шейно-воротниковой зоны','training_id' => 11],
+            ['goal' => 'Общее укрепление организма','training_id' => 11],
 
-            ['goal' => 'Укрепление мышц тазового дна, улучшение кровообращения','training_id' => 12],
-            ['goal' => 'Общее укрепление организма','training_id' => 12],
+            ['goal' => 'Укрепление и восстановление коленных суставов','training_id' => 12],
+            
+            ['goal' => 'Укрепление мышц и восстановление эластичности поясничного отдела позвоночника.','training_id' => 13],
 
-            ['goal' => 'Общеукрепляющая программа тренировок','training_id' => 13],
-
-            ['goal' => 'Укрепление ССС и Дыхательной системы','training_id' => 14],
-            ['goal' => 'Повышение общего тонуса организма','training_id' => 14],
-
-            // Голеностопный сустав
-            ['goal' => 'Укрепление и восстановление коленных суставов','training_id' => 15],
-
+            ['goal' => 'Укрепление мышц тазового дна, улучшение кровообращения','training_id' => 14],
+            ['goal' => 'Общее укрепление организма','training_id' => 14],
+            
+            ['goal' => 'Укрепление мышц и связок голеностопного сустава, улучшение подвижности в нем','training_id' => 15],
+            ['goal' => 'Общеукрепляющие упражнения','training_id' => 15],
+            
             //------------------------------------------------------------------- TRX
             // TRX №1
             ['goal' => 'Общефизическая подготовка','training_id' => 16],
@@ -999,24 +998,24 @@ class TrainingsTableSeeder extends Seeder
             ['goal' => 'Сброс лишнего веса','training_id' => 16],
 
             // TRX №2
-            ['goal' => 'Функциональный режим работы','training_id' => 17],
-            ['goal' => 'Развитие силовой выносливости','training_id' => 17],
-            ['goal' => 'Проработка мышц всего организма','training_id' => 17],
-            ['goal' => 'Повышение общей физической Подготовки; развитие баланса, гибкости.','training_id' => 17],
-
-            // TRX №3
             ['goal' => 'Функциональный режим работы','training_id' => 18],
             ['goal' => 'Развитие силовой выносливости','training_id' => 18],
             ['goal' => 'Проработка мышц всего организма','training_id' => 18],
             ['goal' => 'Сброс лишнего веса','training_id' => 18],
             ['goal' => 'Коррекция фигуры','training_id' => 18],
 
-            // TRX №4
+            // TRX №3
             ['goal' => 'Функциональный режим работы','training_id' => 19],
             ['goal' => 'Развитие мышц всего тела','training_id' => 19],
             ['goal' => 'Наращивание сухой мышечной массы','training_id' => 19],
             ['goal' => 'Развитие силовой выносливости','training_id' => 19],
             ['goal' => 'Баланс и гибкость','training_id' => 19],
+
+            // TRX №4
+            ['goal' => 'Функциональный режим работы','training_id' => 17],
+            ['goal' => 'Развитие силовой выносливости','training_id' => 17],
+            ['goal' => 'Проработка мышц всего организма','training_id' => 17],
+            ['goal' => 'Повышение общей физической Подготовки; развитие баланса, гибкости.','training_id' => 17],
 
             //------------------------------------------------------------------- BOSU
             // BOSU №1
@@ -1246,16 +1245,29 @@ class TrainingsTableSeeder extends Seeder
 
             // Main FireFox myfit.robot@gmail.com
             // Голеностопный сустав
-            ['video' => '','training_id' => 15],
-            ['video' => '','training_id' => 15],
-            ['video' => '','training_id' => 15],
-            ['video' => '','training_id' => 15],
-            ['video' => '','training_id' => 15],
-            ['video' => '','training_id' => 15],
-            ['video' => '','training_id' => 15],
-            ['video' => '','training_id' => 15],
-            ['video' => '','training_id' => 15],
-            ['video' => '','training_id' => 15],
+            ['video' => 'https://youtu.be/0jxsOt8D4vk','training_id' => 15],
+            ['video' => 'https://youtu.be/tA3-9-j2XUA','training_id' => 15],
+            ['video' => 'https://youtu.be/t4AcSy-WdAM','training_id' => 15],
+            ['video' => 'https://youtu.be/7g7o3NoImyg','training_id' => 15],
+            ['video' => 'https://youtu.be/KS6ylxt7zps','training_id' => 15],
+            ['video' => 'https://youtu.be/Gzu6ILgV2nc','training_id' => 15],
+            ['video' => 'https://youtu.be/u4TAkxkBP-A','training_id' => 15],
+            ['video' => 'https://youtu.be/oTtG-RZCsvU','training_id' => 15],
+            ['video' => 'https://youtu.be/bdUHqZ__2QI','training_id' => 15],
+            ['video' => 'https://youtu.be/VzKC0o1r_0s','training_id' => 15],
+
+            //------------------------------------------------------------------- TRX
+            // TRX №1
+            // Main Opera robot.stroter@gmail.com
+            ['video' => 'https://youtu.be/DDNS-mubwcY','training_id' => 16],
+            ['video' => 'https://youtu.be/r_L_ldIYCYo','training_id' => 16],
+            ['video' => 'https://youtu.be/BmgoS5w-DYQ','training_id' => 16],
+            ['video' => 'https://youtu.be/8Gy8-s1MeLY','training_id' => 16],
+            ['video' => 'https://youtu.be/_JQMAPzEj88','training_id' => 16],
+            ['video' => 'https://youtu.be/CVV6ZnF4-4E','training_id' => 16],
+            ['video' => 'https://youtu.be/oRHcti_EIhc','training_id' => 16],
+            ['video' => 'https://youtu.be/COrz8ybl0sg','training_id' => 16],
+            ['video' => '','training_id' => 16],
         ];
         
         foreach ($dataTrainings as $k => $training) {
