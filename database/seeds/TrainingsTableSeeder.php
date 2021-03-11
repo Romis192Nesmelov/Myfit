@@ -1068,10 +1068,10 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/_iMYsmLurBs','training_id' => 6],
             ['video' => 'https://youtu.be/FvyjhkN8Row','training_id' => 6],
             ['video' => 'https://youtu.be/aOao4qwS2xg','training_id' => 6],
-            ['video' => '','training_id' => 6],
-            ['video' => '','training_id' => 6],
-            ['video' => '','training_id' => 6],
-            ['video' => '','training_id' => 6],
+            ['video' => 'https://youtu.be/AJ6acCYWVcI','training_id' => 6],
+            ['video' => 'https://youtu.be/QKi9UWBoN6Q','training_id' => 6],
+            ['video' => 'https://youtu.be/Ea78-kXJ8pU','training_id' => 6],
+            ['video' => 'https://youtu.be/iVorcAXjQHo','training_id' => 6],
 
             // Main Opera robot.stroter@gmail.com
             ['video' => 'https://youtu.be/05wn-qKB08s','training_id' => 7],
@@ -1144,6 +1144,19 @@ class TrainingsTableSeeder extends Seeder
             ['video' => '','training_id' => 12],
             ['video' => '','training_id' => 12],
             ['video' => '','training_id' => 12],
+
+            // Xrenovo FireFox mail.robot192@gmail.com
+            ['video' => 'https://youtu.be/gwFe-MNmyaQ','training_id' => 13],
+            ['video' => 'https://youtu.be/DpLsQZi-flw','training_id' => 13],
+            ['video' => 'https://youtu.be/20zq-X4DPaA','training_id' => 13],
+            ['video' => 'https://youtu.be/-uXXrrouhhw','training_id' => 13],
+            ['video' => 'https://youtu.be/frt0fUQRVow','training_id' => 13],
+            ['video' => 'https://youtu.be/T4_bLvfkIqo','training_id' => 13],
+            ['video' => 'https://youtu.be/X3xGt6DXt1E','training_id' => 13],
+            ['video' => 'https://youtu.be/RXylAcccpDM','training_id' => 13],
+            ['video' => 'https://youtu.be/MHIskYLI0NI','training_id' => 13],
+            ['video' => 'https://youtu.be/HwkVnMX_apw','training_id' => 13],
+            ['video' => 'https://youtu.be/izS1t8kTEvo','training_id' => 13],
         ];
         
         foreach ($dataTrainings as $k => $training) {
