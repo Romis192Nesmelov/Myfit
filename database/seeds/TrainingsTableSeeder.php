@@ -1002,6 +1002,7 @@ class TrainingsTableSeeder extends Seeder
         
         $dataVideos = [
 
+            // Функциональные тренировки
             // Main FireFox myfit.robot@gmail.com
             ['video' => 'https://youtu.be/npIGLZQ3ubU','training_id' => 1],
             ['video' => 'https://youtu.be/TElU897ym3E','training_id' => 1],
@@ -1044,10 +1045,11 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/7MB5Txx4fRI','training_id' => 4],
             ['video' => 'https://youtu.be/UMCHOM49log','training_id' => 4],
             ['video' => 'https://youtu.be/_3n1qDaPriU','training_id' => 4],
-            ['video' => '','training_id' => 4],
-            ['video' => '','training_id' => 4],
-            ['video' => '','training_id' => 4],
+            ['video' => 'https://youtu.be/4Byy6mB0XSA','training_id' => 4],
+            ['video' => 'https://youtu.be/ic37PXKqHnE','training_id' => 4],
+            ['video' => 'https://youtu.be/WgFG6y3ZyWc','training_id' => 4],
 
+            // Послеродовые
             // Xrenovo FireFox mail.robot192@gmail.com
             ['video' => 'https://youtu.be/P7oxKXcgzKM','training_id' => 5],
             ['video' => 'https://youtu.be/tM-uLDruRI4','training_id' => 5],
@@ -1094,6 +1096,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => '','training_id' => 8],
             ['video' => '','training_id' => 8],
 
+            // 50+
             // Main FireFox myfit.robot@gmail.com
             ['video' => 'https://youtu.be/ZB2c8djKmGU','training_id' => 9],
             ['video' => 'https://youtu.be/ET75eNkiJmc','training_id' => 9],
@@ -1118,16 +1121,29 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/fX_omK_cFnE','training_id' => 10],
             ['video' => 'https://youtu.be/Wa-T8TQKp04','training_id' => 10],
 
-            ['video' => 'https://youtu.be/AMq-NzCGRfA','training_id' => 11],
-            ['video' => 'https://youtu.be/o1GpFICWu0Q','training_id' => 11],
-            ['video' => 'https://youtu.be/k9jc193Nxs8','training_id' => 11],
-            ['video' => 'https://youtu.be/rsP_kKHq-A4','training_id' => 11],
-            ['video' => 'https://youtu.be/5Q2J5NBOR1c','training_id' => 11],
-            ['video' => 'https://youtu.be/XAQWwrxnyY4','training_id' => 11],
-            ['video' => '','training_id' => 11],
-            ['video' => '','training_id' => 11],
-            ['video' => '','training_id' => 11],
-            ['video' => '','training_id' => 11],
+            // WorkUbuntu FireFox nesmelov.robot@gmail.com
+            ['video' => 'https://youtu.be/LAXY0rirBlA','training_id' => 11],
+            ['video' => 'https://youtu.be/hMBTynD2JFc','training_id' => 11],
+            ['video' => 'https://youtu.be/Yf-7kpDEPKI','training_id' => 11],
+            ['video' => 'https://youtu.be/LBJoEyCoeBY','training_id' => 11],
+            ['video' => 'https://youtu.be/QpEvPDmiWDk','training_id' => 11],
+            ['video' => 'https://youtu.be/r5Ax1VMReDc','training_id' => 11],
+            ['video' => 'https://youtu.be/i0uZbvz2oq4','training_id' => 11],
+            ['video' => 'https://youtu.be/6x2ltCyfH1c','training_id' => 11],
+            ['video' => 'https://youtu.be/FpZCe_Zgdbs','training_id' => 11],
+            ['video' => 'https://youtu.be/ORocyocHEmw','training_id' => 11],
+
+            // Old FireFox nesmelov.and.company@gmail.com
+            ['video' => 'https://youtu.be/AMq-NzCGRfA','training_id' => 12],
+            ['video' => 'https://youtu.be/o1GpFICWu0Q','training_id' => 12],
+            ['video' => 'https://youtu.be/k9jc193Nxs8','training_id' => 12],
+            ['video' => 'https://youtu.be/rsP_kKHq-A4','training_id' => 12],
+            ['video' => 'https://youtu.be/5Q2J5NBOR1c','training_id' => 12],
+            ['video' => 'https://youtu.be/XAQWwrxnyY4','training_id' => 12],
+            ['video' => '','training_id' => 12],
+            ['video' => '','training_id' => 12],
+            ['video' => '','training_id' => 12],
+            ['video' => '','training_id' => 12],
         ];
         
         foreach ($dataTrainings as $k => $training) {
