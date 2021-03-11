@@ -7,6 +7,7 @@ class Training extends Model
 {
     protected $fillable = [
         'photo',
+        'name',
         'complexity',
         'duration',
         'periodicity',

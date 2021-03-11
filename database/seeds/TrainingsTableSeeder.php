@@ -13,6 +13,7 @@ class TrainingsTableSeeder extends Seeder
             // Program#1
             // #1 id:1
             [
+                'name' => 'Функциональная тренировка №1',
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '2-3',
@@ -45,6 +46,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #2 id:2
             [
+                'name' => 'Функциональная тренировка №2',
                 'complexity' => 4,
                 'duration' => 6,
                 'periodicity' => '2-3',
@@ -77,6 +79,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #3 id:3
             [
+                'name' => 'Функциональная тренировка №3',
                 'complexity' => 5,
                 'duration' => 8,
                 'periodicity' => '2-3',
@@ -109,6 +112,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #4 id:4
             [
+                'name' => 'Функциональная тренировка №4',
                 'complexity' => 6,
                 'duration' => 8,
                 'periodicity' => '2-3',
@@ -143,6 +147,7 @@ class TrainingsTableSeeder extends Seeder
             // Program#2
             // #1 id:5
             [
+                'name' => 'Послеродовой период №1',
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '2',
@@ -180,6 +185,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #2 id:6
             [
+                'name' => 'Послеродовой период №2',
                 'complexity' => 2,
                 'duration' => 8,
                 'periodicity' => '2-3',
@@ -217,6 +223,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #3 id:7
             [
+                'name' => 'Послеродовой период №3',
                 'complexity' => 4,
                 'duration' => 8,
                 'periodicity' => '2-3',
@@ -254,6 +261,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #4 id:8
             [
+                'name' => 'Послеродовой период №4',
                 'complexity' => 6,
                 'duration' => 10,
                 'periodicity' => '1-2',
@@ -293,6 +301,7 @@ class TrainingsTableSeeder extends Seeder
             // Program#3
             // #1 id:9
             [
+                'name' => 'Общеукрепляющие программа',
                 'complexity' => 2,
                 'duration' => 8,
                 'periodicity' => '3',
@@ -325,6 +334,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #2 id:10
             [
+                'name' => 'ССС и ДС',
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '3',
@@ -357,6 +367,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #3 id:11
             [
+                'name' => 'Верхний плечевой пояс',
                 'complexity' => 2,
                 'duration' => 8,
                 'periodicity' => '3',
@@ -389,6 +400,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #4 id:12
             [
+                'name' => 'Коленные суставы',
                 'complexity' => 2,
                 'duration' => 8,
                 'periodicity' => '3',
@@ -421,6 +433,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #5 id:13
             [
+                'name' => 'Поясничный отдел',
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '3',
@@ -453,6 +466,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #6 id:14
             [
+                'name' => 'Укрепление мышц таза',
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '2-3',
@@ -485,6 +499,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #7 id:15
             [
+                'name' => 'Голеностопный сустав',
                 'complexity' => 2,
                 'duration' => 8,
                 'periodicity' => '3',
@@ -519,6 +534,7 @@ class TrainingsTableSeeder extends Seeder
             // Program#4
             // #1 id:16
             [
+                'name' => 'TRX №1',
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '2-3',
@@ -554,6 +570,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #2 id:17
             [
+                'name' => 'TRX №2',
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '2-3',
@@ -589,6 +606,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #3 id:18
             [
+                'name' => 'TRX №3',
                 'complexity' => 4,
                 'duration' => 6,
                 'periodicity' => '2-3',
@@ -624,6 +642,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #4 id:19
             [
+                'name' => 'TRX №4',
                 'complexity' => 5,
                 'duration' => 6,
                 'periodicity' => '2-3',
@@ -661,6 +680,7 @@ class TrainingsTableSeeder extends Seeder
             // Program#5
             // #1 id:20
             [
+                'name' => 'BOSU №1',
                 'complexity' => 4,
                 'duration' => 6,
                 'periodicity' => '3',
@@ -696,6 +716,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #2 id:21
             [
+                'name' => 'BOSU №2',
                 'complexity' => 5,
                 'duration' => 6,
                 'periodicity' => '2-3',
@@ -731,6 +752,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #3 id:22
             [
+                'name' => 'BOSU №3',
                 'complexity' => 6,
                 'duration' => 6,
                 'periodicity' => '3',
@@ -768,6 +790,7 @@ class TrainingsTableSeeder extends Seeder
             // Program#6
             // #1 id:23
             [
+                'name' => 'Кардио №1',
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '2',
@@ -800,6 +823,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #2 id:24
             [
+                'name' => 'Кардио №2',
                 'complexity' => 4,
                 'duration' => 6,
                 'periodicity' => '2',
@@ -832,6 +856,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #3 id:25
             [
+                'name' => 'Кардио №3',
                 'complexity' => 5,
                 'duration' => 6,
                 'periodicity' => '2',
@@ -864,6 +889,7 @@ class TrainingsTableSeeder extends Seeder
             ],
             // #4 id:26
             [
+                'name' => 'Кардио №4',
                 'complexity' => 6,
                 'duration' => 6,
                 'periodicity' => '2',
@@ -897,43 +923,56 @@ class TrainingsTableSeeder extends Seeder
         ];
 
         $dataGoals = [
+            //------------------------------------------------------------------- Функциональный тренировки
+            // Функциональная тренировка №1
             ['goal' => 'Общеукрепляющие упражнения','training_id' => 1],
             ['goal' => 'Развитие силовых показателей','training_id' => 1],
             ['goal' => 'Укрепление сердечно-сосудистой системы','training_id' => 1],
             ['goal' => 'Тренировка баланса и координации','training_id' => 1],
-            
+
+            // Функциональная тренировка №2
             ['goal' => 'Укрепление организма','training_id' => 2],
             ['goal' => 'Сброс лишнего веса','training_id' => 2],
             ['goal' => 'Развитие силовой выносливости','training_id' => 2],
             ['goal' => 'Проработка мышц рук и ног (Акцент на приводящую группу мышц бёдер)','training_id' => 2],
             ['goal' => 'Проработка мышц пресса и спины','training_id' => 2],
-            
+
+            // Функциональная тренировка №3
             ['goal' => 'Проработка мышечных групп','training_id' => 3],
             ['goal' => 'Сброс лишнего веса и коррекция фигуры','training_id' => 3],
             ['goal' => 'Укрепление связо-мышечного аппарата','training_id' => 3],
-            
+
+            // Функциональная тренировка №4
             ['goal' => 'Проработка всех мышечных групп ','training_id' => 4],
             ['goal' => 'Развитие силовой выносливости','training_id' => 4],
             ['goal' => 'Сброс лишнего веса','training_id' => 4],
             ['goal' => 'Развитие координации и баланс','training_id' => 4],
-            
+
+            //------------------------------------------------------------------- Послеродовые тренировки
+            // Послеродовой период №1
             ['goal' => 'Общеукрепляющие упражнения','training_id' => 5],
             ['goal' => 'Упражнения на баланс и координацию','training_id' => 5],
 
+            // Послеродовой период №2
             ['goal' => 'Общее укрепление организма Коррекция фигуры','training_id' => 6],
             ['goal' => 'Коррекция фигуры','training_id' => 6],
             ['goal' => 'Укрепление мышц пресса и спины','training_id' => 6],
 
+            // Послеродовой период №3
             ['goal' => 'Общеукрепляющие упражнения','training_id' => 7],
             ['goal' => 'Укрепление мышц малого таза и внутренней стенки живота','training_id' => 7],
             ['goal' => 'Развитие гибкости','training_id' => 7],
             ['goal' => 'Развитие баланса и координации','training_id' => 7],
 
+            // Послеродовой период №4
             ['goal' => 'Сброс лишнего веса','training_id' => 8],
             ['goal' => 'Коррекция фигуры, локальная проработка мышечных групп','training_id' => 8],
 
+            //------------------------------------------------------------------- 50+
+            // Общеукрепляющие программа
             ['goal' => 'Укрепление мышц и восстановление эластичности поясничного отдела позвоночника.','training_id' => 9],
 
+            // ССС и ДС
             ['goal' => 'Укрепление мышц, суставов, связок верхнего плечевого пояса','training_id' => 10],
             ['goal' => 'Проработка шейно-воротниковой зоны','training_id' => 10],
             ['goal' => 'Общее укрепление организма','training_id' => 10],
@@ -949,53 +988,68 @@ class TrainingsTableSeeder extends Seeder
             ['goal' => 'Укрепление ССС и Дыхательной системы','training_id' => 14],
             ['goal' => 'Повышение общего тонуса организма','training_id' => 14],
 
+            // Голеностопный сустав
             ['goal' => 'Укрепление и восстановление коленных суставов','training_id' => 15],
 
+            //------------------------------------------------------------------- TRX
+            // TRX №1
             ['goal' => 'Общефизическая подготовка','training_id' => 16],
             ['goal' => 'Укрепление мышц всего организма','training_id' => 16],
             ['goal' => 'Координация и баланс','training_id' => 16],
             ['goal' => 'Сброс лишнего веса','training_id' => 16],
 
+            // TRX №2
             ['goal' => 'Функциональный режим работы','training_id' => 17],
             ['goal' => 'Развитие силовой выносливости','training_id' => 17],
             ['goal' => 'Проработка мышц всего организма','training_id' => 17],
             ['goal' => 'Повышение общей физической Подготовки; развитие баланса, гибкости.','training_id' => 17],
 
+            // TRX №3
             ['goal' => 'Функциональный режим работы','training_id' => 18],
             ['goal' => 'Развитие силовой выносливости','training_id' => 18],
             ['goal' => 'Проработка мышц всего организма','training_id' => 18],
             ['goal' => 'Сброс лишнего веса','training_id' => 18],
             ['goal' => 'Коррекция фигуры','training_id' => 18],
 
+            // TRX №4
             ['goal' => 'Функциональный режим работы','training_id' => 19],
             ['goal' => 'Развитие мышц всего тела','training_id' => 19],
             ['goal' => 'Наращивание сухой мышечной массы','training_id' => 19],
             ['goal' => 'Развитие силовой выносливости','training_id' => 19],
             ['goal' => 'Баланс и гибкость','training_id' => 19],
 
+            //------------------------------------------------------------------- BOSU
+            // BOSU №1
             ['goal' => 'Повышение физической подготовки','training_id' => 20],
             ['goal' => 'Укрепление организма в целом','training_id' => 20],
             ['goal' => 'Баланс и координация','training_id' => 20],
             ['goal' => 'Коррекция фигуры и сброс веса','training_id' => 20],
 
+            // BOSU №2
             ['goal' => 'Развитие силовой выносливости','training_id' => 21],
             ['goal' => 'Баланс и координация','training_id' => 21],
             ['goal' => 'Сброс лишнего веса','training_id' => 21],
             ['goal' => 'Укрепление мышц и связок','training_id' => 21],
 
+            // BOSU №3
             ['goal' => 'Повышение общей выносливости Укрепление организма в целом','training_id' => 22],
             ['goal' => 'Сброс лишнего веса','training_id' => 22],
             ['goal' => 'Развитие баланса и координации','training_id' => 22],
 
+            //------------------------------------------------------------------- Кардио
+            // Кардио №1
             ['goal' => 'Укрепление организма','training_id' => 23],
             ['goal' => 'Активное жиросжигание','training_id' => 23],
 
+            // Кардио №2
             ['goal' => 'Укрепление организма','training_id' => 24],
             ['goal' => 'Активное жиросжигание','training_id' => 24],
 
+            // Кардио №3
             ['goal' => 'Укрепление организма','training_id' => 25],
             ['goal' => 'Активное жиросжигание','training_id' => 25],
 
+            // Кардио №4
             ['goal' => 'Укрепление организма','training_id' => 26],
             ['goal' => 'Активное жиросжигание','training_id' => 26]
         ];
@@ -1003,6 +1057,9 @@ class TrainingsTableSeeder extends Seeder
         $dataVideos = [
 
             // Функциональные тренировки
+            //------------------------------------------------------------------- Функциональный тренировки
+
+            // Функциональная тренировка №1
             // Main FireFox myfit.robot@gmail.com
             ['video' => 'https://youtu.be/npIGLZQ3ubU','training_id' => 1],
             ['video' => 'https://youtu.be/TElU897ym3E','training_id' => 1],
@@ -1016,6 +1073,8 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/a0SGZCrs2po','training_id' => 1],
             ['video' => 'https://youtu.be/yAHGL3b_iqM','training_id' => 1],
 
+            // Функциональная тренировка №2
+            // Main FireFox myfit.robot@gmail.com
             ['video' => 'https://youtu.be/s_umAv8Rv4Q','training_id' => 2],
             ['video' => 'https://youtu.be/GQfBU663bMk','training_id' => 2],
             ['video' => 'https://youtu.be/8H3jK0TSK0Y','training_id' => 2],
@@ -1027,6 +1086,8 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/em_uGSqo1MM','training_id' => 2],
             ['video' => 'https://youtu.be/qCb0MBUwzkM','training_id' => 2],
 
+            // Функциональная тренировка №3
+            // Main FireFox myfit.robot@gmail.com
             ['video' => 'https://youtu.be/c7FKxhxXp7M','training_id' => 3],
             ['video' => 'https://youtu.be/RLgSolITwuQ','training_id' => 3],
             ['video' => 'https://youtu.be/Hr7hlx0euXA','training_id' => 3],
@@ -1037,6 +1098,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/6pkPuyBWtQI','training_id' => 3],
             ['video' => 'https://youtu.be/xVs9NEPwcxc','training_id' => 3],
 
+            // Функциональная тренировка №4
             // WorkUbuntu FireFox nesmelov.robot@gmail.com
             ['video' => 'https://youtu.be/1f-B_8-bvIA','training_id' => 4],
             ['video' => 'https://youtu.be/oxYHfd0MNTw','training_id' => 4],
@@ -1049,7 +1111,8 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/ic37PXKqHnE','training_id' => 4],
             ['video' => 'https://youtu.be/WgFG6y3ZyWc','training_id' => 4],
 
-            // Послеродовые
+            //------------------------------------------------------------------- Послеродовые тренировки
+            // Послеродовой период №1
             // Xrenovo FireFox mail.robot192@gmail.com
             ['video' => 'https://youtu.be/P7oxKXcgzKM','training_id' => 5],
             ['video' => 'https://youtu.be/tM-uLDruRI4','training_id' => 5],
@@ -1062,6 +1125,8 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/FloCR9umaao','training_id' => 5],
             ['video' => 'https://youtu.be/jg7_E60jTeM','training_id' => 5],
 
+            // Послеродовой период №2
+            // Xrenovo FireFox mail.robot192@gmail.com
             ['video' => 'https://youtu.be/dz0yVRGK68w','training_id' => 6],
             ['video' => 'https://youtu.be/zZHyVINpAUQ','training_id' => 6],
             ['video' => 'https://youtu.be/Ds2SNmbtT0Q','training_id' => 6],
@@ -1073,6 +1138,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/Ea78-kXJ8pU','training_id' => 6],
             ['video' => 'https://youtu.be/iVorcAXjQHo','training_id' => 6],
 
+            // Послеродовой период №3
             // Main Opera robot.stroter@gmail.com
             ['video' => 'https://youtu.be/05wn-qKB08s','training_id' => 7],
             ['video' => 'https://youtu.be/iXOY8Z18xZ4','training_id' => 7],
@@ -1086,17 +1152,20 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/gLKouvNXxy0','training_id' => 7],
             ['video' => 'https://youtu.be/XMktHamptxE','training_id' => 7],
 
+            // Послеродовой период №4
+            // Main Opera robot.stroter@gmail.com
             ['video' => 'https://youtu.be/5j2VbJSC2wc','training_id' => 8],
             ['video' => 'https://youtu.be/XkXhvCaLPyU','training_id' => 8],
             ['video' => 'https://youtu.be/sL5MFOTQgLE','training_id' => 8],
             ['video' => 'https://youtu.be/c1nf2Nk0l9g','training_id' => 8],
             ['video' => 'https://youtu.be/gFuMInlhvbw','training_id' => 8],
-            ['video' => '','training_id' => 8],
-            ['video' => '','training_id' => 8],
-            ['video' => '','training_id' => 8],
-            ['video' => '','training_id' => 8],
+            ['video' => 'https://youtu.be/6htkZg4Yp5Q','training_id' => 8],
+            ['video' => 'https://youtu.be/kJcvCRo-hsA','training_id' => 8],
+            ['video' => 'https://youtu.be/Yz-aTJC50gg','training_id' => 8],
+            ['video' => 'https://youtu.be/bP2kRubXfbY','training_id' => 8],
 
-            // 50+
+            //------------------------------------------------------------------- 50+
+            // Общеукрепляющие программа
             // Main FireFox myfit.robot@gmail.com
             ['video' => 'https://youtu.be/ZB2c8djKmGU','training_id' => 9],
             ['video' => 'https://youtu.be/ET75eNkiJmc','training_id' => 9],
@@ -1109,6 +1178,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/hxz_d5K8xhA','training_id' => 9],
             ['video' => 'https://youtu.be/zHlTCD0sWTo','training_id' => 9],
 
+            // ССС и ДС
             // Old FireFox nesmelov.and.company@gmail.com
             ['video' => 'https://youtu.be/5pMGx_UYXr0','training_id' => 10],
             ['video' => 'https://youtu.be/bvYXTnURGOM','training_id' => 10],
@@ -1121,6 +1191,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/fX_omK_cFnE','training_id' => 10],
             ['video' => 'https://youtu.be/Wa-T8TQKp04','training_id' => 10],
 
+            // Верхний плечевой пояс
             // WorkUbuntu FireFox nesmelov.robot@gmail.com
             ['video' => 'https://youtu.be/LAXY0rirBlA','training_id' => 11],
             ['video' => 'https://youtu.be/hMBTynD2JFc','training_id' => 11],
@@ -1133,6 +1204,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/FpZCe_Zgdbs','training_id' => 11],
             ['video' => 'https://youtu.be/ORocyocHEmw','training_id' => 11],
 
+            // Коленные суставы
             // Old FireFox nesmelov.and.company@gmail.com
             ['video' => 'https://youtu.be/AMq-NzCGRfA','training_id' => 12],
             ['video' => 'https://youtu.be/o1GpFICWu0Q','training_id' => 12],
@@ -1140,11 +1212,12 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/rsP_kKHq-A4','training_id' => 12],
             ['video' => 'https://youtu.be/5Q2J5NBOR1c','training_id' => 12],
             ['video' => 'https://youtu.be/XAQWwrxnyY4','training_id' => 12],
-            ['video' => '','training_id' => 12],
-            ['video' => '','training_id' => 12],
-            ['video' => '','training_id' => 12],
-            ['video' => '','training_id' => 12],
+            ['video' => 'https://youtu.be/_gNqjgN6Wng','training_id' => 12],
+            ['video' => 'https://youtu.be/auVavhbFRh4','training_id' => 12],
+            ['video' => 'https://youtu.be/vJG2fuUiLsI','training_id' => 12],
+            ['video' => 'https://youtu.be/mWjqDVU-wd4','training_id' => 12],
 
+            // Поясничный отдел
             // Xrenovo FireFox mail.robot192@gmail.com
             ['video' => 'https://youtu.be/gwFe-MNmyaQ','training_id' => 13],
             ['video' => 'https://youtu.be/DpLsQZi-flw','training_id' => 13],
@@ -1157,6 +1230,32 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/MHIskYLI0NI','training_id' => 13],
             ['video' => 'https://youtu.be/HwkVnMX_apw','training_id' => 13],
             ['video' => 'https://youtu.be/izS1t8kTEvo','training_id' => 13],
+
+            // Укрепление мышц тазов дна
+            // Old FireFox nesmelov.and.company@gmail.com
+            ['video' => 'https://youtu.be/SIqcAQPcj-E','training_id' => 14],
+            ['video' => 'https://youtu.be/XjOQT3i-4kg','training_id' => 14],
+            ['video' => 'https://youtu.be/Scy7oWZ3kUU','training_id' => 14],
+            ['video' => 'https://youtu.be/rNmrMlaatOI','training_id' => 14],
+            ['video' => 'https://youtu.be/bz4_GXHCxqc','training_id' => 14],
+            ['video' => 'https://youtu.be/i_ppBOL08A0','training_id' => 14],
+            ['video' => 'https://youtu.be/5mPtf_403Kw','training_id' => 14],
+            ['video' => 'https://youtu.be/U6QMaG79gvg','training_id' => 14],
+            ['video' => 'https://youtu.be/_sNCcBZ7u24','training_id' => 14],
+            ['video' => 'https://youtu.be/XUmt8iIQnPM','training_id' => 14],
+
+            // Main FireFox myfit.robot@gmail.com
+            // Голеностопный сустав
+            ['video' => '','training_id' => 15],
+            ['video' => '','training_id' => 15],
+            ['video' => '','training_id' => 15],
+            ['video' => '','training_id' => 15],
+            ['video' => '','training_id' => 15],
+            ['video' => '','training_id' => 15],
+            ['video' => '','training_id' => 15],
+            ['video' => '','training_id' => 15],
+            ['video' => '','training_id' => 15],
+            ['video' => '','training_id' => 15],
         ];
         
         foreach ($dataTrainings as $k => $training) {
