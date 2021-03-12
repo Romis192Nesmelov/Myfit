@@ -1289,6 +1289,58 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/C7ugfJCyaEc','training_id' => 18],
             ['video' => 'https://youtu.be/OnXL8Xfl_-s','training_id' => 18],
             ['video' => 'https://youtu.be/cKB4chlxyXY','training_id' => 18],
+
+            // TRX №4
+            // WorkUbuntu FireFox nesmelov.robot@gmail.com
+            ['video' => 'https://youtu.be/ZgVyy72E-D8','training_id' => 19],
+            ['video' => 'https://youtu.be/X-LFJRdZF-g','training_id' => 19],
+            ['video' => 'https://youtu.be/KTSGSUsKRR4','training_id' => 19],
+            ['video' => 'https://youtu.be/c_o15kg3_N8','training_id' => 19],
+            ['video' => 'https://youtu.be/oPduK5WvLo4','training_id' => 19],
+            ['video' => 'https://youtu.be/IFDAMvNkfxs','training_id' => 19],
+            ['video' => 'https://youtu.be/i2W95gz0YvA','training_id' => 19],
+            ['video' => 'https://youtu.be/x1X9iokULqs','training_id' => 19],
+            ['video' => 'https://youtu.be/thzW-l-ME8E','training_id' => 19],
+            ['video' => 'https://youtu.be/RZjwZn5Mqio','training_id' => 19],
+
+            //------------------------------------------------------------------- BOSU
+            // BOSU №1
+            // WorkUbuntu FireFox nesmelov.robot@gmail.com
+            ['video' => 'https://youtu.be/AsBkHXiPkMU','training_id' => 20],
+            ['video' => 'https://youtu.be/NahrjsALSdc','training_id' => 20],
+            ['video' => 'https://youtu.be/T6h_Y-4E4YQ','training_id' => 20],
+            ['video' => 'https://youtu.be/OSPFxrLRwoM','training_id' => 20],
+            ['video' => 'https://youtu.be/bDrHmbEJNP8','training_id' => 20],
+            ['video' => 'https://youtu.be/eDPEuuS1pNU','training_id' => 20],
+            ['video' => '','training_id' => 20],
+            ['video' => '','training_id' => 20],
+            ['video' => '','training_id' => 20],
+            ['video' => '','training_id' => 20],
+
+            // BOSU №2
+            // Main Opera robot.stroter@gmail.com
+            ['video' => 'https://youtu.be/Np7-sXz54WQ','training_id' => 21],
+            ['video' => 'https://youtu.be/EBk2Hoi6U2s','training_id' => 21],
+            ['video' => 'https://youtu.be/uR6y3XSHuJo','training_id' => 21],
+            ['video' => 'https://youtu.be/b2nom2aW3-0','training_id' => 21],
+            ['video' => 'https://youtu.be/DjhRoT3xiDE','training_id' => 21],
+            ['video' => 'https://youtu.be/UpRBxi3uf3o','training_id' => 21],
+            ['video' => 'https://youtu.be/pI-jbXBvo6A','training_id' => 21],
+            ['video' => 'https://youtu.be/aldIAvh0Ecs','training_id' => 21],
+            ['video' => 'https://youtu.be/8wFG1485Osk','training_id' => 21],
+            ['video' => 'https://youtu.be/GHEvE9t_pTY','training_id' => 21],
+
+            // BOSU №3
+            // Main Opera robot.stroter@gmail.com
+            ['video' => 'https://youtu.be/T6aY2qZOA48','training_id' => 22],
+            ['video' => 'https://youtu.be/MUYhWUYZFp8','training_id' => 22],
+            ['video' => 'https://youtu.be/x4gxVnIWYYQ','training_id' => 22],
+            ['video' => 'https://youtu.be/2YoxNhgYYFE','training_id' => 22],
+            ['video' => 'https://youtu.be/TcO6ovN-Pe8','training_id' => 22],
+            ['video' => 'https://youtu.be/D2KtfJin4mg','training_id' => 22],
+            ['video' => 'https://youtu.be/0F0oYm2IKhY','training_id' => 22],
+            ['video' => 'https://youtu.be/b_9qXgK4rDk','training_id' => 22],
+            ['video' => 'https://youtu.be/bYkn3-5g7j8','training_id' => 22],
         ];
         
         foreach ($dataTrainings as $k => $training) {
