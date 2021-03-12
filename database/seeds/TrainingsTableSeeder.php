@@ -1268,6 +1268,27 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/oRHcti_EIhc','training_id' => 16],
             ['video' => 'https://youtu.be/COrz8ybl0sg','training_id' => 16],
             ['video' => '','training_id' => 16],
+
+            // TRX №2
+            // Xrenovo FireFox mail.robot192@gmail.com
+            ['video' => 'https://youtu.be/YQqdPIFN2Zg','training_id' => 17],
+            ['video' => 'https://youtu.be/cj_04nZZEUs','training_id' => 17],
+            ['video' => 'https://youtu.be/PNPjwUSM3kM','training_id' => 17],
+            ['video' => 'https://youtu.be/UOZVN5BE52c','training_id' => 17],
+            ['video' => 'https://youtu.be/wG0OsSAqM5w','training_id' => 17],
+            ['video' => 'https://youtu.be/flhJbK1jIAI','training_id' => 17],
+
+            // TRX №3
+            // Xrenovo FireFox mail.robot192@gmail.com
+            ['video' => 'https://youtu.be/a5X4X3SokF8','training_id' => 18],
+            ['video' => 'https://youtu.be/aeT_LpBUkBE','training_id' => 18],
+            ['video' => 'https://youtu.be/xX9y1KRBMfg','training_id' => 18],
+            ['video' => 'https://youtu.be/DRm6I1hZW3g','training_id' => 18],
+            ['video' => 'https://youtu.be/8MkkoJ556hI','training_id' => 18],
+            ['video' => 'https://youtu.be/kwtYApP9GCw','training_id' => 18],
+            ['video' => 'https://youtu.be/C7ugfJCyaEc','training_id' => 18],
+            ['video' => 'https://youtu.be/OnXL8Xfl_-s','training_id' => 18],
+            ['video' => 'https://youtu.be/cKB4chlxyXY','training_id' => 18],
         ];
         
         foreach ($dataTrainings as $k => $training) {
