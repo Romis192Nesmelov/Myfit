@@ -1267,7 +1267,7 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/CVV6ZnF4-4E','training_id' => 16],
             ['video' => 'https://youtu.be/oRHcti_EIhc','training_id' => 16],
             ['video' => 'https://youtu.be/COrz8ybl0sg','training_id' => 16],
-            ['video' => '','training_id' => 16],
+            ['video' => 'https://youtu.be/agKvJTeexK4','training_id' => 16],
 
             // TRX №2
             // Xrenovo FireFox mail.robot192@gmail.com
@@ -1312,10 +1312,11 @@ class TrainingsTableSeeder extends Seeder
             ['video' => 'https://youtu.be/OSPFxrLRwoM','training_id' => 20],
             ['video' => 'https://youtu.be/bDrHmbEJNP8','training_id' => 20],
             ['video' => 'https://youtu.be/eDPEuuS1pNU','training_id' => 20],
-            ['video' => '','training_id' => 20],
-            ['video' => '','training_id' => 20],
-            ['video' => '','training_id' => 20],
-            ['video' => '','training_id' => 20],
+            ['video' => 'https://youtu.be/uGFBThIdZdg','training_id' => 20],
+            ['video' => 'https://youtu.be/9C7D_3I68tg','training_id' => 20],
+            ['video' => 'https://youtu.be/9r6Ozk0qKxk','training_id' => 20],
+            ['video' => 'https://youtu.be/qWRdVGm7ZGQ','training_id' => 20],
+            ['video' => 'https://youtu.be/QjoylkmqyBI','training_id' => 20],
 
             // BOSU №2
             // Main Opera robot.stroter@gmail.com
