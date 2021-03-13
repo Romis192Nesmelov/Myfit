@@ -856,7 +856,7 @@ class TrainingsTableSeeder extends Seeder
 
                 'with_cardio' => 0,
                 'its_cardio' => 1,
-                'price' => 0,
+                'price' => 2500,
                 'active' => 1,
                 'program_id' => 6
             ],
@@ -889,7 +889,7 @@ class TrainingsTableSeeder extends Seeder
 
                 'with_cardio' => 0,
                 'its_cardio' => 1,
-                'price' => 0,
+                'price' => 2500,
                 'active' => 1,
                 'program_id' => 6
             ],
@@ -922,7 +922,7 @@ class TrainingsTableSeeder extends Seeder
 
                 'with_cardio' => 0,
                 'its_cardio' => 1,
-                'price' => 0,
+                'price' => 2500,
                 'active' => 1,
                 'program_id' => 6
             ],
@@ -955,7 +955,7 @@ class TrainingsTableSeeder extends Seeder
 
                 'with_cardio' => 0,
                 'its_cardio' => 1,
-                'price' => 0,
+                'price' => 2500,
                 'active' => 1,
                 'program_id' => 6
             ],
