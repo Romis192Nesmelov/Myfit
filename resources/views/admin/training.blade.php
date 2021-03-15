@@ -180,28 +180,6 @@
                                             'placeholder' => trans('content.warmup_warning_title'),
                                             'value' => isset($data['training']) ? $data['training']->warmup_warning_title : ''
                                         ])
-
-                                        @include('admin._textarea_block',[
-                                            'label' => trans('content.warmup_warning_description'),
-                                            'name' => 'warmup_warning_description',
-                                            'value' => isset($data['training']) ? $data['training']->warmup_warning_description : '',
-                                            'simple' => true
-                                        ])
-
-                                        @include('admin._input_block', [
-                                            'label' => trans('content.warmup_recommendation_title'),
-                                            'name' => 'warmup_recommendation_title',
-                                            'type' => 'text',
-                                            'placeholder' => trans('content.warmup_recommendation_title'),
-                                            'value' => isset($data['training']) ? $data['training']->warmup_recommendation_title : ''
-                                        ])
-
-                                        @include('admin._textarea_block',[
-                                            'label' => trans('content.warmup_recommendation_description'),
-                                            'name' => 'warmup_recommendation_description',
-                                            'value' => isset($data['training']) ? $data['training']->warmup_recommendation_description : '',
-                                            'simple' => true
-                                        ])
                                     </div>
                                 </div>
                             </div>
@@ -225,21 +203,6 @@
                                             'value' => isset($data['training']) ? $data['training']->main_warning_description : '',
                                             'simple' => true
                                         ])
-
-                                        @include('admin._input_block', [
-                                            'label' => trans('content.main_recommendation_title'),
-                                            'name' => 'main_recommendation_title',
-                                            'type' => 'text',
-                                            'placeholder' => trans('content.main_recommendation_title'),
-                                            'value' => isset($data['training']) ? $data['training']->main_recommendation_title : ''
-                                        ])
-
-                                        @include('admin._textarea_block',[
-                                            'label' => trans('content.main_recommendation_description'),
-                                            'name' => 'main_recommendation_description',
-                                            'value' => isset($data['training']) ? $data['training']->main_recommendation_description : '',
-                                            'simple' => true
-                                        ])
                                     </div>
                                 </div>
                             </div>
@@ -261,21 +224,6 @@
                                             'label' => trans('content.hitch_warning_description'),
                                             'name' => 'hitch_warning_description',
                                             'value' => isset($data['training']) ? $data['training']->hitch_warning_description : '',
-                                            'simple' => true
-                                        ])
-
-                                        @include('admin._input_block', [
-                                            'label' => trans('content.hitch_recommendation_title'),
-                                            'name' => 'hitch_recommendation_title',
-                                            'type' => 'text',
-                                            'placeholder' => trans('content.hitch_recommendation_title'),
-                                            'value' => isset($data['training']) ? $data['training']->hitch_recommendation_title : ''
-                                        ])
-
-                                        @include('admin._textarea_block',[
-                                            'label' => trans('content.hitch_recommendation_description'),
-                                            'name' => 'hitch_recommendation_description',
-                                            'value' => isset($data['training']) ? $data['training']->hitch_recommendation_description : '',
                                             'simple' => true
                                         ])
                                     </div>

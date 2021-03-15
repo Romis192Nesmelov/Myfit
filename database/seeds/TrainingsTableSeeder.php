@@ -21,22 +21,15 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '1-2 круга (нагрузку увеличивать постепенно).',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба',
                 'main_cardio_description' => '1-2 раза в неделю по 20-30 минут. Режим - равномерный. ЧП 70-75% от максима.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -54,22 +47,15 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '1-2 круга (нагрузку увеличивать постепенно). Акцент на приводящую группу мышц бёдер.',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба',
-                'main_cardio_description' => '1-2 раза в неделю по 30-40 минут. Режим- равномерный. ЧП 70-75% от максима.',
+                'main_cardio_description' => '1-2 раза в неделю по 30-40 минут. Режим - равномерный. ЧП 70-75% от максима.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -83,26 +69,19 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 5,
                 'duration' => 8,
                 'periodicity' => '2-3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/гантели от 2 кг/скакалка',
+                'equipment' => 'гимнастический коврик / гимнастический мяч / гантели от 2 кг / скакалка',
                 'need_previous_completed' => 1,
 
                 'warmup_warning_title' => '4-6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба',
                 'main_cardio_description' => '1 трениновка: 30-40 минут, режим работы равномерный; 2 тренировка: 20-30 минут, режим работы интервальный',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -116,26 +95,19 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 6,
                 'duration' => 8,
                 'periodicity' => '2-3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/гантели от 2 кг/скакалка/резиновый эспандер',
+                'equipment' => 'гимнастический коврик / гимнастический мяч / гантели от 2 кг / скакалка / резиновый эспандер',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '5-6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '1-3 круга (нагрузку увеличивать постепенно)',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба',
                 'main_cardio_description' => '1 тренировка: 30-40 минут, режим работы равномерный; 2 тренировка: 30-40 минут, режим работы равномерный',
 
                 'hitch_warning_title' => 'стрейч 4-6 упражнений',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -160,22 +132,15 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => '',
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Прогулки с коляской.',
                 'main_cardio_description' => 'Темп медленный.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -198,22 +163,15 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => '',
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '13 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Прогулки с коляской.',
                 'main_cardio_description' => ' Темп медленный.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -227,7 +185,7 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 4,
                 'duration' => 8,
                 'periodicity' => '2-3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/резиновый эспандер',
+                'equipment' => 'гимнастический коврик / гимнастический мяч / резиновый эспандер',
                 'need_previous_completed' => 1,
 
                 'warning_title' => 'С разрешения лечащего врача',
@@ -236,22 +194,15 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Переход к тренировкам высокого уровня, рекомендуется только после прохождения предыдущих программ',
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю.',
                 'main_cardio_description' => ' Темп - средний.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -265,7 +216,7 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 6,
                 'duration' => 10,
                 'periodicity' => '1-2',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/гантели 2 кг',
+                'equipment' => 'гимнастический коврик / гимнастический мяч / гантели 2 кг',
                 'need_previous_completed' => 1,
 
                 'warning_title' => 'С разрешения лечащего врача',
@@ -274,22 +225,15 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Переход к тренировкам высокого уровня, рекомендуется только после прохождения предыдущих программ',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю.',
                 'main_cardio_description' => ' Темп - средний.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -303,7 +247,7 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 6,
                 'duration' => 10,
                 'periodicity' => '1-2',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/гантели 2 кг',
+                'equipment' => 'гимнастический коврик / гимнастический мяч / гантели 2 кг',
                 'need_previous_completed' => 1,
 
                 'warning_title' => 'С разрешения лечащего врача',
@@ -312,22 +256,15 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Переход к тренировкам высокого уровня, рекомендуется только после прохождения предыдущих программ',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю.',
                 'main_cardio_description' => ' Темп - средний.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -347,22 +284,15 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю по 15-20 минут',
                 'main_cardio_description' => 'Частота пульса 70-80% от максима',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -376,26 +306,19 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '2-3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/скакалка',
+                'equipment' => 'гимнастический коврик / гимнастический мяч / скакалка',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 2-3 раза в неделю по 15-20 минут.',
                 'main_cardio_description' => 'Частота пульса 70-75% от максима.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -409,26 +332,19 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/скакалка/гантели по1-2 кг',
+                'equipment' => 'гимнастический коврик / гимнастический мяч / скакалка / гантели по1-2 кг',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 2 раза в неделю по 30 минут.',
                 'main_cardio_description' => ' Частота пульса 75% от максима.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -443,26 +359,19 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 2,
                 'duration' => 8,
                 'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч',
+                'equipment' => 'гимнастический коврик / гимнастический мяч',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю 15 минут.',
                 'main_cardio_description' => 'Темп медленный.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -476,26 +385,19 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 2,
                 'duration' => 8,
                 'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч',
+                'equipment' => 'гимнастический коврик / гимнастический мяч',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю 15 минут.',
                 'main_cardio_description' => 'Темп медленный.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -509,26 +411,19 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 2,
                 'duration' => 8,
                 'periodicity' => '2-3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/резиновый эспандер (легкий)',
+                'equipment' => 'гимнастический коврик / гимнастический мяч / резиновый эспандер (легкий)',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 2-3 раза в неделю по 20 минут.',
                 'main_cardio_description' => 'Частота пульса 70-75% от максима.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -542,26 +437,19 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 2,
                 'duration' => 8,
                 'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/гимнастический мяч/гантели 2 кг',
+                'equipment' => 'гимнастический коврик / гимнастический мяч / гантели 2 кг',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '13 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => 'Оздоровительная ходьба 2 раза в неделю по 10-15 минут.',
                 'main_cardio_description' => 'Темп очень медленный.',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -577,29 +465,22 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '2-3',
-                'equipment' => 'ленты TRX/гимнастический коврик/скакалка',
+                'equipment' => 'ленты TRX / гимнастический коврик / скакалка',
                 'need_previous_completed' => 0,
 
                 'recommendation_title' => 'Рекомендация!',
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => '1-2 раза в неделю 30-40 минут.',
                 'main_cardio_description' => ' Частота пульса 70-80 % от максима.',
 
                 'hitch_warning_title' => 'стрейч 4 упражнений (фото)',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -613,29 +494,22 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 4,
                 'duration' => 6,
                 'periodicity' => '2-3',
-                'equipment' => 'ленты TRX/гимнастический коврик/скакалка',
+                'equipment' => 'ленты TRX / гимнастический коврик / скакалка',
                 'need_previous_completed' => 0,
 
                 'recommendation_title' => 'Рекомендация!',
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => '1-2 раза в неделю по 40 минут.',
                 'main_cardio_description' => 'Частота пульса 70-80 % от максима.',
 
                 'hitch_warning_title' => 'стрейч 4 упражнений (фото)',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -649,29 +523,22 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 5,
                 'duration' => 6,
                 'periodicity' => '2-3',
-                'equipment' => 'ленты TRX/гимнастический коврик/скакалка',
+                'equipment' => 'ленты TRX / гимнастический коврик / скакалка',
                 'need_previous_completed' => 0,
 
                 'recommendation_title' => 'Рекомендация!',
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => '1-2 раза в неделю 40-60 минут.',
                 'main_cardio_description' => 'Частота пульса 70-80 % от максима.',
 
                 'hitch_warning_title' => 'стрейч 4 упражнений (фото)',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -685,29 +552,22 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 2,
                 'duration' => 6,
                 'periodicity' => '2-3',
-                'equipment' => 'ленты TRX/гимнастический коврик/скакалка',
+                'equipment' => 'ленты TRX / гимнастический коврик / скакалка',
                 'need_previous_completed' => 0,
 
                 'recommendation_title' => 'Рекомендация!',
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => '1-2 раза в неделю 30-40 минут.',
                 'main_cardio_description' => ' Частота пульса 70-80 % от максима.',
 
                 'hitch_warning_title' => 'стрейч 4 упражнений (фото)',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -723,29 +583,22 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 4,
                 'duration' => 6,
                 'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/BOSU/скакалка',
+                'equipment' => 'гимнастический коврик / BOSU / скакалка',
                 'need_previous_completed' => 0,
 
                 'recommendation_title' => 'Рекомендация!',
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => '1-2 раза в неделю. По 40-60 минут.',
                 'main_cardio_description' => 'Частота пульса 75% от максима.',
 
                 'hitch_warning_title' => 'стрейч 4 упражнений (фото)',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -759,29 +612,22 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 5,
                 'duration' => 6,
                 'periodicity' => '2-3',
-                'equipment' => 'гимнастический коврик/BOSU/скакалка',
+                'equipment' => 'гимнастический коврик / BOSU / скакалка',
                 'need_previous_completed' => 0,
 
                 'recommendation_title' => 'Рекомендация!',
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => '1-2 раза в неделю. По 40 минут.',
                 'main_cardio_description' => 'Частота пульса 75-80% от максима.',
 
                 'hitch_warning_title' => 'стрейч 4 упражнений (фото)',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -795,29 +641,22 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 6,
                 'duration' => 6,
                 'periodicity' => '3',
-                'equipment' => 'гимнастический коврик/резиновый эспандер/гантели 3-4 кг/скакалка/BOSU',
+                'equipment' => 'гимнастический коврик / резиновый эспандер / гантели 3-4 кг / скакалка/ BOSU',
                 'need_previous_completed' => 0,
 
                 'recommendation_title' => 'Рекомендация!',
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => '2 раза в неделю. По 60 минут.',
                 'main_cardio_description' => 'Частота пульса 75-80% от максима.',
 
                 'hitch_warning_title' => 'стрейч 4 упражнений (фото)',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 1,
                 'its_cardio' => 0,
@@ -837,22 +676,15 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '',
                 'main_warning_description' => '',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => '',
                 'main_cardio_description' => '',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 0,
                 'its_cardio' => 1,
@@ -870,22 +702,15 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '',
                 'main_warning_description' => '',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => '',
                 'main_cardio_description' => '',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 0,
                 'its_cardio' => 1,
@@ -903,22 +728,15 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '',
                 'main_warning_description' => '',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => '',
                 'main_cardio_description' => '',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 0,
                 'its_cardio' => 1,
@@ -936,22 +754,15 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '',
-                'warmup_warning_description' => '',
-                'warmup_recommendation_title' => '',
-                'warmup_recommendation_description' => '',
 
                 'main_warning_title' => '',
                 'main_warning_description' => '',
-                'main_recommendation_title' => '',
-                'main_recommendation_description' => '',
 
                 'main_cardio_title' => '',
                 'main_cardio_description' => '',
 
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
-                'hitch_recommendation_title' => '',
-                'hitch_recommendation_description' => '',
 
                 'with_cardio' => 0,
                 'its_cardio' => 1,

@@ -217,22 +217,15 @@ class AdminController extends UserController
             'recommendation_description' => 'required|max:1000',
 
             'warmup_warning_title' => 'max:191',
-            'warmup_warning_description' => 'max:1000',
-            'warmup_recommendation_title' => 'max:191',
-            'warmup_recommendation_description' => 'max:1000',
 
             'main_warning_title' => 'required|max:191',
             'main_warning_description' => 'required|max:1000',
-            'main_recommendation_title' => 'required|max:191',
-            'main_recommendation_description' => 'required|max:1000',
 
             'main_cardio_title' => 'max:191',
             'main_cardio_description' => 'max:1000',
 
             'hitch_warning_title' => 'max:191',
             'hitch_warning_description' => 'max:1000',
-            'hitch_recommendation_title' => 'max:191',
-            'hitch_recommendation_description' => 'max:1000',
 
             'price' => 'required|integer|min:50|max:10000',
             'program_id' => $this->validationProgram
