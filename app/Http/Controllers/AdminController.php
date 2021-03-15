@@ -207,19 +207,20 @@ class AdminController extends UserController
     {
         $validationArr = [
             'complexity' => 'required|integer|min:1|max:6',
-            'duration' => 'regex:/^(\d(\s?-\s?\d)?)$/',
-            'periodicity' => 'required|integer|min:1|max:7',
-            'equipment' => 'required|max:191',
+            'duration' => 'required|integer|min:1|max:7',
+            'periodicity' => 'regex:/^(\d(\s?-\s?\d)?)$/',
+            'equipment' => 'max:191',
 
-            'warning_title' => 'required|max:191',
-            'warning_description' => 'required|max:1000',
-            'recommendation_title' => 'required|max:191',
-            'recommendation_description' => 'required|max:1000',
+            'warning_title' => 'max:191',
+            'warning_description' => 'max:1000',
+            'recommendation_title' => 'max:191',
+            'recommendation_description' => 'max:1000',
 
             'warmup_warning_title' => 'max:191',
+            'warmup_warning_description' => 'max:1000',
 
-            'main_warning_title' => 'required|max:191',
-            'main_warning_description' => 'required|max:1000',
+            'main_warning_title' => 'max:191',
+            'main_warning_description' => 'max:1000',
 
             'main_cardio_title' => 'max:191',
             'main_cardio_description' => 'max:1000',

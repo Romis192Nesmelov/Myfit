@@ -117,7 +117,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-9 col-sm-12 col-xs-12">
                     <div class="panel panel-flat">
                         <div class="panel-body">
@@ -129,10 +128,10 @@
                                 'value' => isset($data['training']) ? $data['training']->equipment : ''
                             ])
 
-                            <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="panel panel-flat">
                                     <div class="panel-heading">
-                                        <h5 class="panel-title">{{ trans('content.description') }}</h5>
+                                        <h5 class="panel-title">{{ trans('content.warning') }}</h5>
                                     </div>
                                     <div class="panel-body">
                                         @include('admin._input_block', [
@@ -180,27 +179,11 @@
                                             'placeholder' => trans('content.warmup_warning_title'),
                                             'value' => isset($data['training']) ? $data['training']->warmup_warning_title : ''
                                         ])
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 col-xs-12">
-                                <div class="panel panel-flat">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">{{ trans('content.main_content') }}</h5>
-                                    </div>
-                                    <div class="panel-body">
-                                        @include('admin._input_block', [
-                                            'label' => trans('content.main_warning_title'),
-                                            'name' => 'main_warning_title',
-                                            'type' => 'text',
-                                            'placeholder' => trans('content.main_warning_title'),
-                                            'value' => isset($data['training']) ? $data['training']->main_warning_title : ''
-                                        ])
 
                                         @include('admin._textarea_block',[
-                                            'label' => trans('content.main_warning_description'),
-                                            'name' => 'main_warning_description',
-                                            'value' => isset($data['training']) ? $data['training']->main_warning_description : '',
+                                            'label' => trans('content.warmup_warning_description'),
+                                            'name' => 'warmup_warning_description',
+                                            'value' => isset($data['training']) ? $data['training']->warmup_warning_description : '',
                                             'simple' => true
                                         ])
                                     </div>
@@ -229,6 +212,30 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="panel panel-flat">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">{{ trans('content.main_content') }}</h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        @include('admin._input_block', [
+                                            'label' => trans('content.main_warning_title'),
+                                            'name' => 'main_warning_title',
+                                            'type' => 'text',
+                                            'placeholder' => trans('content.main_warning_title'),
+                                            'value' => isset($data['training']) ? $data['training']->main_warning_title : ''
+                                        ])
+
+                                        @include('admin._textarea_block',[
+                                            'label' => trans('content.main_warning_description'),
+                                            'name' => 'main_warning_description',
+                                            'value' => isset($data['training']) ? $data['training']->main_warning_description : '',
+                                            'simple' => true
+                                        ])
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="panel panel-flat">
                                     <div class="panel-heading">

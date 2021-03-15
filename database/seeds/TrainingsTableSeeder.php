@@ -21,6 +21,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '1-2 круга (нагрузку увеличивать постепенно).',
@@ -47,6 +48,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '1-2 круга (нагрузку увеличивать постепенно). Акцент на приводящую группу мышц бёдер.',
@@ -73,6 +75,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 1,
 
                 'warmup_warning_title' => '4-6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '',
@@ -99,6 +102,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '5-6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '1-3 круга (нагрузку увеличивать постепенно)',
@@ -132,7 +136,8 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => '',
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
-
+                'warmup_warning_description' => '',
+                
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
 
@@ -163,6 +168,7 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => '',
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '13 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
@@ -194,6 +200,7 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Переход к тренировкам высокого уровня, рекомендуется только после прохождения предыдущих программ',
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
@@ -225,6 +232,7 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Переход к тренировкам высокого уровня, рекомендуется только после прохождения предыдущих программ',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
@@ -256,6 +264,7 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Переход к тренировкам высокого уровня, рекомендуется только после прохождения предыдущих программ',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
@@ -284,6 +293,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
@@ -310,6 +320,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
@@ -336,6 +347,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
@@ -363,6 +375,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
@@ -389,6 +402,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
@@ -415,6 +429,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
@@ -441,6 +456,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '4-5 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '13 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
@@ -472,6 +488,7 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
@@ -501,6 +518,7 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '11 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
@@ -530,7 +548,8 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
-
+                'warmup_warning_description' => '',
+                
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
 
@@ -559,6 +578,7 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
@@ -590,6 +610,7 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
@@ -619,6 +640,7 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
@@ -648,6 +670,7 @@ class TrainingsTableSeeder extends Seeder
                 'recommendation_description' => 'Все упражнения делать одно за другим без отдыха.',
 
                 'warmup_warning_title' => '6 упражнений (фото)',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
@@ -676,6 +699,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '',
                 'main_warning_description' => '',
@@ -702,6 +726,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '',
                 'main_warning_description' => '',
@@ -728,6 +753,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '',
                 'main_warning_description' => '',
@@ -754,6 +780,7 @@ class TrainingsTableSeeder extends Seeder
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => '',
+                'warmup_warning_description' => '',
 
                 'main_warning_title' => '',
                 'main_warning_description' => '',

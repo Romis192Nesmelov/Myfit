@@ -20,6 +20,7 @@ class Training extends Model
         'recommendation_description',
 
         'warmup_warning_title',
+        'warmup_warning_description',
         
         'main_warning_title',
         'main_warning_description',
