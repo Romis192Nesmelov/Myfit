@@ -19,9 +19,16 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Юлия Павликова',
                 'email' => 'pavlicova67@gmail.com',
-                'password' => '',
+                'password' => bcrypt('pavlicova'),
                 'active' => 1,
-                'admin' => 0
+                'admin' => 1
+            ],
+            [
+                'name' => 'Евгения Цаплева',
+                'email' => 'jazzzfank@gmail.com',
+                'password' => bcrypt('jazzzfank'),
+                'active' => 1,
+                'admin' => 1
             ],
             [
                 'name' => 'Евгений Степаненко',
@@ -44,7 +51,7 @@ class UsersTableSeeder extends Seeder
                 'email' => 'fekipa2328@aenmail.net',
                 'password' => '$2y$10$tKv0DECLg3.hI7Usdn8yZOjgq.dEFgYkcJQ1rBv8n/g7bLl9mNaSu',
                 'active' => 1,
-                'admin' => 0
+                'admin' => 1
             ],
         ];
 
