@@ -53,6 +53,14 @@ class UsersTableSeeder extends Seeder
                 'active' => 1,
                 'admin' => 1
             ],
+            [
+                'name' => 'Оксана',
+                'email' => 'tonya.1109@gmail.com',
+                'password' => bcrypt('tonya'),
+                'active' => 1,
+                'admin' => 1,
+                'receive_messages' => 1
+            ],
         ];
 
         foreach ($data as $user) {

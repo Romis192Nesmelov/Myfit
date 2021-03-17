@@ -132,7 +132,7 @@ class UserController extends Controller
                 'price'
             )->first()->toArray();
 
-        $training['its_paid'] = $this->checkPaid($request, $training['price']);
+        $training['its_paid'] = $request->user()->admin || $this->checkPaid($request, $training['price']);
         $training['periodicity'] = $this->setNumeralPeriodicity($training['periodicity']);
         return response()->json([
             'success' => true,
@@ -144,7 +144,9 @@ class UserController extends Controller
     {
         return response()->json([
             'success' => true,
-            'trainings' => Payment::where('user_id',$request->user()->id)->where('active',1)->pluck('training_id')->toArray()
+            'trainings' => $request->user()->admin 
+                ? Training::where('active',1)->pluck('id')->toArray() 
+                : Payment::where('user_id',$request->user()->id)->where('active',1)->pluck('training_id')->toArray()
         ], 200);
     }
     
@@ -197,7 +199,7 @@ class UserController extends Controller
         ]);
         $id = $request->input('id');
         $training = Training::with('goals')->with('videos')->where('active',1)->where('id',$id)->first()->toArray();
-        if (!$this->checkPaid($request, $training['price'])) return response()->json(['success' => false, 'error' => trans('auth.training_access_err')], 403);
+        if (!$this->checkPaid($request, $training['price']) && !$request->user()->admin) return response()->json(['success' => false, 'error' => trans('auth.training_access_err')], 403);
         $training['periodicity'] = $this->setNumeralPeriodicity($training['periodicity']);
         $training['photos'] = TrainingPhoto::get()->toArray();
         return response()->json([
