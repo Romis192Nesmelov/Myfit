@@ -29,7 +29,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба',
                 'main_cardio_description' => '1-2 раза в неделю по 20-30 минут. Режим - равномерный. ЧП 70-75% от максима.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -56,7 +56,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба',
                 'main_cardio_description' => '1-2 раза в неделю по 30-40 минут. Режим - равномерный. ЧП 70-75% от максима.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -83,7 +83,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба',
                 'main_cardio_description' => '1 трениновка: 30-40 минут, режим работы равномерный; 2 тренировка: 20-30 минут, режим работы интервальный',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -144,7 +144,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Прогулки с коляской.',
                 'main_cardio_description' => 'Темп медленный.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -176,7 +176,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Прогулки с коляской.',
                 'main_cardio_description' => ' Темп медленный.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -208,7 +208,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю.',
                 'main_cardio_description' => ' Темп - средний.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -240,7 +240,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю.',
                 'main_cardio_description' => ' Темп - средний.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -272,7 +272,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю.',
                 'main_cardio_description' => ' Темп - средний.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -301,7 +301,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю по 15-20 минут',
                 'main_cardio_description' => 'Частота пульса 70-80% от максима',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -328,7 +328,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба 2-3 раза в неделю по 15-20 минут.',
                 'main_cardio_description' => 'Частота пульса 70-75% от максима.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -355,7 +355,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба 2 раза в неделю по 30 минут.',
                 'main_cardio_description' => ' Частота пульса 75% от максима.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -374,7 +374,7 @@ class TrainingsTableSeeder extends Seeder
                 'equipment' => 'гимнастический коврик / гимнастический мяч',
                 'need_previous_completed' => 0,
 
-                'warmup_warning_title' => '4-5 упражнений (фото)',
+                'warmup_warning_title' => 'Выполнять фиксируя позу 5-7 секунд , дыхание не задерживать',
                 'warmup_warning_description' => '',
 
                 'main_warning_title' => '12 упражнений (видео)',
@@ -383,7 +383,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю 15 минут.',
                 'main_cardio_description' => 'Темп медленный.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -410,7 +410,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба 1-2 раза в неделю 15 минут.',
                 'main_cardio_description' => 'Темп медленный.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -437,7 +437,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба 2-3 раза в неделю по 20 минут.',
                 'main_cardio_description' => 'Частота пульса 70-75% от максима.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -464,7 +464,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => 'Оздоровительная ходьба 2 раза в неделю по 10-15 минут.',
                 'main_cardio_description' => 'Темп очень медленный.',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 1,
@@ -707,7 +707,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => '',
                 'main_cardio_description' => '',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 0,
@@ -734,7 +734,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => '',
                 'main_cardio_description' => '',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 0,
@@ -761,7 +761,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => '',
                 'main_cardio_description' => '',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 0,
@@ -788,7 +788,7 @@ class TrainingsTableSeeder extends Seeder
                 'main_cardio_title' => '',
                 'main_cardio_description' => '',
 
-                'hitch_warning_title' => '',
+                'hitch_warning_title' => 'выполнять 15-20 секунд',
                 'hitch_warning_description' => '',
 
                 'with_cardio' => 0,
@@ -845,7 +845,7 @@ class TrainingsTableSeeder extends Seeder
             ['goal' => 'Сброс лишнего веса','training_id' => 8],
             ['goal' => 'Коррекция фигуры, локальная проработка мышечных групп','training_id' => 8],
 
-            // Послеродовой период №4-a
+            // Послеродовой период №4-b
             ['goal' => 'Сброс лишнего веса','training_id' => 9],
             ['goal' => 'Коррекция фигуры, локальная проработка мышечных групп','training_id' => 9],
 
