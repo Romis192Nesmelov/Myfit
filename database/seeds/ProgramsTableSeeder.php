@@ -40,7 +40,6 @@ class ProgramsTableSeeder extends Seeder
             ]
         ];
 
-
         foreach ($data as $k => $item) {
             $item['photo'] = 'images/programs/program'.($k+1).'.jpg';
             Program::create($item);
