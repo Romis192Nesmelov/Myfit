@@ -44,7 +44,7 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 4,
                 'duration' => 6,
                 'periodicity' => '2-3',
-                'equipment' => 'гимнастический коврик / гимнастический мяч / гантели от 2 кг / скакалка',
+                'equipment' => 'гимнастический мяч / гимнастический коврик',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => 'Фиксировать позу 5-7 секунд, не задерживать дыхание.',
@@ -98,7 +98,7 @@ class TrainingsTableSeeder extends Seeder
                 'complexity' => 6,
                 'duration' => 8,
                 'periodicity' => '2-3',
-                'equipment' => 'гимнастический коврик / гимнастический мяч / гантели от 2 кг / скакалка',
+                'equipment' => 'гимнастический коврик / гимнастический мяч / гантели от 2 кг / скакалка / резиновый эспандер',
                 'need_previous_completed' => 0,
 
                 'warmup_warning_title' => 'Фиксировать позу 5-7 секунд, не задерживать дыхание.',
