@@ -103,7 +103,7 @@ class UserController extends Controller
         )->get()->toArray();
 
         for ($i=0;$i<count($trainings);$i++) {
-            $trainings[$i]['its_paid'] = $this->checkPaid($request, $trainings[$i]['price'], $trainings[$i]['id']);
+            $trainings[$i]['its_paid'] = $request->user()->admin || $this->checkPaid($request, $trainings[$i]['price'], $trainings[$i]['id']);
         }
 
         return response()->json([
