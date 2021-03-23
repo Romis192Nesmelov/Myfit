@@ -193,10 +193,7 @@ class UserController extends Controller
 
     public function getTraining(Request $request)
     {
-        $this->validate($request, [
-            'id' => 'required|integer|exists:trainings,id',
-            'day' => 'required|integer'
-        ]);
+        $this->validate($request, ['id' => 'required|integer|exists:trainings,id']);
         $id = $request->input('id');
         $training = Training::with('goals')->with('videos')->where('active',1)->where('id',$id)->first()->toArray();
         if (!$this->checkPaid($request, $training['price']) && !$request->user()->admin) return response()->json(['success' => false, 'error' => trans('auth.training_access_err')], 403);
