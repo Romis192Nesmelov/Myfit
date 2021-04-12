@@ -103,7 +103,7 @@ class UserController extends Controller
         )->get()->toArray();
 
         for ($i=0;$i<count($trainings);$i++) {
-            $trainings[$i]['its_paid'] = $request->user()->admin || $this->checkPaid($request, $trainings[$i]['price'], $trainings[$i]['id']);
+            $trainings[$i]['its_paid'] = $this->checkPaid($request, $trainings[$i]['price'], $trainings[$i]['id']);
         }
 
         return response()->json([
@@ -132,7 +132,7 @@ class UserController extends Controller
                 'price'
             )->first()->toArray();
 
-        $training['its_paid'] = $request->user()->admin || $this->checkPaid($request, $training['price']);
+        $training['its_paid'] = $this->checkPaid($request, $training['price']);
         $training['periodicity'] = $this->setNumeralPeriodicity($training['periodicity']);
         return response()->json([
             'success' => true,
@@ -196,7 +196,7 @@ class UserController extends Controller
         $this->validate($request, ['id' => 'required|integer|exists:trainings,id']);
         $id = $request->input('id');
         $training = Training::with('goals')->with('videos')->where('active',1)->where('id',$id)->first()->toArray();
-        if (!$this->checkPaid($request, $training['price']) && !$request->user()->admin) return response()->json(['success' => false, 'error' => trans('auth.training_access_err')], 403);
+        if (!$this->checkPaid($request, $training['price'])) return response()->json(['success' => false, 'error' => trans('auth.training_access_err')], 403);
         $training['periodicity'] = $this->setNumeralPeriodicity($training['periodicity']);
         $training['photos'] = TrainingPhoto::get()->toArray();
         return response()->json([
@@ -336,6 +336,6 @@ class UserController extends Controller
     private function checkPaid(Request $request, $price, $id=null)
     {
         $paid = Payment::where('user_id',$request->user()->id)->where('training_id', ($id ? $id : $request->input('id')))->where('active',1)->first();
-        return $paid && isset($paid->value) && $paid->value == $price;
+        return $request->user()->admin || ($paid && isset($paid->value) && $paid->value == $price);
     }
 }

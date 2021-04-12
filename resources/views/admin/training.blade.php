@@ -232,6 +232,13 @@
                                             'value' => isset($data['training']) ? $data['training']->main_warning_description : '',
                                             'simple' => true
                                         ])
+
+                                        @include('admin._textarea_block',[
+                                            'label' => trans('content.main_text'),
+                                            'name' => 'main_text',
+                                            'value' => isset($data['training']) ? $data['training']->main_text : '',
+                                            'simple' => true
+                                        ])
                                     </div>
                                 </div>
                             </div>

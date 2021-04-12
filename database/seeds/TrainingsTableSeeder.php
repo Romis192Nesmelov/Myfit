@@ -10,8 +10,8 @@ class TrainingsTableSeeder extends Seeder
     public function run()
     {
         $dataTrainings = [
-            // Program#1
-            // #1 id:1
+            //------------------------------------------------------------------- Функциональный тренировки
+// Функциональная тренировка №1 id:1
             [
                 'name' => 'Функциональная тренировка №1',
                 'complexity' => 2,
@@ -38,7 +38,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 1
             ],
-            // #2 id:2
+// Функциональная тренировка №2 id:2
             [
                 'name' => 'Функциональная тренировка №2',
                 'complexity' => 4,
@@ -65,7 +65,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 1
             ],
-            // #3 id:3
+// Функциональная тренировка №3 id:3
             [
                 'name' => 'Функциональная тренировка №3',
                 'complexity' => 5,
@@ -92,7 +92,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 1
             ],
-            // #4 id:4
+// Функциональная тренировка №4 id:4
             [
                 'name' => 'Функциональная тренировка №4',
                 'complexity' => 6,
@@ -119,9 +119,9 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 1
             ],
-            
-            // Program#2
-            // #1 id:5
+
+//------------------------------------------------------------------- Послеродовые тренировки
+// Послеродовой период №1 id:5
             [
                 'name' => 'Послеродовой период №1',
                 'complexity' => 2,
@@ -137,7 +137,7 @@ class TrainingsTableSeeder extends Seeder
 
                 'warmup_warning_title' => 'Фиксировать позу 5-7 секунд, не задерживать дыхание.',
                 'warmup_warning_description' => '',
-                
+
                 'main_warning_title' => '12 упражнений (видео)',
                 'main_warning_description' => '8-10 повторений / 1-2 круга',
 
@@ -153,7 +153,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 2
             ],
-            // #2 id:6
+// Послеродовой период №2 id:6
             [
                 'name' => 'Послеродовой период №2',
                 'complexity' => 2,
@@ -185,7 +185,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 2
             ],
-            // #3 id:7
+// Послеродовой период №3 id:7
             [
                 'name' => 'Послеродовой период №3',
                 'complexity' => 4,
@@ -217,7 +217,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 2
             ],
-            // #4 id:8
+// Послеродовой период №4-a id:8
             [
                 'name' => 'Послеродовой период №4-a',
                 'complexity' => 6,
@@ -249,7 +249,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 2
             ],
-            // #4 id:9
+// Послеродовой период №4-b id:9
             [
                 'name' => 'Послеродовой период №4-b',
                 'complexity' => 6,
@@ -281,9 +281,9 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 2
             ],
-            
-            // Program#3
-            // #1 id:10
+
+//------------------------------------------------------------------- 50+
+// Общеукрепляющие программа id:10
             [
                 'name' => 'Общеукрепляющие программа',
                 'complexity' => 2,
@@ -310,7 +310,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 3
             ],
-            // #2 id:11
+// ССС и ДС id:11
             [
                 'name' => 'ССС и ДС',
                 'complexity' => 2,
@@ -337,7 +337,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 3
             ],
-            // #3 id:12
+// Верхний плечевой пояс id:12
             [
                 'name' => 'Верхний плечевой пояс',
                 'complexity' => 2,
@@ -364,8 +364,8 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 3
             ],
-            
-            // #4 id:13
+
+// Коленные суставы id:13
             [
                 'name' => 'Коленные суставы',
                 'complexity' => 2,
@@ -392,7 +392,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 3
             ],
-            // #5 id:14
+// Поясничный отдел id:14
             [
                 'name' => 'Поясничный отдел',
                 'complexity' => 2,
@@ -419,7 +419,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 3
             ],
-            // #6 id:15
+// Укрепление мышц тазового дна id:15
             [
                 'name' => 'Укрепление мышц тазового дна',
                 'complexity' => 2,
@@ -446,7 +446,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 3
             ],
-            // #7 id:16
+// Голеностопный сустав id:16
             [
                 'name' => 'Голеностопный сустав',
                 'complexity' => 2,
@@ -473,9 +473,9 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 3
             ],
-            
-            // Program#4
-            // #1 id:17
+
+//------------------------------------------------------------------- TRX
+// TRX №1 id:17
             [
                 'name' => 'TRX №1',
                 'complexity' => 2,
@@ -505,7 +505,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 4
             ],
-            // #2 id:18
+// TRX №2 id:18
             [
                 'name' => 'TRX №2',
                 'complexity' => 4,
@@ -535,7 +535,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 4
             ],
-            // #3 id:19
+// TRX №3 id:19
             [
                 'name' => 'TRX №3',
                 'complexity' => 5,
@@ -549,7 +549,7 @@ class TrainingsTableSeeder extends Seeder
 
                 'warmup_warning_title' => 'Фиксировать позу 5-7 секунд, не задерживать дыхание.',
                 'warmup_warning_description' => '',
-                
+
                 'main_warning_title' => '10 упражнений (видео)',
                 'main_warning_description' => '10-15 повторений / 2-3 круга. Нагрузку увеличивать постепенно',
 
@@ -565,7 +565,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 4
             ],
-            // #4 id:20
+// TRX №4 id:20
             [
                 'name' => 'TRX №4',
                 'complexity' => 6,
@@ -596,8 +596,8 @@ class TrainingsTableSeeder extends Seeder
                 'program_id' => 4
             ],
 
-            // Program#5
-            // #1 id:21
+//------------------------------------------------------------------- BOSU
+// BOSU №1 id:21
             [
                 'name' => 'BOSU №1',
                 'complexity' => 4,
@@ -627,7 +627,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 5
             ],
-            // #2 id:22
+// BOSU №2 id:22
             [
                 'name' => 'BOSU №2',
                 'complexity' => 5,
@@ -657,7 +657,7 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 5
             ],
-            // #3 id:23
+// BOSU №3 id:23
             [
                 'name' => 'BOSU №3',
                 'complexity' => 6,
@@ -687,9 +687,9 @@ class TrainingsTableSeeder extends Seeder
                 'active' => 1,
                 'program_id' => 5
             ],
-            
-            // Program#6
-            // #1 id:24
+
+//------------------------------------------------------------------- Кардио
+// Кардио №1 id:24
             [
                 'name' => 'Кардио №1',
                 'complexity' => 2,
@@ -710,13 +710,15 @@ class TrainingsTableSeeder extends Seeder
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
 
+                'main_text' => 'Оздоровительная ходьба ( ЧСС 60-70%от max)',
+
                 'with_cardio' => 0,
                 'its_cardio' => 1,
                 'price' => 2500,
                 'active' => 1,
                 'program_id' => 6
             ],
-            // #2 id:25
+// Кардио №2 id:25
             [
                 'name' => 'Кардио №2',
                 'complexity' => 4,
@@ -737,13 +739,15 @@ class TrainingsTableSeeder extends Seeder
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
 
+                'main_text' => 'Чередование : Оздоровительной ходьбы с переходом на медленный бег с горки (или по прямой). Цикл 4+1 где:  4 минуты ходьба( ЧСС 60-70% от максимума )+1 минута бег (ЧСС 70-80% от максимума) чередовать, 6-8 циклов',
+
                 'with_cardio' => 0,
                 'its_cardio' => 1,
                 'price' => 2500,
                 'active' => 1,
                 'program_id' => 6
             ],
-            // #3 id:26
+// Кардио №3 id:26
             [
                 'name' => 'Кардио №3',
                 'complexity' => 5,
@@ -764,13 +768,15 @@ class TrainingsTableSeeder extends Seeder
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
 
+                'main_text' => '3 тренировки в неделю.\n1 и 2 тренировки:\nРазминка: ходьба с постепенным увеличением скорости 5 мин.\nОсновная часть.\n Чередование: Быстрой ходьбы с переходом на быстрый бег. 2+1 где: 2 минуты быстрая ходьба ЧСС 70-80% от max; 1 мин быстрый бег ЧСС 80%-85% от max. После бега переход на ходьбу, ЧСС должна восстанавливаться до 70%.\nПродолжительность тренировки 7-10 циклов; выполнять 2 раза в неделю; 4-6 недель.\n3-я тренировка:\nОздоровительная ходьба (ЧСС 60-70% от max) продолжительность тренировки 40 -50 минут; 1 раз в неделю; 4-6 недель.',
+
                 'with_cardio' => 0,
                 'its_cardio' => 1,
                 'price' => 2500,
                 'active' => 1,
                 'program_id' => 6
             ],
-            // #4 id:27
+// Кардио №4 id:27
             [
                 'name' => 'Кардио №4',
                 'complexity' => 6,
@@ -791,12 +797,13 @@ class TrainingsTableSeeder extends Seeder
                 'hitch_warning_title' => '',
                 'hitch_warning_description' => '',
 
+                'main_text' => '2 тренировки в неделю.\n1 тренировка:\nРазминка: ходьба с постепенным увеличением скорости 5 мин.\nОсновная часть: медленный бег (ЧСС 70-80% от max);\nПродолжительность тренировки 50- 70 минут. 1 раз в неделю.\n2 тренировка:\nРазминка: ходьба с постепенным увеличением скорости 5 минут.\nОсновная часть:\nЦикл 1+4 где: 1 минута бег в гору (ЧСС 80-85% от max. ) + 4 минуты быстрая ходьба (ЧСС 70% от max.)\nПродолжительность тренировки (4-5 циклов); 1 раза в неделю.\nЗаминка: медленная ходьба 10-15 мин. Стретч.',
                 'with_cardio' => 0,
                 'its_cardio' => 1,
                 'price' => 2500,
                 'active' => 1,
                 'program_id' => 6
-            ],
+            ]
         ];
 
         $dataGoals = [

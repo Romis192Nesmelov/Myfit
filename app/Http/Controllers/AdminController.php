@@ -347,8 +347,8 @@ class AdminController extends UserController
         $this->validate($request, ['id' => $this->validationTraining]);
         $trainingId = $request->input('id');
         $addVideo = $request->input('video_add');
-        $dayVideos = TrainingVideo::where('training_id', $trainingId)->get();
-        foreach ($dayVideos as $video) {
+        $videos = TrainingVideo::where('training_id', $trainingId)->get();
+        foreach ($videos as $video) {
             $href = $request->input('video_id' . $video->id);
             if ($href && $href != $video->video) {
 //                $video->video = $changeHref($href);

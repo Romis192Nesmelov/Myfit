@@ -31,6 +31,8 @@ class Training extends Model
         'hitch_warning_title',
         'hitch_warning_description',
 
+        'main_text',
+
         'with_cardio',
         'its_cardio',
         'price',

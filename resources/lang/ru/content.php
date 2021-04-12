@@ -88,6 +88,7 @@ return [
     'main_content' => 'Основной контент',
     'main_warning_title' => 'Основной контент заголовок',
     'main_warning_description' => 'Основной контент описание',
+    'main_text' => 'Главный текст',
     'cardio' => 'Кардио',
     'main_cardio_title' => 'Основной контент-кардио заголовок',
     'main_cardio_description' => 'Основной контент-кардио описание',

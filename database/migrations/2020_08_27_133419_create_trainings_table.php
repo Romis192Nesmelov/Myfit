@@ -39,6 +39,8 @@ class CreateTrainingsTable extends Migration
 
             $table->string('hitch_warning_title',191)->nullable();
             $table->text('hitch_warning_description')->nullable();
+
+            $table->text('main_text')->nullable();
             
             $table->boolean('with_cardio');
             $table->boolean('its_cardio');
