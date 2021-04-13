@@ -190,7 +190,7 @@ class AdminController extends UserController
         if ($request->has('id')) {
             $this->data['training'] = Training::findOrFail($request->input('id'));
             $this->breadcrumbs['programs?id=' . $this->data['training']->program->id] = $this->data['training']->program->title;
-            $this->breadcrumbs['trainings?id=' . $this->data['training']->id] = $this->data['training']->duration . ' ' . trans('content.weeks') . '/' . $this->data['training']->periodicity;
+            $this->breadcrumbs['trainings?id=' . $this->data['training']->id] = $this->data['training']->name;
             return $this->showView('training');
         } else if ($slug && $slug == 'add') {
             $this->validate($request, ['program_id' => $this->validationProgram]);
@@ -206,6 +206,8 @@ class AdminController extends UserController
     public function editTraining(Request $request)
     {
         $validationArr = [
+            'name' => 'required|min:2|max:255',
+            
             'complexity' => 'required|integer|min:1|max:6',
             'duration' => 'required|integer|min:1|max:7',
             'periodicity' => 'regex:/^(\d(\s?-\s?\d)?)$/',
@@ -228,6 +230,8 @@ class AdminController extends UserController
             'hitch_warning_title' => 'max:191',
             'hitch_warning_description' => 'max:1000',
 
+            'main_text' => 'max:1000',
+
             'price' => 'required|integer|min:50|max:10000',
             'program_id' => $this->validationProgram
         ];
@@ -245,7 +249,7 @@ class AdminController extends UserController
             $training = Training::create($fields);
         }
 
-        if ($request->file('photo')) $fields = array_merge($fields, $this->processingImage($request, $program, 'photo', 'program' . $program->id, 'images/programs'));
+        if ($request->file('photo')) $fields = array_merge($fields, $this->processingImage($request, $training, 'photo', 'training'.$training->id, 'images/trainings'));
         $training->update($fields);
         
         $this->saveCompleteMessage();

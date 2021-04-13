@@ -1,14 +1,3 @@
-<div class="form-group has-feedback has-feedback-left {{ isset($addClass) ? $addClass : '' }} {{ $errors && $errors->has($name) ? 'has-error' : '' }}">
-    @if (isset($label) && $label)
-        <label class="control-label">{{ $label }}</label>
-    @endif
-    <input {{ !isset($icon) || !$icon ? 'style=padding-left:10px' : '' }} {{ isset($min) && $min ? 'min='.$min : '' }} {{ isset($max) && $max ? 'max='.$max : '' }} name="{{ $name }}" type="{{ $type }}" class="form-control" placeholder="{{ isset($placeholder) && $placeholder ? $placeholder : '' }}" value="{{ isset($value) && !count($errors) ? $value : old($name) }}">
-    @if (isset($icon) && $icon)
-        <div class="form-control-feedback">
-            <i class="{{ $icon }}"></i>
-        </div>
-    @endif
-    @if ( ($errors && $errors->has($name)) || (isset($useAjax) && $useAjax))
-        <span class="help-block">{{ $errors->first($name) }}</span>
-    @endif
-</div>
+@php ob_start(); @endphp
+<input class="form-control" {{ isset($min) && $min ? 'min='.$min : '' }} {{ isset($max) && $max ? 'max='.$max : '' }} name="{{ $name }}" type="{{ $type }}" placeholder="{{ isset($placeholder) && $placeholder ? $placeholder : '' }}" value="{{ isset($value) && !count($errors) ? $value : old($name) }}">
+@include('admin._inputs_cover_block',['content' => ob_get_clean()])

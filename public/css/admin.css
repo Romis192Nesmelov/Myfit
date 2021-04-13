@@ -89,6 +89,21 @@ td.delete > span {
     position: static;
 }
 
+.form-control-feedback {
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+}
+
+.has-feedback-left .form-control {
+    padding-left: 10px;
+}
+
+.has-feedback-left.has-error .form-control,
+.has-feedback-left.has-icon .form-control {
+    padding-left: 35px;
+}
+
 input[type=number],
 .number-style input {
     height: 50px;
@@ -98,9 +113,9 @@ input[type=number],
     color: #337ab7;
 }
 
-textarea {
+textarea.form-control {
     width: 100%;
-    height: 200px;
+    height: 200px !important;
     resize: vertical;
 }
 
@@ -111,6 +126,11 @@ table.range-input {
 table.range-input td.value {
     width: 15%;
     padding-right: 10px;
+}
+
+label.control-label {
+    font-weight: bold;
+    color: grey;
 }
 
 .modal-body {

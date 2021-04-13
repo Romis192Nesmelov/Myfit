@@ -1,17 +1,10 @@
-<div class="clearfix form-group textarea has-feedback {{ $errors && $errors->has($name) ? 'has-error' : '' }}" style="margin-bottom: 0;">
-    @if (isset($label) && $label)
-        <p class="description">{{ $label }}</p>
-    @endif
-    <textarea  name="{{ $name }}">{{ count($errors->getMessageBag()) ? old($name) : (isset($value) ? $value : '') }}</textarea>
-
-    @if ($errors && $errors->has($name) || (isset($useAjax) && $useAjax))
-        <div class="help-block error error-{{ $name }}">{{ $errors->first($name) }}</div>
-    @endif
-    @if (!isset($simple) || !$simple)
-        <script>
-            var editor = CKEDITOR.replace('{{ $name }}', {
-                height: '{{ isset($height) ? $height.'px' : '200px' }}'
-            });
-        </script>
-    @endif
-</div>
+@php ob_start(); @endphp
+<textarea class="form-control" name="{{ $name }}">{{ count($errors->getMessageBag()) ? old($name) : (isset($value) ? $value : '') }}</textarea>
+@include('admin._inputs_cover_block',['content' => ob_get_clean()])
+@if (!isset($simple) || !$simple)
+    <script>
+        var editor = CKEDITOR.replace('{{ $name }}', {
+            height: '{{ isset($height) ? $height.'px' : '200px' }}'
+        });
+    </script>
+@endif

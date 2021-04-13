@@ -7,7 +7,7 @@
             <h4 class="panel-title">
                 {!!
                 isset($data['training'])
-                ? trans('content.editing_training',['program' => $data['training']->program->title]).' '.$data['training']->duration.' '.trans('content.weeks').'/'.view('_case_numeral_periodicity_block',['value' => $data['training']->periodicity])->render()
+                ? trans('content.editing_training',['training' => $data['training']->name])
                 : trans('content.adding_training')
                 !!}
             </h4>
@@ -121,6 +121,14 @@
                     <div class="panel panel-flat">
                         <div class="panel-body">
                             @include('admin._input_block', [
+                                'label' => trans('content.training_name'),
+                                'name' => 'name',
+                                'type' => 'text',
+                                'placeholder' => trans('content.training_name'),
+                                'value' => isset($data['training']) ? $data['training']->name : ''
+                            ])
+
+                            @include('admin._input_block', [
                                 'label' => trans('content.equipment'),
                                 'name' => 'equipment',
                                 'type' => 'text',
@@ -128,42 +136,41 @@
                                 'value' => isset($data['training']) ? $data['training']->equipment : ''
                             ])
 
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="panel panel-flat">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">{{ trans('content.warning') }}</h5>
-                                    </div>
-                                    <div class="panel-body">
-                                        @include('admin._input_block', [
-                                            'label' => trans('content.warning_title'),
-                                            'name' => 'warning_title',
-                                            'type' => 'text',
-                                            'placeholder' => trans('content.warning_title'),
-                                            'value' => isset($data['training']) ? $data['training']->warning_title : ''
-                                        ])
 
-                                        @include('admin._textarea_block',[
-                                            'label' => trans('content.warning_description'),
-                                            'name' => 'warning_description',
-                                            'value' => isset($data['training']) ? $data['training']->warning_description : '',
-                                            'simple' => true
-                                        ])
+                            <div class="panel panel-flat">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">{{ trans('content.warning') }}</h5>
+                                </div>
+                                <div class="panel-body">
+                                    @include('admin._input_block', [
+                                        'label' => trans('content.warning_title'),
+                                        'name' => 'warning_title',
+                                        'type' => 'text',
+                                        'placeholder' => trans('content.warning_title'),
+                                        'value' => isset($data['training']) ? $data['training']->warning_title : ''
+                                    ])
 
-                                        @include('admin._input_block', [
-                                            'label' => trans('content.recommendation_title'),
-                                            'name' => 'recommendation_title',
-                                            'type' => 'text',
-                                            'placeholder' => trans('content.recommendation_title'),
-                                            'value' => isset($data['training']) ? $data['training']->recommendation_title : ''
-                                        ])
+                                    @include('admin._textarea_block',[
+                                        'label' => trans('content.warning_description'),
+                                        'name' => 'warning_description',
+                                        'value' => isset($data['training']) ? $data['training']->warning_description : '',
+                                        'simple' => true
+                                    ])
 
-                                        @include('admin._textarea_block',[
-                                            'label' => trans('content.recommendation_description'),
-                                            'name' => 'recommendation_description',
-                                            'value' => isset($data['training']) ? $data['training']->recommendation_description : '',
-                                            'simple' => true
-                                        ])
-                                    </div>
+                                    @include('admin._input_block', [
+                                        'label' => trans('content.recommendation_title'),
+                                        'name' => 'recommendation_title',
+                                        'type' => 'text',
+                                        'placeholder' => trans('content.recommendation_title'),
+                                        'value' => isset($data['training']) ? $data['training']->recommendation_title : ''
+                                    ])
+
+                                    @include('admin._textarea_block',[
+                                        'label' => trans('content.recommendation_description'),
+                                        'name' => 'recommendation_description',
+                                        'value' => isset($data['training']) ? $data['training']->recommendation_description : '',
+                                        'simple' => true
+                                    ])
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12">
