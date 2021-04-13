@@ -1,11 +1,3 @@
-<div class="form-group has-feedback {{ $errors && $errors->has($name) ? 'has-error' : '' }}">
-    @if (isset($label))
-        <label class="col-md-12 col-sm-12 col-xs-12">{{ $label }}</label>
-    @endif
-    <div class="col-md-12">
-        <input {{ isset($inputId) ? 'id='.$inputId : '' }} type="file" name="{{ $name }}" class="file-styled">
-        @if ($errors && $errors->has($name))
-            <span class="help-block">{{ $errors->first($name) }}</span>
-        @endif
-    </div>
-</div>
+@php ob_start(); @endphp
+<input class="form-control file-styled" type="file" name="{{ $name }}">
+@include('admin._inputs_cover_block',['content' => ob_get_clean()])
